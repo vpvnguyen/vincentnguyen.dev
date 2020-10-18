@@ -17,7 +17,9 @@ phases:
   build:
     commands:
       - echo Building...
-      - yarn build
+      - gatsby build
+      - echo Serving...
+      - gatsby serve
 artifacts:
   files:
     - "**/*"
