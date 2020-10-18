@@ -69,7 +69,6 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#03DAC5`,
         display: `minimal-ui`,
-        icon: `https://s3.us-east-2.amazonaws.com/vincentnguyen.dev-images/dev-icon.png`,
       },
     },
   ],
