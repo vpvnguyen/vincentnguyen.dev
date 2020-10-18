@@ -19,11 +19,9 @@ phases:
       - yarn
   build:
     commands:
-      # build and serve
+      # build
       - echo Building...
       - yarn build
-      - echo Serving...
-      - yarn serve
 artifacts:
   files:
     - "**/*"
