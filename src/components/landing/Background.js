@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BackgroundImage from "../../images/hb.jpg";
 import theme from "../../ui/theme";
 
 const style = {
@@ -9,7 +8,7 @@ const style = {
       rgba(0, 0, 0, 0.7), 
       rgba(0, 0, 0, 0.8)
       ),
-      url(${BackgroundImage})`,
+      url('https://s3.us-east-2.amazonaws.com/vincentnguyen.dev-images/hb.jpg')`,
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "fixed",
