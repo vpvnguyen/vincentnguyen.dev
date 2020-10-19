@@ -1,43 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
 import theme from "../../ui/theme";
+import LanguageMapper from "../../utils/helpers/LanguageMapper";
 import GithubAPI from "../../utils/api/github.api";
 
 const Languages = ({ url, user, projectName }) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
-    const defaultLanguageStyle = () => ({
-      fontSize: ".75em",
-      marginLeft: "3px",
-      padding: "5px",
-      borderRadius: "20px",
-      background: "white",
-      color: "black",
-    });
-
-    const lowerCaseLanguageNames = githubLanguages =>
-      Object.keys(githubLanguages).map(languageName =>
-        languageName.toLowerCase()
-      );
-
-    const getLanguageColorKeys = theme => Object.keys(theme.languages);
-
-    const mapLanguagesToThemeStyle = (languageArray, languageColorKey) =>
-      languageArray.map((key, index) => {
-        let style = defaultLanguageStyle();
-
-        if (languageColorKey.includes(key)) {
-          style.background = theme.languages[key].background;
-          style.color = theme.languages[key].color;
-          return { name: languageArray[index], style };
-        } else {
-          style.background = theme.languages.default.background;
-          style.color = theme.languages.default.color;
-          return { name: languageArray[index], style };
-        }
-      });
-
     const getGithubProjectLanguages = async (url, user, projectName) => {
       try {
         const githubLanguages = await GithubAPI.fetchProjectLanguages(
@@ -45,9 +15,12 @@ const Languages = ({ url, user, projectName }) => {
           user,
           projectName
         );
-        const languageColorKeys = getLanguageColorKeys(theme);
-        let languages = lowerCaseLanguageNames(githubLanguages);
-        languages = mapLanguagesToThemeStyle(languages, languageColorKeys);
+        const languageColorKeys = LanguageMapper.getLanguageColorKeys(theme);
+        let languages = LanguageMapper.lowerCaseLanguageNames(githubLanguages);
+        languages = LanguageMapper.mapLanguagesToThemeStyle(
+          languages,
+          languageColorKeys
+        );
         setLanguages(languages);
       } catch (error) {
         setLanguages(null);
