@@ -33,32 +33,28 @@ const style = {
   },
   motionButtonText: MotionStyle.scaleUpMenuItem(),
   motionToolbar: MotionStyle.springDownToolBar(),
+  motionAuthor: () => MotionStyle.scrollToTop(),
 };
 
-const Author = ({ author }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  return (
-    <Button
-      style={style.author}
-      onClick={scrollToTop}
-      title="Take me to the top!"
-    >
-      {author}
-    </Button>
-  );
-};
+const Author = ({ author }) => (
+  <Button
+    style={style.author}
+    onClick={style.motionAuthor}
+    title="Take me to the top!"
+  >
+    {author}
+  </Button>
+);
 
 const Resume = () => {
   const data = useStaticResumeQuery();
+  const resume = data.site.siteMetadata.resume;
 
   return (
     <Button>
       <a
         style={style.resume}
-        href={data.site.siteMetadata.resume}
+        href={resume}
         target="_blank"
         rel="noreferrer"
         download
