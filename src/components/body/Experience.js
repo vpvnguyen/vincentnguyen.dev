@@ -16,7 +16,6 @@ const style = {
     paddingBottom: ".5rem",
   },
   experienceHeader: theme.h1,
-
   motionExperienceHeader: MotionStyle.fadeInHeadersLeft(),
   motionExperience: MotionStyle.fadeInExperienceRight(),
 };
@@ -43,6 +42,7 @@ const MotionExperience = ({ children }) => (
 
 const Experience = () => {
   const data = useStaticExperienceQuery();
+  const experiences = data.site.siteMetadata.experience;
 
   return (
     <LayoutComponent>
@@ -51,9 +51,9 @@ const Experience = () => {
       </MotionExperienceHeader>
       <div style={style.experienceCotainer}>
         <MotionExperience>
-          {data.site.siteMetadata.experience.map(experience => (
+          {experiences.map(experience => (
             <div key={experience} style={style.experienceList}>
-              {experience.toUpperCase()}
+              {experience}
             </div>
           ))}
         </MotionExperience>
