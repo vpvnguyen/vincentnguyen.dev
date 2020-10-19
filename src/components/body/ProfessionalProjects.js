@@ -59,15 +59,35 @@ const MotionProProject = ({ children }) => (
   </motion.div>
 );
 
+const ProjectName = ({ children }) => (
+  <h3 style={style.proProjectName}>
+    {children}{" "}
+    <span>
+      <FontAwesomeIcon icon={faGlobe} title="Click me for live demo!" />
+    </span>
+  </h3>
+);
+
+const ProjectDescription = ({ children }) => (
+  <p style={style.proProjectDescription}>{children}</p>
+);
+
+const ProjectDate = ({ children }) => (
+  <p style={style.proProjectDate}>{children}</p>
+);
+
+const ProjectLanguages = ({ children }) => <div>{children}</div>;
+
 const ProfessionalProjects = () => {
   const data = useStaticProProjectsQuery();
+  const professionalProjects = data.site.siteMetadata.professionalProjects;
 
   return (
     <LayoutComponent>
       <div style={style.proProjectContainer}>
         <MotionProProjectHeader>Professional Projects</MotionProProjectHeader>
-        {data &&
-          data.site.siteMetadata.professionalProjects.map(project => (
+        {professionalProjects &&
+          professionalProjects.map(project => (
             <MotionProProject>
               <Button
                 key={project.name}
@@ -77,21 +97,12 @@ const ProfessionalProjects = () => {
                 target="_blank"
               >
                 <div style={style.proProjectList}>
-                  <h3 style={style.proProjectName}>
-                    {project.name}{" "}
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faGlobe}
-                        title="Click me for live demo!"
-                      />
-                    </span>
-                  </h3>
-                  <p style={style.proProjectDescription}>
-                    {project.description}
-                  </p>
-                  <p style={style.proProjectDate}>{project.date}</p>
+                  <ProjectName>{project.name}</ProjectName>
+                  <ProjectDescription>{project.description}</ProjectDescription>
+                  <ProjectDate>{project.date}</ProjectDate>
                 </div>
-                <div>{project.languages}</div>
+
+                <ProjectLanguages>{project.languages}</ProjectLanguages>
               </Button>
             </MotionProProject>
           ))}
