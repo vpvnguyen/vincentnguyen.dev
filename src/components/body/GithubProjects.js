@@ -89,29 +89,29 @@ const ProjectDate = ({ projectDate }) => (
 const GithubProjects = () => {
   const [githubProjects, setGithubProjects] = useState(null);
   const [loading, setLoading] = useState(true);
+
   const data = useStaticGithubApiQuery();
+  const githubUrl = data.site.siteMetadata.api.github.url;
+  const githubUser = data.site.siteMetadata.api.github.user;
+  const pageAmount = data.site.siteMetadata.api.github.pageAmount;
 
   useEffect(() => {
     const getGithubProjects = async (url, user, pageAmount) => {
       try {
-        const githubProjectsResponse = await GithubAPI.fetchGithubProjects(
+        const githubProjects = await GithubAPI.fetchGithubProjects(
           url,
           user,
           pageAmount
         );
-        await setGithubProjects(githubProjectsResponse);
+        await setGithubProjects(githubProjects);
         setLoading(false);
       } catch (error) {
         await setGithubProjects(null);
       }
     };
 
-    getGithubProjects(
-      data.site.siteMetadata.api.github.url,
-      data.site.siteMetadata.api.github.user,
-      data.site.siteMetadata.api.github.pageAmount
-    );
-  }, [data]);
+    getGithubProjects(githubUrl, githubUser, pageAmount);
+  }, [githubUrl, githubUser, pageAmount]);
 
   return (
     <LayoutComponent>
