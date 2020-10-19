@@ -18,11 +18,12 @@ const style = {
 
 const Footer = () => {
   const data = useStaticAuthorQuery();
+  const author = data.site.siteMetadata.author;
 
   return (
     <footer style={style.footer}>
       <div style={style.footerContent}>
-        © {new Date().getFullYear()} {data.site.siteMetadata.author}
+        © {new Date().getFullYear()} {author}
         <Social />
       </div>
     </footer>
