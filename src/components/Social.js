@@ -34,18 +34,18 @@ const MotionIcon = ({ children, url }) => (
 
 const Social = () => {
   const data = useStaticSocialQuery();
+  const githubUrl = data.site.siteMetadata.social.github.url;
+  const githubUser = data.site.siteMetadata.social.github.user;
+  const linkedinUrl = data.site.siteMetadata.social.linkedin.url;
+  const linkedinUser = data.site.siteMetadata.social.linkedin.user;
 
   return (
     <>
-      <MotionIcon
-        url={`${data.site.siteMetadata.social.github.url}${data.site.siteMetadata.social.github.user}`}
-      >
+      <MotionIcon url={`${githubUrl}${githubUser}`}>
         <GitHubIcon />
       </MotionIcon>
 
-      <MotionIcon
-        url={`${data.site.siteMetadata.social.linkedin.url}${data.site.siteMetadata.social.linkedin.user}`}
-      >
+      <MotionIcon url={`${linkedinUrl}${linkedinUser}`}>
         <LinkedInIcon />
       </MotionIcon>
     </>
