@@ -1,3 +1,5 @@
+import theme from "../../ui/theme";
+
 class LanguageMapper {
   static defaultLanguageStyle = () => ({
     fontSize: ".75em",
@@ -8,19 +10,14 @@ class LanguageMapper {
     color: "black",
   });
 
-  static setLanguageNamesToLowerCase = githubLanguages =>
-    Object.keys(githubLanguages).map(languageName =>
-      languageName.toLowerCase()
-    );
+  static lowerCaseLanguageNames = languages =>
+    Object.keys(languages).map(languageName => languageName.toLowerCase());
 
-  static mapLanguageStyle = languageArray => {
-    const languageColorKey = Object.keys(theme.languages);
-    return mapLanguageColor(languageArray, languageColorKey);
-  };
+  static getLanguageColorKeys = theme => Object.keys(theme.languages);
 
-  static mapLanguageColor = (languageArray, languageColorKey) =>
+  static mapLanguagesToThemeStyle = (languageArray, languageColorKey) =>
     languageArray.map((key, index) => {
-      let style = defaultLanguageStyle();
+      let style = this.defaultLanguageStyle();
 
       if (languageColorKey.includes(key)) {
         style.background = theme.languages[key].background;
