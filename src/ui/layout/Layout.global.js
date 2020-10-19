@@ -12,11 +12,12 @@ const style = {
 
 const LayoutGlobal = ({ children }) => {
   const data = useStaticAuthorQuery();
+  const author = data.site.siteMetadata.author;
 
   return (
     <div style={style}>
-      <Header author={data.site.siteMetadata.author} />
-      <Navbar author={data.site.siteMetadata.author} />
+      <Header author={author} />
+      <Navbar author={author} />
       <div>{children}</div>
     </div>
   );
