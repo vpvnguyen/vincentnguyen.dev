@@ -30,6 +30,7 @@ module.exports = {
       twitter: {
         url: `https://twitter.com/Vincent33567189?ref_src=twsrc%5Etfw`,
         user: `Vincent33567189`,
+        embedWidget: `https://platform.twitter.com/widgets.js`,
       },
       github: {
         url: `https://www.github.com/`,
