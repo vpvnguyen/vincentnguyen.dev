@@ -5,6 +5,10 @@ class MotionStyle {
 
   static whileHoverScale = () => ({ scale: 1.1 });
 
+  static scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   static springDownToolBar = () => ({
     initial: {
       opacity: 0,
