@@ -39,12 +39,13 @@ const MotionWelcomeText = ({ children }) => (
 
 const Welcome = () => {
   const data = useStaticAuthorQuery();
+  const author = data.site.siteMetadata.author;
 
   return (
     <>
       <div style={style.welcomeHeaderContainer}>
         <MotionWelcomeHeader>
-          <h1 style={style.welcomeHeader}>{data.site.siteMetadata.author}</h1>
+          <h1 style={style.welcomeHeader}>{author}</h1>
         </MotionWelcomeHeader>
         <MotionWelcomeText>
           I enjoy breaking and building things
