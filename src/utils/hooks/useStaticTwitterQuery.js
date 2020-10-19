@@ -9,6 +9,7 @@ const useStaticTwitterQuery = () =>
             twitter {
               url
               user
+              embedWidget
             }
           }
         }
