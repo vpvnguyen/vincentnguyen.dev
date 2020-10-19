@@ -37,7 +37,8 @@ const MotionTwitterTimeline = ({ children }) => (
 const EmbedTwitterTimeline = () => {
   const data = useStaticTwitterQuery();
   const twitterUrl = data.site.siteMetadata.social.twitter.url;
-  useScript("https://platform.twitter.com/widgets.js");
+  const embedTwitterWidget = data.site.siteMetadata.social.twitter.embedWidget;
+  useScript(embedTwitterWidget);
 
   return (
     <LayoutComponent>
