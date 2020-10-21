@@ -31,9 +31,12 @@ const theme = {
       border: "#323F50",
       background: "#EEEEEE",
     },
-    sql: { color: "black", border: "#FFD43B", background: "#EEEEEE" },
+    sql: { color: "black", border: "#FFD43B", background: "#FFEBCA" },
+    mysql: { color: "black", border: "#FFD43B", background: "#FFEBCA" },
     tsql: { color: "black", border: "#00273F", background: "#EEEEEE" },
     shell: { color: "black", border: "#D3D3D3", background: "#E0E0E0" },
+    laravel: { color: "black", border: "#F3F0FF", background: "#E7E0FF" },
+    drupal: { color: "black", border: "#F3F0FF", background: "#DDF2FF" },
   },
   h1: {
     textDecoration: `underline #03DAC5`,
