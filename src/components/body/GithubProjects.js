@@ -5,7 +5,7 @@ import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import Languages from "./Languages";
+import GithubLanguages from "./GithubLanguages";
 import theme from "../../ui/theme";
 import MotionStyle from "../../ui/motion";
 import GithubAPI from "../../utils/api/github.api";
@@ -145,7 +145,7 @@ const GithubProjects = () => {
                   <ProjectDate projectDate={project.pushed_at} />
                 </div>
 
-                <Languages
+                <GithubLanguages
                   url={data.site.siteMetadata.api.github.url}
                   user={data.site.siteMetadata.api.github.user}
                   projectName={project.name}
