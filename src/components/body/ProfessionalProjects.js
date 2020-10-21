@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import theme from "../../ui/theme";
 import MotionStyle from "../../ui/motion";
+import LanguageMapper from "../../utils/helpers/LanguageMapper";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 
 const style = {
@@ -76,7 +77,29 @@ const ProjectDate = ({ children }) => (
   <p style={style.proProjectDate}>{children}</p>
 );
 
-const ProjectLanguages = ({ children }) => <div>{children}</div>;
+const ProjectLanguages = ({ projectLanguages }) => {
+  const [languages, setLanguages] = useState(null);
+
+  useEffect(() => {
+    const languageColorKeys = LanguageMapper.getLanguageColorKeys(theme);
+    const languages = LanguageMapper.mapLanguagesToThemeStyle(
+      projectLanguages,
+      languageColorKeys
+    );
+    setLanguages(languages);
+  }, [projectLanguages]);
+
+  return (
+    <>
+      {languages &&
+        languages.map((language, index) => (
+          <span key={`${language}-${index}`} style={language.style}>
+            {language.name}
+          </span>
+        ))}
+    </>
+  );
+};
 
 const ProfessionalProjects = () => {
   const data = useStaticProProjectsQuery();
@@ -88,7 +111,7 @@ const ProfessionalProjects = () => {
         <MotionProProjectHeader>Professional Projects</MotionProProjectHeader>
         {professionalProjects &&
           professionalProjects.map(project => (
-            <MotionProProject>
+            <MotionProProject key={project.name}>
               <Button
                 key={project.name}
                 style={style.proProjectButton}
@@ -102,7 +125,7 @@ const ProfessionalProjects = () => {
                   <ProjectDate>{project.date}</ProjectDate>
                 </div>
 
-                <ProjectLanguages>{project.languages}</ProjectLanguages>
+                <ProjectLanguages projectLanguages={project.languages} />
               </Button>
             </MotionProProject>
           ))}
