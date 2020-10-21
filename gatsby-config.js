@@ -15,7 +15,7 @@ module.exports = {
         description:
           "Mazda reimbursement program for recalls and special services for selected vehicles.",
         date: "Mar-2020",
-        languages: ["typescript", "scss"],
+        languages: ["typescript", "mysql"],
       },
       {
         name: "Hyundai Motors America Engine Settlement",
@@ -23,7 +23,7 @@ module.exports = {
         description:
           "Hyundai theta engine class action settlement claim program.",
         date: "Jul-2020",
-        languages: ["laravel", "php", "html", "css"],
+        languages: ["laravel", "php", "drupal", "mysql"],
       },
     ],
     social: {
