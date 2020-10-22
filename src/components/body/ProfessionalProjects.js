@@ -81,11 +81,7 @@ const ProjectLanguages = ({ projectLanguages }) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
-    const languageColorKeys = LanguageMapper.getLanguageColorKeys(theme);
-    const languages = LanguageMapper.mapLanguagesToThemeStyle(
-      projectLanguages,
-      languageColorKeys
-    );
+    const languages = LanguageMapper.getLanguageStyle(projectLanguages);
     setLanguages(languages);
   }, [projectLanguages]);
 
