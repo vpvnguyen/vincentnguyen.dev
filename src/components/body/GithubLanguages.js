@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
-import theme from "../../ui/theme";
 import LanguageMapper from "../../utils/helpers/LanguageMapper";
 import GithubAPI from "../../utils/api/github.api";
 
@@ -15,12 +14,10 @@ const GithubLanguages = ({ url, user, projectName }) => {
           user,
           projectName
         );
-        const languageColorKeys = LanguageMapper.getLanguageColorKeys(theme);
-        let languages = LanguageMapper.lowerCaseLanguageNames(githubLanguages);
-        languages = LanguageMapper.mapLanguagesToThemeStyle(
-          languages,
-          languageColorKeys
+        let languages = LanguageMapper.setLanguageNamesToLowerCase(
+          githubLanguages
         );
+        languages = LanguageMapper.getLanguageStyle(languages);
         setLanguages(languages);
       } catch (error) {
         setLanguages(null);
