@@ -1,7 +1,7 @@
 import theme from "../../ui/theme";
 
 class LanguageMapper {
-  static defaultLanguageStyle = () => ({
+  static getDefaultLanguageStyle = () => ({
     fontSize: ".75em",
     marginLeft: "3px",
     padding: "5px",
@@ -10,25 +10,36 @@ class LanguageMapper {
     color: "black",
   });
 
-  static lowerCaseLanguageNames = languages =>
+  static setLanguageNamesToLowerCase = languages =>
     Object.keys(languages).map(languageName => languageName.toLowerCase());
 
-  static getLanguageColorKeys = theme => Object.keys(theme.languages);
+  static setLanguageThemeStyle = (languageArray, key, index) => {
+    let style = this.getDefaultLanguageStyle();
+    style.background = theme.languages[key].background;
+    style.color = theme.languages[key].color;
+    return { name: languageArray[index], style };
+  };
 
-  static mapLanguagesToThemeStyle = (languageArray, languageColorKey) =>
-    languageArray.map((key, index) => {
-      let style = this.defaultLanguageStyle();
+  static setLanguageDefaultStyle = (languageArray, index) => {
+    let style = this.getDefaultLanguageStyle();
+    style.background = theme.languages.default.background;
+    style.color = theme.languages.default.color;
+    return { name: languageArray[index], style };
+  };
 
-      if (languageColorKey.includes(key)) {
-        style.background = theme.languages[key].background;
-        style.color = theme.languages[key].color;
-        return { name: languageArray[index], style };
-      } else {
-        style.background = theme.languages.default.background;
-        style.color = theme.languages.default.color;
-        return { name: languageArray[index], style };
-      }
-    });
+  static hasTheme = key => Object.keys(theme.languages).includes(key);
+
+  static setLangaugesToStyle = (languageArray, key, index) => {
+    if (this.hasTheme(key)) {
+      return this.setLanguageThemeStyle(languageArray, key, index);
+    }
+    return this.setLanguageDefaultStyle(languageArray, index);
+  };
+
+  static getLanguageStyle = languageArray =>
+    languageArray.map((key, index) =>
+      this.setLangaugesToStyle(languageArray, key, index)
+    );
 }
 
 export default LanguageMapper;
