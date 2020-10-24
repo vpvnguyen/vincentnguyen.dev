@@ -16,13 +16,16 @@ const style = {
     paddingBottom: ".5rem",
   },
   experienceHeader: theme.h1,
+};
+
+const motionVariants = {
   motionExperienceHeader: MotionStyle.fadeInHeadersLeft(),
   motionExperience: MotionStyle.fadeInExperienceRight(),
 };
 
 const MotionExperienceHeader = ({ children }) => (
   <motion.div
-    variants={style.motionExperienceHeader}
+    variants={motionVariants.motionExperienceHeader}
     initial={"initial"}
     animate={"animate"}
   >
@@ -32,7 +35,7 @@ const MotionExperienceHeader = ({ children }) => (
 
 const MotionExperience = ({ children }) => (
   <motion.div
-    variants={style.motionExperience}
+    variants={motionVariants.motionExperience}
     initial={"initial"}
     animate={"animate"}
   >
