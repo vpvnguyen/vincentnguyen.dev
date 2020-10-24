@@ -34,24 +34,26 @@ const style = {
     justifyContent: "space-between",
     fontFamily: theme.font.fontFamily,
   },
+};
+
+const motionVariants = {
   motionProProjectHeader: MotionStyle.fadeInHeadersLeft(),
   motionProProject: MotionStyle.animateProject(),
 };
 
 const MotionProProjectHeader = ({ children }) => (
-  <motion.h1
-    style={style.proProjectHeader}
-    variants={style.motionProProjectHeader}
+  <motion.div
+    variants={motionVariants.motionProProjectHeader}
     initial={"initial"}
     animate={"animate"}
   >
     {children}
-  </motion.h1>
+  </motion.div>
 );
 
 const MotionProProject = ({ children }) => (
   <motion.div
-    variants={style.motionProProject}
+    variants={motionVariants.motionProProject}
     initial={"initial"}
     animate={"animate"}
     whileHover={"whileHover"}
@@ -104,7 +106,9 @@ const ProfessionalProjects = () => {
   return (
     <LayoutComponent>
       <div style={style.proProjectContainer}>
-        <MotionProProjectHeader>Professional Projects</MotionProProjectHeader>
+        <MotionProProjectHeader>
+          <h1 style={style.proProjectHeader}>Professional Projects</h1>
+        </MotionProProjectHeader>
         {professionalProjects &&
           professionalProjects.map(project => (
             <MotionProProject key={project.name}>
