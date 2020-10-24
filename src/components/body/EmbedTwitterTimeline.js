@@ -8,25 +8,26 @@ import MotionStyle from "../../ui/motion";
 
 const style = {
   twitterHeader: theme.h1,
+};
+
+const motionVariants = {
   motionTwitterHeader: MotionStyle.fadeInHeadersLeft(),
   motionTwitterTimeline: MotionStyle.fadeInTwitterTimelineRight(),
 };
 
 const MotionTwitterHeader = ({ children }) => (
-  <motion.h1
-    style={style.twitterHeader}
-    variants={style.motionTwitterHeader}
+  <motion.div
+    variants={motionVariants.motionTwitterHeader}
     initial={"initial"}
     animate={"animate"}
   >
     {children}
-  </motion.h1>
+  </motion.div>
 );
 
 const MotionTwitterTimeline = ({ children }) => (
   <motion.div
-    style={style.twitterHeader}
-    variants={style.motionTwitterTimeline}
+    variants={motionVariants.motionTwitterTimeline}
     initial={"initial"}
     animate={"animate"}
   >
@@ -42,7 +43,9 @@ const EmbedTwitterTimeline = () => {
 
   return (
     <LayoutComponent>
-      <MotionTwitterHeader>Tweets</MotionTwitterHeader>
+      <MotionTwitterHeader>
+        <h1 style={style.twitterHeader}>Tweets</h1>
+      </MotionTwitterHeader>
       <MotionTwitterTimeline>
         <a
           aria-label="Twitter Feed"
