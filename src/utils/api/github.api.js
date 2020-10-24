@@ -28,6 +28,9 @@ const createProjectStructure = projects =>
 const sortProjectsByDateDesc = projects =>
   projects.sort((a, b) => b.pushed_at - a.pushed_at);
 
+const setLangaugeNamesToLowerCase = languages =>
+  Object.keys(languages).map(languageName => languageName.toLowerCase());
+
 const GithubAPI = {
   fetchGithubProjects: async (url, user, pageAmount) => {
     try {
@@ -47,7 +50,8 @@ const GithubAPI = {
         user,
         projectName
       );
-      return projectLanguages.data;
+      const languages = setLangaugeNamesToLowerCase(projectLanguages.data);
+      return languages;
     } catch (error) {
       return null;
     }
