@@ -31,6 +31,9 @@ const style = {
     color: theme.color.accent,
     textDecoration: "none",
   },
+};
+
+const motionVariants = {
   motionButtonText: MotionStyle.scaleUpMenuItem(),
   motionToolbar: MotionStyle.springDownToolBar(),
   motionAuthor: () => MotionStyle.scrollToTop(),
@@ -39,7 +42,7 @@ const style = {
 const Author = ({ author }) => (
   <Button
     style={style.author}
-    onClick={style.motionAuthor}
+    onClick={motionVariants.motionAuthor}
     title="Take me to the top!"
   >
     {author}
@@ -68,7 +71,7 @@ const Resume = () => {
 
 const MotionToolbar = ({ children }) => (
   <motion.nav
-    variants={style.motionToolbar}
+    variants={motionVariants.motionToolbar}
     initial={"initial"}
     animate={"animate"}
   >
@@ -78,7 +81,7 @@ const MotionToolbar = ({ children }) => (
 
 const MotionButtonText = ({ children }) => (
   <motion.div
-    variants={style.motionButtonText}
+    variants={motionVariants.motionButtonText}
     initial={"initial"}
     whileHover={"whileHover"}
     whileTap={"whileTap"}
