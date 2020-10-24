@@ -10,9 +10,6 @@ class LanguageMapper {
     color: "black",
   });
 
-  static setLanguageNamesToLowerCase = languages =>
-    Object.keys(languages).map(languageName => languageName.toLowerCase());
-
   static setLanguageThemeStyle = (languageArray, key, index) => {
     let style = this.getDefaultLanguageStyle();
     style.background = theme.languages[key].background;
