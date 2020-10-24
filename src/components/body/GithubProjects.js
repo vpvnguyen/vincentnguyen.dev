@@ -36,24 +36,26 @@ const style = {
     paddingTop: "1rem",
     fontStyle: "oblique",
   },
+};
+
+const motionVariants = {
   motionProjectHeader: MotionStyle.fadeInHeadersLeft(),
   motionProject: MotionStyle.animateProject(),
 };
 
 const MotionProjectHeader = ({ children }) => (
-  <motion.h1
-    style={style.projectHeader}
-    variants={style.motionProjectHeader}
+  <motion.div
+    variants={motionVariants.motionProjectHeader}
     initial={"initial"}
     animate={"animate"}
   >
     {children}
-  </motion.h1>
+  </motion.div>
 );
 
 const MotionProject = ({ children }) => (
   <motion.div
-    variants={style.motionProject}
+    variants={motionVariants.motionProject}
     initial={"initial"}
     animate={"animate"}
     whileHover={"whileHover"}
@@ -96,11 +98,11 @@ const GithubProjects = () => {
   const pageAmount = data.site.siteMetadata.api.github.pageAmount;
 
   useEffect(() => {
-    const getGithubProjects = async (url, user, pageAmount) => {
+    const getGithubProjects = async (githubUrl, githubUser, pageAmount) => {
       try {
         const githubProjects = await GithubAPI.fetchGithubProjects(
-          url,
-          user,
+          githubUrl,
+          githubUser,
           pageAmount
         );
         await setGithubProjects(githubProjects);
@@ -116,7 +118,10 @@ const GithubProjects = () => {
   return (
     <LayoutComponent>
       <MotionProjectHeader>
-        {loading ? "Loading Personal Projects..." : "Personal Projects"}
+        <h1 style={style.projectHeader}>
+          {" "}
+          {loading ? "Loading Personal Projects..." : "Personal Projects"}
+        </h1>
       </MotionProjectHeader>
       <div style={style.projectContainer}>
         {loading ? (
