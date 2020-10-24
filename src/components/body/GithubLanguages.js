@@ -9,13 +9,10 @@ const GithubLanguages = ({ url, user, projectName }) => {
   useEffect(() => {
     const getGithubProjectLanguages = async (url, user, projectName) => {
       try {
-        const githubLanguages = await GithubAPI.fetchProjectLanguages(
+        let languages = await GithubAPI.fetchProjectLanguages(
           url,
           user,
           projectName
-        );
-        let languages = LanguageMapper.setLanguageNamesToLowerCase(
-          githubLanguages
         );
         languages = LanguageMapper.getLanguageStyle(languages);
         setLanguages(languages);
