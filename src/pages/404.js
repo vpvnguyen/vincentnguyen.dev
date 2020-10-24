@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { navigate } from "gatsby";
 
 export default () => {
+  const route = "/";
+
   useEffect(() => {
-    navigate("/");
-  }, []);
+    navigate(route);
+  }, [route]);
 
   return null;
 };
