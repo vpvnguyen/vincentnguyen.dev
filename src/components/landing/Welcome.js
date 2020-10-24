@@ -13,13 +13,16 @@ const style = {
     padding: "1rem",
   },
   welcomeTextTitle: theme.h1,
+};
+
+const motionVariants = {
   motionWelcomeHeader: MotionStyle.springUpWelcomeHeader(),
   motionWelcomeText: MotionStyle.springUpWelcomeText(),
 };
 
 const MotionWelcomeHeader = ({ children }) => (
   <motion.span
-    variants={style.motionWelcomeHeader}
+    variants={motionVariants.motionWelcomeHeader}
     initial={"initial"}
     animate={"animate"}
   >
@@ -29,7 +32,7 @@ const MotionWelcomeHeader = ({ children }) => (
 
 const MotionWelcomeText = ({ children }) => (
   <motion.h2
-    variants={style.motionWelcomeText}
+    variants={motionVariants.motionWelcomeText}
     initial={"initial"}
     animate={"animate"}
   >
@@ -42,16 +45,14 @@ const Welcome = () => {
   const author = data.site.siteMetadata.author;
 
   return (
-    <>
-      <div style={style.welcomeHeaderContainer}>
-        <MotionWelcomeHeader>
-          <h1 style={style.welcomeHeader}>{author}</h1>
-        </MotionWelcomeHeader>
-        <MotionWelcomeText>
-          I enjoy breaking and building things
-        </MotionWelcomeText>
-      </div>
-    </>
+    <div style={style.welcomeHeaderContainer}>
+      <MotionWelcomeHeader>
+        <h1 style={style.welcomeHeader}>{author}</h1>
+      </MotionWelcomeHeader>
+      <MotionWelcomeText>
+        I enjoy breaking and building things
+      </MotionWelcomeText>
+    </div>
   );
 };
 

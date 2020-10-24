@@ -14,14 +14,15 @@ const style = {
     backgroundColor: "transparent",
     color: theme.color.accent,
   },
+};
+
+const motionVariants = {
   motionIcon: MotionStyle.scaleUpSocialIcons(),
 };
 
-const MotionIcon = ({ children, url }) => (
-  <motion.a
-    href={url}
-    style={style.links}
-    variants={style.motionIcon}
+const MotionIcon = ({ children }) => (
+  <motion.div
+    variants={motionVariants.motionIcon}
     initial={"initial"}
     whileHover={"whileHover"}
     whileTap={"whileTap"}
@@ -29,7 +30,7 @@ const MotionIcon = ({ children, url }) => (
     target="_blank"
   >
     {children}
-  </motion.a>
+  </motion.div>
 );
 
 const Social = () => {
@@ -41,12 +42,16 @@ const Social = () => {
 
   return (
     <>
-      <MotionIcon url={`${githubUrl}${githubUser}`}>
-        <GitHubIcon />
+      <MotionIcon>
+        <a href={`${githubUrl}${githubUser}`} style={style.links}>
+          <GitHubIcon />
+        </a>
       </MotionIcon>
 
-      <MotionIcon url={`${linkedinUrl}${linkedinUser}`}>
-        <LinkedInIcon />
+      <MotionIcon>
+        <a href={`${linkedinUrl}${linkedinUser}`} style={style.links}>
+          <LinkedInIcon />
+        </a>
       </MotionIcon>
     </>
   );
