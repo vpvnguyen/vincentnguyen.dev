@@ -6,8 +6,10 @@ import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 import theme from "../../ui/theme";
 
 const style = {
-  fontFamily: theme.font.fontFamily,
-  fontSize: theme.font.fontSize,
+  layoutGlobalContainer: {
+    fontFamily: theme.font.fontFamily,
+    fontSize: theme.font.fontSize,
+  },
 };
 
 const LayoutGlobal = ({ children }) => {
@@ -15,7 +17,7 @@ const LayoutGlobal = ({ children }) => {
   const author = data.site.siteMetadata.author;
 
   return (
-    <div style={style}>
+    <div style={style.layoutGlobalContainer}>
       <Header author={author} />
       <Navbar author={author} />
       <div>{children}</div>

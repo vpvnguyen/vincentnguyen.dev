@@ -9,28 +9,28 @@ import EmbedTwitterTimeline from "../components/body/EmbedTwitterTimeline";
 import Background from "../components/landing/Background";
 
 const style = {
-  page: {
+  pageRoot: {
     overflow: "hidden",
   },
-  container: {
+  pageContainer: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
   },
-  content: {
+  sectionLanding: {
+    flex: "1 100%",
+    textAlign: "center",
+  },
+  sectionContent: {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "1280px",
   },
-  landing: {
-    flex: "1 100%",
-    textAlign: "center",
-  },
-  leftColumn: {
+  sectionContentLeft: {
     flex: 2,
     padding: "1rem 2rem 1rem 2rem",
   },
-  rightColumn: {
+  sectionContentRight: {
     flex: 1,
     padding: "1rem 2rem 1rem 2rem",
   },
@@ -38,20 +38,20 @@ const style = {
 
 const IndexPage = () => (
   <LayoutGlobal>
-    <div style={style.page}>
-      <div style={style.container}>
-        <div style={style.landing}>
+    <div style={style.pageRoot}>
+      <div style={style.pageContainer}>
+        <div style={style.sectionLanding}>
           <Background>
             <Landing />
           </Background>
         </div>
 
-        <div style={style.content}>
-          <div style={style.leftColumn}>
+        <div style={style.sectionContent}>
+          <div style={style.sectionContentLeft}>
             <ProfessionalProjects />
             <GithubProjects />
           </div>
-          <div style={style.rightColumn}>
+          <div style={style.sectionContentRight}>
             <Experience />
             <EmbedTwitterTimeline />
           </div>

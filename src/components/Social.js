@@ -9,7 +9,7 @@ import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
 import MotionStyle from "../ui/motion";
 
 const style = {
-  links: {
+  socialLink: {
     margin: ".5rem",
     backgroundColor: "transparent",
     color: theme.color.accent,
@@ -43,13 +43,13 @@ const Social = () => {
   return (
     <>
       <MotionIcon>
-        <a href={`${githubUrl}${githubUser}`} style={style.links}>
+        <a href={`${githubUrl}${githubUser}`} style={style.socialLink}>
           <GitHubIcon />
         </a>
       </MotionIcon>
 
       <MotionIcon>
-        <a href={`${linkedinUrl}${linkedinUser}`} style={style.links}>
+        <a href={`${linkedinUrl}${linkedinUser}`} style={style.socialLink}>
           <LinkedInIcon />
         </a>
       </MotionIcon>

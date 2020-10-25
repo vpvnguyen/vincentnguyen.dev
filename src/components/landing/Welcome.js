@@ -5,14 +5,13 @@ import MotionStyle from "../../ui/motion";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {
-  welcomeHeader: theme.h1,
   welcomeHeaderContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     padding: "1rem",
   },
-  welcomeTextTitle: theme.h1,
+  welcomeHeader: theme.h1,
 };
 
 const motionVariants = {

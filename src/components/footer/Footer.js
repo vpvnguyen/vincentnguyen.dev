@@ -4,7 +4,7 @@ import theme from "../../ui/theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {
-  footer: {
+  footerContainer: {
     backgroundColor: theme.color.dark,
     color: theme.color.accent,
   },
@@ -21,7 +21,7 @@ const Footer = () => {
   const author = data.site.siteMetadata.author;
 
   return (
-    <footer style={style.footer}>
+    <footer style={style.footerContainer}>
       <div style={style.footerContent}>
         © {new Date().getFullYear()} {author}
         <Social />

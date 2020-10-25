@@ -8,7 +8,7 @@ import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
 import MotionStyle from "../../ui/motion";
 
 const style = {
-  root: {
+  navRoot: {
     backgroundColor: theme.color.dark,
     height: "70px",
   },
@@ -92,7 +92,7 @@ const MotionButtonText = ({ children }) => (
 
 const Navbar = ({ author }) => {
   return (
-    <div style={style.root}>
+    <div style={style.navRoot}>
       <ElevationScroll>
         <AppBar position="fixed" style={style.navContainer}>
           <MotionToolbar>

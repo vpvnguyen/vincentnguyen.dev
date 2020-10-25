@@ -3,7 +3,7 @@ import LayoutComponent from "../../ui/layout/Layout.component";
 import Welcome from "./Welcome";
 
 const style = {
-  container: {
+  landingContainer: {
     color: "#ffffff",
     padding: "10rem 0rem 15rem 0rem",
   },
@@ -14,7 +14,7 @@ const style = {
 
 const Landing = () => (
   <LayoutComponent>
-    <div style={style.container}>
+    <div style={style.landingContainer}>
       <div style={style.landingMessage}>
         <Welcome />
       </div>

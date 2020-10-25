@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const style = {
-  container: {
+  layoutComponentContainer: {
     margin: "auto",
     padding: "1em",
   },
 };
 
 const LayoutComponent = ({ children }) => (
-  <main style={style.container}>{children}</main>
+  <main style={style.layoutComponentContainer}>{children}</main>
 );
 
 LayoutComponent.propTypes = {
