@@ -31,8 +31,8 @@ const sortProjectsByDateDesc = projects =>
 const setLangaugeNamesToLowerCase = languages =>
   Object.keys(languages).map(languageName => languageName.toLowerCase());
 
-const GithubAPI = {
-  fetchGithubProjects: async (url, user, pageAmount) => {
+class GithubApi {
+  static fetchGithubProjects = async (url, user, pageAmount) => {
     try {
       const githubProjects = await getGithubProjects(url, user, pageAmount);
       const starredProjects = filterByStarredProjects(githubProjects.data);
@@ -42,8 +42,9 @@ const GithubAPI = {
     } catch (error) {
       return null;
     }
-  },
-  fetchProjectLanguages: async (url, user, projectName) => {
+  };
+
+  static fetchProjectLanguages = async (url, user, projectName) => {
     try {
       const projectLanguages = await getProjectLanguages(
         url,
@@ -55,7 +56,7 @@ const GithubAPI = {
     } catch (error) {
       return null;
     }
-  },
-};
+  };
+}
 
-export default GithubAPI;
+export default GithubApi;
