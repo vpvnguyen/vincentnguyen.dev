@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import GithubLanguages from "./GithubLanguages";
 import theme from "../../ui/theme";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
 
@@ -39,8 +39,8 @@ const style = {
 };
 
 const motionVariants = {
-  motionProjectHeader: MotionStyle.fadeInHeadersLeft(),
-  motionProject: MotionStyle.animateProject(),
+  motionProjectHeader: Animate.fadeInHeadersLeft(),
+  motionProject: Animate.animateProject(),
 };
 
 const MotionProjectHeader = ({ children }) => (
@@ -151,8 +151,8 @@ const GithubProjects = () => {
                 </div>
 
                 <GithubLanguages
-                  url={data.site.siteMetadata.api.github.url}
-                  user={data.site.siteMetadata.api.github.user}
+                  githubUrl={githubUrl}
+                  githubUser={githubUser}
                   projectName={project.name}
                 />
               </Button>

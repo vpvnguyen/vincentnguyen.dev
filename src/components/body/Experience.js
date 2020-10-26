@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import theme from "../../ui/theme";
 import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 
 const style = {
   experienceContainer: {
@@ -19,8 +19,8 @@ const style = {
 };
 
 const motionVariants = {
-  motionExperienceHeader: MotionStyle.fadeInHeadersLeft(),
-  motionExperience: MotionStyle.fadeInExperienceRight(),
+  motionExperienceHeader: Animate.fadeInHeadersLeft(),
+  motionExperience: Animate.fadeInExperienceRight(),
 };
 
 const MotionExperienceHeader = ({ children }) => (

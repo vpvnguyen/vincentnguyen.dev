@@ -5,7 +5,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import theme from "../../ui/theme";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 import LanguageMapper from "../../utils/helpers/LanguageMapper";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 
@@ -37,8 +37,8 @@ const style = {
 };
 
 const motionVariants = {
-  motionProProjectHeader: MotionStyle.fadeInHeadersLeft(),
-  motionProProject: MotionStyle.animateProject(),
+  motionProProjectHeader: Animate.fadeInHeadersLeft(),
+  motionProProject: Animate.animateProject(),
 };
 
 const MotionProProjectHeader = ({ children }) => (

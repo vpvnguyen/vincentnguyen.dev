@@ -3,15 +3,19 @@ import { CircularProgress } from "@material-ui/core";
 import LanguageMapper from "../../utils/helpers/LanguageMapper";
 import GithubAPI from "../../utils/api/github.api";
 
-const GithubLanguages = ({ url, user, projectName }) => {
+const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
-    const getGithubProjectLanguages = async (url, user, projectName) => {
+    const getGithubProjectLanguages = async (
+      githubUrl,
+      githubUser,
+      projectName
+    ) => {
       try {
         let languages = await GithubAPI.fetchProjectLanguages(
-          url,
-          user,
+          githubUrl,
+          githubUser,
           projectName
         );
         languages = LanguageMapper.getLanguageStyle(languages);
@@ -21,8 +25,8 @@ const GithubLanguages = ({ url, user, projectName }) => {
       }
     };
 
-    getGithubProjectLanguages(url, user, projectName);
-  }, [projectName, url, user]);
+    getGithubProjectLanguages(githubUrl, githubUser, projectName);
+  }, [projectName, githubUrl, githubUser]);
 
   return (
     <>

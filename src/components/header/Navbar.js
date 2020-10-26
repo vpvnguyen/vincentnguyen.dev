@@ -5,7 +5,7 @@ import Social from "../Social";
 import theme from "../../ui/theme";
 import ElevationScroll from "./ElevationScroll";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 
 const style = {
   navRoot: {
@@ -34,9 +34,9 @@ const style = {
 };
 
 const motionVariants = {
-  motionButtonText: MotionStyle.scaleUpMenuItem(),
-  motionToolbar: MotionStyle.springDownToolBar(),
-  motionAuthor: () => MotionStyle.scrollToTop(),
+  motionButtonText: Animate.scaleUpMenuItem(),
+  motionToolbar: Animate.springDownToolBar(),
+  motionAuthor: () => Animate.scrollToTop(),
 };
 
 const Author = ({ author }) => (

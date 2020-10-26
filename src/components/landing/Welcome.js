@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import theme from "../../ui/theme";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {
@@ -15,8 +15,8 @@ const style = {
 };
 
 const motionVariants = {
-  motionWelcomeHeader: MotionStyle.springUpWelcomeHeader(),
-  motionWelcomeText: MotionStyle.springUpWelcomeText(),
+  motionWelcomeHeader: Animate.springUpWelcomeHeader(),
+  motionWelcomeText: Animate.springUpWelcomeText(),
 };
 
 const MotionWelcomeHeader = ({ children }) => (

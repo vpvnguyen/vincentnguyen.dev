@@ -6,7 +6,7 @@ import {
 import { motion } from "framer-motion";
 import theme from "../ui/theme";
 import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
-import MotionStyle from "../ui/motion";
+import Animate from "../ui/Animate";
 
 const style = {
   socialLink: {
@@ -17,7 +17,7 @@ const style = {
 };
 
 const motionVariants = {
-  motionIcon: MotionStyle.scaleUpSocialIcons(),
+  motionIcon: Animate.scaleUpSocialIcons(),
 };
 
 const MotionIcon = ({ children }) => (

@@ -4,15 +4,15 @@ import LayoutComponent from "../../ui/layout/Layout.component";
 import theme from "../../ui/theme";
 import useStaticTwitterQuery from "../../utils/hooks/useStaticTwitterQuery";
 import useScript from "../../utils/hooks/useScript";
-import MotionStyle from "../../ui/motion";
+import Animate from "../../ui/Animate";
 
 const style = {
   twitterHeader: theme.h1,
 };
 
 const motionVariants = {
-  motionTwitterHeader: MotionStyle.fadeInHeadersLeft(),
-  motionTwitterTimeline: MotionStyle.fadeInTwitterTimelineRight(),
+  motionTwitterHeader: Animate.fadeInHeadersLeft(),
+  motionTwitterTimeline: Animate.fadeInTwitterTimelineRight(),
 };
 
 const MotionTwitterHeader = ({ children }) => (
