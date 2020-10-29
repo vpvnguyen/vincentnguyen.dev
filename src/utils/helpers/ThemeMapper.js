@@ -13,7 +13,7 @@ class ThemeMapper {
   });
 
   static h1 = () => ({
-    textDecoration: `underline #03DAC5`,
+    textDecoration: `underline ${this.color().accent}`,
   });
 
   static h3 = () => ({
@@ -29,7 +29,7 @@ class ThemeMapper {
     html: {
       color: languageFontColor,
       border: "#FFF4E6",
-      background: "#fff0DD",
+      background: "#FFF0DD",
     },
     css: { color: languageFontColor, border: "#E7F5FF", background: "#E7F5FF" },
     javascript: {
