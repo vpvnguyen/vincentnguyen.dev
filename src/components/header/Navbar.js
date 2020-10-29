@@ -90,28 +90,26 @@ const MotionButtonText = ({ children }) => (
   </motion.div>
 );
 
-const Navbar = ({ author }) => {
-  return (
-    <div style={style.navRoot}>
-      <ElevationScroll>
-        <AppBar position="fixed" style={style.navContainer}>
-          <MotionToolbar>
-            <Toolbar>
-              <MotionButtonText>
-                <Author author={author} />
-              </MotionButtonText>
+const Navbar = ({ author }) => (
+  <div style={style.navRoot}>
+    <ElevationScroll>
+      <AppBar position="fixed" style={style.navContainer}>
+        <MotionToolbar>
+          <Toolbar>
+            <MotionButtonText>
+              <Author author={author} />
+            </MotionButtonText>
 
-              <Social />
+            <Social />
 
-              <MotionButtonText>
-                <Resume />
-              </MotionButtonText>
-            </Toolbar>
-          </MotionToolbar>
-        </AppBar>
-      </ElevationScroll>
-    </div>
-  );
-};
+            <MotionButtonText>
+              <Resume />
+            </MotionButtonText>
+          </Toolbar>
+        </MotionToolbar>
+      </AppBar>
+    </ElevationScroll>
+  </div>
+);
 
 export default Navbar;
