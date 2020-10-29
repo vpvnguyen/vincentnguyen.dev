@@ -4,23 +4,23 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 
 ## Features
 
-- GithubAPI Admin Portal
-- Embeded Twitter Timeline
+- GithubAPI fetched projects
+- Embeded Twitter timeline
 - GraphQL static querying template
 - Welcome animations
 
 ## Objective
 
-I wanted to create a scabable, low maintenance content driven portfolio.
+Create a scalable and low maintenance portfolio leveraging external services to manage content.
 
 ### User Profile
 
-User profile is set through `gatsby-config.js`. The portfolio is set and tailored to the config settings of the user.
+User profile and static content are set in `gatsby-config.js`.
 
 ### Personal Github Projects
 
-Utilizing Github as an admin portal. Github projects are filtered by projects that contains at least one star.
+Github projects are fetched and filtered by repositories containing at least one star.
 
 ### Blogging
 
-An embeded twitter timeline will list posts made by the user's twitter account
+An embeded twitter timeline will list posts for dynamic blogging.
