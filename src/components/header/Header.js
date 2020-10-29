@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { CssBaseline } from "@material-ui/core";
+import Images from "../../utils/helpers/Images";
 
 const Header = ({ author }) => (
   <>
@@ -9,7 +10,7 @@ const Header = ({ author }) => (
       <link
         rel="icon"
         type="image/png"
-        href="https://s3.us-east-2.amazonaws.com/vincentnguyen.dev-images/dev-icon.png"
+        href={Images.getFavicon()}
         sizes="16x16"
       />
       <link

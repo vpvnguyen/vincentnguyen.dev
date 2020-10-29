@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 
 const style = {
   landingContainer: {
-    color: "#ffffff",
+    color: "#FFFFFF",
     padding: "10rem 0rem 15rem 0rem",
   },
   landingMessage: {
