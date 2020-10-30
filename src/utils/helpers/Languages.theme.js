@@ -1,4 +1,4 @@
-const { default: Theme } = require("./Theme");
+import Theme from "./Theme";
 
 class LanguageTheme extends Theme {
   static setLanguageThemeStyle = (languageArray, key, index) => {
