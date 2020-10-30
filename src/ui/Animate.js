@@ -1,6 +1,6 @@
-import theme from "../ui/theme";
+import Theme from "../utils/helpers/Theme";
 
-class Animate {
+class Animate extends Theme {
   static projectBoxShadow = () => `0px 1px 10px #ccc`;
 
   static whileHoverScale = () => ({ scale: 1.1 });
@@ -129,7 +129,7 @@ class Animate {
     },
     whileHover: this.whileHoverScale(),
     whileTap: {
-      color: theme.color.dark,
+      color: super.color().dark,
     },
   });
 
@@ -139,7 +139,7 @@ class Animate {
     },
     whileHover: this.whileHoverScale(),
     whileTap: {
-      color: theme.color.dark,
+      color: super.color().dark,
     },
   });
 }
