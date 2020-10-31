@@ -5,8 +5,8 @@ import {
 } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import Theme from "../utils/helpers/Theme";
-import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
 import Animate from "../ui/Animate";
+import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
 
 const style = {
   socialLink: {

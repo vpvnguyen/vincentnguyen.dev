@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
-import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 import Theme from "../../utils/helpers/Theme";
+import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {
   layoutGlobalContainer: {

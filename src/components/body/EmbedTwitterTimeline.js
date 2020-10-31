@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import Theme from "../../utils/helpers/Theme";
+import Animate from "../../ui/Animate";
 import useStaticTwitterQuery from "../../utils/hooks/useStaticTwitterQuery";
 import useScript from "../../utils/hooks/useScript";
-import Animate from "../../ui/Animate";
 
 const style = {
   twitterHeader: Theme.h1(),
