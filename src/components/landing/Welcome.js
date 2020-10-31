@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import Animate from "../../ui/Animate";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
@@ -11,7 +11,7 @@ const style = {
     justifyContent: "center",
     padding: "1rem",
   },
-  welcomeHeader: theme.h1,
+  welcomeHeader: Theme.h1(),
 };
 
 const motionVariants = {

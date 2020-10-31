@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import Images from "../../utils/helpers/Images";
 
 const style = {
@@ -15,7 +15,7 @@ const style = {
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
-    backgroundColor: theme.color.light,
+    backgroundColor: Theme.color().light,
   },
 };
 

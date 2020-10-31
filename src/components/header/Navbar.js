@@ -2,33 +2,33 @@ import React from "react";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import Social from "../Social";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import ElevationScroll from "./ElevationScroll";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
 import Animate from "../../ui/Animate";
 
 const style = {
   navRoot: {
-    backgroundColor: theme.color.dark,
+    backgroundColor: Theme.color().dark,
     height: "70px",
   },
   navContainer: {
     alignItems: "center",
-    backgroundColor: theme.color.dark,
-    color: theme.color.accent,
+    backgroundColor: Theme.color().dark,
+    color: Theme.color().accent,
   },
   author: {
-    fontFamily: theme.font.fontFamily,
+    fontFamily: Theme.font().fontFamily,
     flexGrow: 1,
-    color: theme.color.accent,
+    color: Theme.color().accent,
     "&:hover": {
       backgroundColor: "transparent",
     },
     textDecoration: "none",
   },
   resume: {
-    fontFamily: theme.font.fontFamily,
-    color: theme.color.accent,
+    fontFamily: Theme.font().fontFamily,
+    color: Theme.color().accent,
     textDecoration: "none",
   },
 };

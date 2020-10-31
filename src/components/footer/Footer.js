@@ -1,12 +1,12 @@
 import React from "react";
 import Social from "../Social";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {
   footerContainer: {
-    backgroundColor: theme.color.dark,
-    color: theme.color.accent,
+    backgroundColor: Theme.color().dark,
+    color: Theme.color().accent,
   },
   footerContent: {
     display: "flex",

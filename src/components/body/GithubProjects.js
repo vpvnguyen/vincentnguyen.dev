@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import GithubLanguages from "./GithubLanguages";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
@@ -20,14 +20,14 @@ const style = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    fontFamily: theme.font.fontFamily,
+    fontFamily: Theme.font().fontFamily,
   },
   projectInfo: {
     display: "flex",
     flexDirection: "column",
   },
-  projectHeader: theme.h1,
-  projectName: theme.h3,
+  projectHeader: Theme.h1(),
+  projectName: Theme.h3(),
   projectDescription: {
     fontSize: ".7rem",
   },

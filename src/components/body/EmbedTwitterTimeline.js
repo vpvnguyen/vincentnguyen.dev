@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import useStaticTwitterQuery from "../../utils/hooks/useStaticTwitterQuery";
 import useScript from "../../utils/hooks/useScript";
 import Animate from "../../ui/Animate";
 
 const style = {
-  twitterHeader: theme.h1,
+  twitterHeader: Theme.h1(),
 };
 
 const motionVariants = {

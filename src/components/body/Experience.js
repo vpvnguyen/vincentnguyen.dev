@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery";
 import Animate from "../../ui/Animate";
 
@@ -15,7 +15,7 @@ const style = {
     paddingLeft: ".5rem",
     paddingBottom: ".5rem",
   },
-  experienceHeader: theme.h1,
+  experienceHeader: Theme.h1(),
 };
 
 const motionVariants = {

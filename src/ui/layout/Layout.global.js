@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
-import theme from "../../ui/theme";
+import Theme from "../../utils/helpers/Theme";
 
 const style = {
   layoutGlobalContainer: {
-    fontFamily: theme.font.fontFamily,
-    fontSize: theme.font.fontSize,
+    fontFamily: Theme.font().fontFamily,
+    fontSize: Theme.font().fontSize,
   },
 };
 
