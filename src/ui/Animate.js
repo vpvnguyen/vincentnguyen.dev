@@ -1,4 +1,4 @@
-import Theme from "../utils/helpers/Theme";
+import Theme from "./Theme";
 
 class Animate extends Theme {
   static projectBoxShadow = () => `0px 1px 10px #ccc`;

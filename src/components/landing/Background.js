@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Theme from "../../utils/helpers/Theme";
-import Images from "../../utils/helpers/Images";
+import Theme from "../../ui/Theme";
+import Images from "../../ui/Images";
 
 const style = {
   background: {

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 

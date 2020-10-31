@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery";
 

@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
-import LanguageTheme from "../../utils/helpers/Languages.theme";
+import LanguageTheme from "../../ui/LanguageTheme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 
 const style = {

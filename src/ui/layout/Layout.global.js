@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {

@@ -1,6 +1,6 @@
 import React from "react";
 import Social from "../Social";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style = {

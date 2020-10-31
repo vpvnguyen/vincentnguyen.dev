@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import GithubLanguages from "./GithubLanguages";
-import Theme from "../../utils/helpers/Theme";
+import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";

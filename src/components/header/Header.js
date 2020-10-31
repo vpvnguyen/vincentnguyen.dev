@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { CssBaseline } from "@material-ui/core";
-import Images from "../../utils/helpers/Images";
+import Images from "../../ui/Images";
 
 const Header = ({ author }) => (
   <>
