@@ -4,7 +4,7 @@ import {
   LinkedIn as LinkedInIcon,
 } from "@material-ui/icons";
 import { motion } from "framer-motion";
-import theme from "../ui/theme";
+import Theme from "../utils/helpers/Theme";
 import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
 import Animate from "../ui/Animate";
 
@@ -12,7 +12,7 @@ const style = {
   socialLink: {
     margin: ".5rem",
     backgroundColor: "transparent",
-    color: theme.color.accent,
+    color: Theme.color().accent,
   },
 };
 
@@ -26,8 +26,6 @@ const MotionIcon = ({ children }) => (
     initial={"initial"}
     whileHover={"whileHover"}
     whileTap={"whileTap"}
-    rel="noreferrer"
-    target="_blank"
   >
     {children}
   </motion.div>
@@ -43,13 +41,23 @@ const Social = () => {
   return (
     <>
       <MotionIcon>
-        <a href={`${githubUrl}${githubUser}`} style={style.socialLink}>
+        <a
+          href={`${githubUrl}${githubUser}`}
+          style={style.socialLink}
+          rel="noreferrer"
+          target="_blank"
+        >
           <GitHubIcon />
         </a>
       </MotionIcon>
 
       <MotionIcon>
-        <a href={`${linkedinUrl}${linkedinUser}`} style={style.socialLink}>
+        <a
+          href={`${linkedinUrl}${linkedinUser}`}
+          style={style.socialLink}
+          rel="noreferrer"
+          target="_blank"
+        >
           <LinkedInIcon />
         </a>
       </MotionIcon>
