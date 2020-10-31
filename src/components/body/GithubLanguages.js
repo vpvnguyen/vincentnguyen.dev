@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
-import LanguageMapper from "../../utils/helpers/LanguageMapper";
+import LanguageTheme from "../../utils/helpers/Languages.theme";
 import GithubAPI from "../../utils/api/github.api";
 
 const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
@@ -18,7 +18,7 @@ const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
           githubUser,
           projectName
         );
-        languages = LanguageMapper.getLanguageStyle(languages);
+        languages = LanguageTheme.getLanguageStyle(languages);
         setLanguages(languages);
       } catch (error) {
         setLanguages(null);
