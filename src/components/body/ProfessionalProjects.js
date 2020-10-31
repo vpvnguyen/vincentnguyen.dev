@@ -4,18 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import theme from "../../ui/theme";
 import Animate from "../../ui/Animate";
-import LanguageMapper from "../../utils/helpers/LanguageMapper";
+import LanguageTheme from "../../utils/helpers/Languages.theme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
+import Theme from "../../utils/helpers/Theme";
 
 const style = {
   proProjectContainer: {
     display: "flex",
     flexDirection: "column",
   },
-  proProjectHeader: theme.h1,
-  proProjectName: theme.h3,
+  proProjectHeader: Theme.h1(),
+  proProjectName: Theme.h3(),
   proProjectDescription: {
     fontSize: ".7rem",
   },
@@ -32,7 +32,7 @@ const style = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    fontFamily: theme.font.fontFamily,
+    fontFamily: Theme.font().fontFamily,
   },
 };
 
@@ -83,7 +83,7 @@ const ProjectLanguages = ({ projectLanguages }) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
-    const languages = LanguageMapper.getLanguageStyle(projectLanguages);
+    const languages = LanguageTheme.getLanguageStyle(projectLanguages);
     setLanguages(languages);
   }, [projectLanguages]);
 
