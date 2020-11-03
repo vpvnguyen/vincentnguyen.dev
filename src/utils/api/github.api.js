@@ -1,10 +1,18 @@
 import axios from "axios";
 
-const getGithubProjects = async (url, user, pageAmount) =>
-  await axios.get(`${url}/users/${user}/repos?per_page=${pageAmount}`);
+const getGithubProjects = async (url, user, pageAmount) => {
+  const response = await axios.get(
+    `${url}/users/${user}/repos?per_page=${pageAmount}`
+  );
+  return response.data;
+};
 
-const getProjectLanguages = async (url, user, projectName) =>
-  await axios.get(`${url}/repos/${user}/${projectName}/languages`);
+const getProjectLanguages = async (url, user, projectName) => {
+  const response = await axios.get(
+    `${url}/repos/${user}/${projectName}/languages`
+  );
+  return response.data;
+};
 
 const filterByStarredProjects = projects =>
   projects.reduce((result, project) => {
@@ -35,7 +43,7 @@ class GithubApi {
   static fetchGithubProjects = async (url, user, pageAmount) => {
     try {
       const githubProjects = await getGithubProjects(url, user, pageAmount);
-      const starredProjects = filterByStarredProjects(githubProjects.data);
+      const starredProjects = filterByStarredProjects(githubProjects);
       const structuredProjects = createProjectStructure(starredProjects);
       const sortedProjects = sortProjectsByDateDesc(structuredProjects);
       return sortedProjects;
@@ -51,7 +59,7 @@ class GithubApi {
         user,
         projectName
       );
-      const languages = setLangaugeNamesToLowerCase(projectLanguages.data);
+      const languages = setLangaugeNamesToLowerCase(projectLanguages);
       return languages;
     } catch (error) {
       return null;
