@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const getGithubProjects = async (url, user, pageAmount) => {
-  const response = await axios.get(
+  const githubProjectsResponse = await axios.get(
     `${url}/users/${user}/repos?per_page=${pageAmount}`
   );
-  return response.data;
+  return githubProjectsResponse.data;
 };
 
 const getProjectLanguages = async (url, user, projectName) => {
-  const response = await axios.get(
+  const projectLanguagesResponse = await axios.get(
     `${url}/repos/${user}/${projectName}/languages`
   );
-  return response.data;
+  return projectLanguagesResponse.data;
 };
 
 const filterByStarredProjects = projects =>
