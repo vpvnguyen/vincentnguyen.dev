@@ -11,7 +11,6 @@ const style = {
     alignItems: "center",
   },
   experienceList: {
-    fontSize: ".8rem",
     paddingLeft: ".5rem",
     paddingBottom: ".5rem",
   },
