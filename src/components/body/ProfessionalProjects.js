@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
+import ProjectLanguage from "./ProjectLanguage";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
@@ -91,9 +92,11 @@ const ProjectLanguages = ({ projectLanguages }) => {
     <>
       {languages &&
         languages.map((language, index) => (
-          <span key={`${language}-${index}`} style={language.style}>
-            {language.name}
-          </span>
+          <ProjectLanguage
+            key={`${language}-${index}`}
+            style={language.style}
+            name={language.name}
+          />
         ))}
     </>
   );

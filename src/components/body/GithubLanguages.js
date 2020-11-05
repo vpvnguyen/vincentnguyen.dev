@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
+import ProjectLanguage from "./ProjectLanguage";
 import LanguageTheme from "../../ui/LanguageTheme";
 import GithubAPI from "../../utils/api/github.api";
 
@@ -33,9 +34,11 @@ const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
       {languages ? (
         <div>
           {languages.map((language, index) => (
-            <span key={`${projectName}-${index}`} style={language.style}>
-              {language.name}
-            </span>
+            <ProjectLanguage
+              key={`${projectName}-${index}`}
+              style={language.style}
+              name={language.name}
+            />
           ))}
         </div>
       ) : (
