@@ -6,36 +6,20 @@ import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import GithubLanguages from "./GithubLanguages";
-import Theme from "../../ui/Theme";
+import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
 
 const style = {
-  projectContainer: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  projectButton: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    fontFamily: Theme.font().fontFamily,
-  },
-  projectInfo: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  projectHeader: Theme.h1(),
-  projectName: Theme.h3(),
-  projectDescription: {
-    fontSize: ".7rem",
-  },
-  projectDate: {
-    fontSize: ".6rem",
-    paddingTop: "1rem",
-    fontStyle: "oblique",
-  },
+  container: ProjectTheme.container(),
+  buttonContainer: ProjectTheme.buttonContainer(),
+  sectionLeft: ProjectTheme.sectionLeft(),
+  sectionRight: ProjectTheme.sectionRight(),
+  header: ProjectTheme.header(),
+  title: ProjectTheme.title(),
+  description: ProjectTheme.description(),
+  date: ProjectTheme.date(),
 };
 
 const motionVariants = {
@@ -65,7 +49,7 @@ const MotionProject = ({ children }) => (
 );
 
 const ProjectTitle = ({ projectName, projectHomepage }) => (
-  <h3 style={style.projectName}>
+  <h3 style={style.title}>
     {projectName}{" "}
     <span>
       {projectHomepage ? (
@@ -81,11 +65,11 @@ const ProjectTitle = ({ projectName, projectHomepage }) => (
 );
 
 const ProjectDescription = ({ projectDescription }) => (
-  <p style={style.projectDescription}>{projectDescription}</p>
+  <p style={style.description}>{projectDescription}</p>
 );
 
 const ProjectDate = ({ projectDate }) => (
-  <p style={style.projectDate}>{dayjs(projectDate).format("MMM-YYYY")}</p>
+  <p style={style.date}>{dayjs(projectDate).format("MMM-YYYY")}</p>
 );
 
 const GithubProjects = () => {
@@ -118,12 +102,11 @@ const GithubProjects = () => {
   return (
     <LayoutComponent>
       <MotionProjectHeader>
-        <h1 style={style.projectHeader}>
-          {" "}
+        <h1 style={style.header}>
           {loading ? "Loading Personal Projects..." : "Personal Projects"}
         </h1>
       </MotionProjectHeader>
-      <div style={style.projectContainer}>
+      <div style={style.container}>
         {loading ? (
           <LinearProgress />
         ) : (
@@ -131,30 +114,30 @@ const GithubProjects = () => {
             <MotionProject key={project.name}>
               <Button
                 key={project.name}
-                style={style.projectButton}
+                style={style.buttonContainer}
                 href={project.homepage || project.html_url}
                 target="_blank"
                 rel="noreferrer"
                 fullWidth
               >
-                <div style={style.projectInfo}>
+                <div style={style.sectionLeft}>
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.homepage}
                   />
-
                   <ProjectDescription
                     projectDescription={project.description}
                   />
-
                   <ProjectDate projectDate={project.pushed_at} />
                 </div>
 
-                <GithubLanguages
-                  githubUrl={githubUrl}
-                  githubUser={githubUser}
-                  projectName={project.name}
-                />
+                <div style={style.sectionRight}>
+                  <GithubLanguages
+                    githubUrl={githubUrl}
+                    githubUser={githubUser}
+                    projectName={project.name}
+                  />
+                </div>
               </Button>
             </MotionProject>
           ))

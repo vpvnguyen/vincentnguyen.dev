@@ -5,36 +5,20 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import ProjectLanguage from "./ProjectLanguage";
-import Theme from "../../ui/Theme";
+import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 
 const style = {
-  proProjectContainer: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  proProjectHeader: Theme.h1(),
-  proProjectName: Theme.h3(),
-  proProjectDescription: {
-    fontSize: ".7rem",
-  },
-  proProjectDate: {
-    fontSize: ".6rem",
-    paddingTop: "1rem",
-    fontStyle: "oblique",
-  },
-  proProjectList: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  proProjectButton: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    fontFamily: Theme.font().fontFamily,
-  },
+  container: ProjectTheme.container(),
+  buttonContainer: ProjectTheme.buttonContainer(),
+  sectionLeft: ProjectTheme.sectionLeft(),
+  sectionRight: ProjectTheme.sectionRight(),
+  header: ProjectTheme.header(),
+  title: ProjectTheme.title(),
+  description: ProjectTheme.description(),
+  date: ProjectTheme.date(),
 };
 
 const motionVariants = {
@@ -63,8 +47,8 @@ const MotionProProject = ({ children }) => (
   </motion.div>
 );
 
-const ProjectName = ({ children }) => (
-  <h3 style={style.proProjectName}>
+const ProjectTitle = ({ children }) => (
+  <h3 style={style.title}>
     {children}{" "}
     <span>
       <FontAwesomeIcon icon={faGlobe} title="Click me for live demo!" />
@@ -73,12 +57,10 @@ const ProjectName = ({ children }) => (
 );
 
 const ProjectDescription = ({ children }) => (
-  <p style={style.proProjectDescription}>{children}</p>
+  <p style={style.description}>{children}</p>
 );
 
-const ProjectDate = ({ children }) => (
-  <p style={style.proProjectDate}>{children}</p>
-);
+const ProjectDate = ({ children }) => <p style={style.date}>{children}</p>;
 
 const ProjectLanguages = ({ projectLanguages }) => {
   const [languages, setLanguages] = useState(null);
@@ -108,27 +90,29 @@ const ProfessionalProjects = () => {
 
   return (
     <LayoutComponent>
-      <div style={style.proProjectContainer}>
+      <div style={style.container}>
         <MotionProProjectHeader>
-          <h1 style={style.proProjectHeader}>Professional Projects</h1>
+          <h1 style={style.header}>Professional Projects</h1>
         </MotionProProjectHeader>
         {professionalProjects &&
           professionalProjects.map(project => (
             <MotionProProject key={project.name}>
               <Button
                 key={project.name}
-                style={style.proProjectButton}
+                style={style.buttonContainer}
                 href={project.url}
                 rel="noreferrer"
                 target="_blank"
               >
-                <div style={style.proProjectList}>
-                  <ProjectName>{project.name}</ProjectName>
+                <div style={style.sectionLeft}>
+                  <ProjectTitle>{project.name}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
                   <ProjectDate>{project.date}</ProjectDate>
                 </div>
 
-                <ProjectLanguages projectLanguages={project.languages} />
+                <div style={style.sectionRight}>
+                  <ProjectLanguages projectLanguages={project.languages} />
+                </div>
               </Button>
             </MotionProProject>
           ))}
