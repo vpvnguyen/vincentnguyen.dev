@@ -18,6 +18,8 @@ class Theme {
     fontSize: "1.3em",
   });
 
+  static projectBoxShadow = () => `0px 1px 10px #CCC`;
+
   static getDefaultLanguageStyle = () => ({
     fontSize: ".75em",
     marginLeft: "3px",
