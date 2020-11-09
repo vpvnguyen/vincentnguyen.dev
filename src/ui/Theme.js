@@ -1,4 +1,7 @@
 class Theme {
+  static fontUrl = () =>
+    "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap";
+
   static font = () => ({
     fontFamily: "Source Code Pro, monospace",
     fontSize: "16px",
