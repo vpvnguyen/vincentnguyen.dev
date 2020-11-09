@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { CssBaseline } from "@material-ui/core";
 import Images from "../../ui/Images";
+import Theme from "../../ui/Theme";
 
 const Header = ({ author }) => (
   <>
@@ -13,10 +14,7 @@ const Header = ({ author }) => (
         href={Images.getFavicon()}
         sizes="16x16"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-        rel="stylesheet"
-      />
+      <link href={Theme.fontUrl()} rel="stylesheet" />
     </Helmet>
   </>
 );
