@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button, LinearProgress } from "@material-ui/core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
+import { LinearProgress } from "@material-ui/core";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
+import ProjectButton from "./ProjectButton";
+import ProjectTitle from "./ProjectTitle";
+import ProjectDescription from "./ProjectDescription";
+import ProjectDate from "./ProjectDate";
 import GithubLanguages from "./GithubLanguages";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
@@ -17,9 +19,6 @@ const style = {
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
-  title: ProjectTheme.title(),
-  description: ProjectTheme.description(),
-  date: ProjectTheme.date(),
 };
 
 const motionVariants = {
@@ -46,30 +45,6 @@ const MotionProject = ({ children }) => (
   >
     {children}
   </motion.div>
-);
-
-const ProjectTitle = ({ projectName, projectHomepage }) => (
-  <h3 style={style.title}>
-    {projectName}{" "}
-    <span>
-      {projectHomepage ? (
-        <FontAwesomeIcon icon={faGlobe} title="Click me for live demo!" />
-      ) : (
-        <FontAwesomeIcon
-          icon={faCode}
-          title="Click me to go to the repository!"
-        />
-      )}
-    </span>
-  </h3>
-);
-
-const ProjectDescription = ({ projectDescription }) => (
-  <p style={style.description}>{projectDescription}</p>
-);
-
-const ProjectDate = ({ projectDate }) => (
-  <p style={style.date}>{dayjs(projectDate).format("MMM-YYYY")}</p>
 );
 
 const GithubProjects = () => {
@@ -112,23 +87,21 @@ const GithubProjects = () => {
         ) : (
           githubProjects.map(project => (
             <MotionProject key={project.name}>
-              <Button
+              <ProjectButton
                 key={project.name}
-                style={style.buttonContainer}
                 href={project.homepage || project.html_url}
                 target="_blank"
                 rel="noreferrer"
-                fullWidth
               >
                 <div style={style.sectionLeft}>
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.homepage}
                   />
-                  <ProjectDescription
-                    projectDescription={project.description}
-                  />
-                  <ProjectDate projectDate={project.pushed_at} />
+                  <ProjectDescription>{project.description}</ProjectDescription>
+                  <ProjectDate>
+                    {dayjs(project.pushed_at).format("MMM-YYYY")}
+                  </ProjectDate>
                 </div>
 
                 <div style={style.sectionRight}>
@@ -138,7 +111,7 @@ const GithubProjects = () => {
                     projectName={project.name}
                   />
                 </div>
-              </Button>
+              </ProjectButton>
             </MotionProject>
           ))
         )}

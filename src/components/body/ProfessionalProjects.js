@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@material-ui/core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
+import ProjectButton from "./ProjectButton";
+import ProjectTitle from "./ProjectTitle";
+import ProjectDescription from "./ProjectDescription";
+import ProjectDate from "./ProjectDate";
 import ProjectLanguage from "./ProjectLanguage";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
@@ -16,9 +17,6 @@ const style = {
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
-  title: ProjectTheme.title(),
-  description: ProjectTheme.description(),
-  date: ProjectTheme.date(),
 };
 
 const motionVariants = {
@@ -46,21 +44,6 @@ const MotionProProject = ({ children }) => (
     {children}
   </motion.div>
 );
-
-const ProjectTitle = ({ children }) => (
-  <h3 style={style.title}>
-    {children}{" "}
-    <span>
-      <FontAwesomeIcon icon={faGlobe} title="Click me for live demo!" />
-    </span>
-  </h3>
-);
-
-const ProjectDescription = ({ children }) => (
-  <p style={style.description}>{children}</p>
-);
-
-const ProjectDate = ({ children }) => <p style={style.date}>{children}</p>;
 
 const ProjectLanguages = ({ projectLanguages }) => {
   const [languages, setLanguages] = useState(null);
@@ -97,15 +80,18 @@ const ProfessionalProjects = () => {
         {professionalProjects &&
           professionalProjects.map(project => (
             <MotionProProject key={project.name}>
-              <Button
+              <ProjectButton
                 key={project.name}
-                style={style.buttonContainer}
                 href={project.url}
                 rel="noreferrer"
                 target="_blank"
               >
                 <div style={style.sectionLeft}>
-                  <ProjectTitle>{project.name}</ProjectTitle>
+                  <ProjectTitle
+                    projectName={project.name}
+                    projectHomepage={project.url}
+                  />
+
                   <ProjectDescription>{project.description}</ProjectDescription>
                   <ProjectDate>{project.date}</ProjectDate>
                 </div>
@@ -113,7 +99,7 @@ const ProfessionalProjects = () => {
                 <div style={style.sectionRight}>
                   <ProjectLanguages projectLanguages={project.languages} />
                 </div>
-              </Button>
+              </ProjectButton>
             </MotionProProject>
           ))}
       </div>
