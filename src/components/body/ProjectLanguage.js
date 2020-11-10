@@ -1,9 +1,5 @@
 import React from "react";
 
-const ProjectLanguage = ({ key, style, name }) => (
-  <span key={key} style={style}>
-    {name}
-  </span>
-);
+const ProjectLanguage = ({ style, name }) => <span style={style}>{name}</span>;
 
 export default ProjectLanguage;
