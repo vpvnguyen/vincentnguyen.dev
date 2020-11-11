@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import ProjectButton from "./ProjectButton";
-import ProjectTitle from "./ProjectTitle";
-import ProjectDescription from "./ProjectDescription";
-import ProjectDate from "./ProjectDate";
-import ProjectLanguage from "./ProjectLanguage";
+
+// import ProjectButton from "./ProjectButton";
+// import ProjectTitle from "./ProjectTitle";
+// import ProjectDescription from "./ProjectDescription";
+// import ProjectDate from "./ProjectDate";
+// import ProjectLanguage from "./ProjectLanguage";
+
+import {
+  ProjectButton,
+  ProjectTitle,
+  ProjectDescription,
+  ProjectDate,
+  ProjectLanguage,
+} from "./Project";
+
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
@@ -17,6 +27,12 @@ const style = {
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
+  //   buttonContainer: ProjectTheme.buttonContainer(),
+  //   sectionLeft: ProjectTheme.sectionLeft(),
+  //   sectionRight: ProjectTheme.sectionRight(),
+  //   description: ProjectTheme.description(),
+  //   date: ProjectTheme.date(),
+  //   title: ProjectTheme.title(),
 };
 
 const motionVariants = {
@@ -82,6 +98,7 @@ const ProfessionalProjects = () => {
             <MotionProProject key={project.name}>
               <ProjectButton
                 key={project.name}
+                style={style.buttonContainer}
                 href={project.url}
                 rel="noreferrer"
                 target="_blank"
