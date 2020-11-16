@@ -13,8 +13,13 @@ const style = {
   title: ProjectTheme.title(),
 };
 
-export const ProjectButton = ({ children, style, href }) => (
-  <Button style={style} href={href} rel="noreferrer" target="_blank">
+export const ProjectButton = ({ children, href }) => (
+  <Button
+    style={style.buttonContainer}
+    href={href}
+    rel="noreferrer"
+    target="_blank"
+  >
     {children}
   </Button>
 );
