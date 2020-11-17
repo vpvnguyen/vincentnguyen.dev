@@ -77,10 +77,10 @@ const ProfessionalProjects = () => {
 
   return (
     <LayoutComponent>
+      <MotionProProjectHeader>
+        <h1 style={style.header}>Professional Projects</h1>
+      </MotionProProjectHeader>
       <div style={style.container}>
-        <MotionProProjectHeader>
-          <h1 style={style.header}>Professional Projects</h1>
-        </MotionProProjectHeader>
         {professionalProjects &&
           professionalProjects.map(project => (
             <MotionProProject key={project.name}>
