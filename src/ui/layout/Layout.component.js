@@ -9,7 +9,7 @@ const style = {
 };
 
 const LayoutComponent = ({ children }) => (
-  <main style={style.layoutComponentContainer}>{children}</main>
+  <section style={style.layoutComponentContainer}>{children}</section>
 );
 
 LayoutComponent.propTypes = {
