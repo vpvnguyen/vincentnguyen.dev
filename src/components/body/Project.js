@@ -8,9 +8,9 @@ const style = {
   buttonContainer: ProjectTheme.buttonContainer(),
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
+  title: ProjectTheme.title(),
   description: ProjectTheme.description(),
   date: ProjectTheme.date(),
-  title: ProjectTheme.title(),
 };
 
 export const ProjectButton = ({ children, href }) => (
