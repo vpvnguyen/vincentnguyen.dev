@@ -3,10 +3,12 @@ import { LinearProgress } from "@material-ui/core";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
-import ProjectButton from "./ProjectButton";
-import ProjectTitle from "./ProjectTitle";
-import ProjectDescription from "./ProjectDescription";
-import ProjectDate from "./ProjectDate";
+import {
+  ProjectButton,
+  ProjectTitle,
+  ProjectDescription,
+  ProjectDate,
+} from "./Project";
 import GithubLanguages from "./GithubLanguages";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
