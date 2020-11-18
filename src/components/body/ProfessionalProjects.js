@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
-
 import {
   ProjectButton,
   ProjectTitle,
@@ -9,7 +8,6 @@ import {
   ProjectDate,
   ProjectLanguage,
 } from "./Project";
-
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
@@ -86,7 +84,6 @@ const ProfessionalProjects = () => {
             <MotionProProject key={project.name}>
               <ProjectButton
                 key={project.name}
-                style={style.buttonContainer}
                 href={project.url}
                 rel="noreferrer"
                 target="_blank"
