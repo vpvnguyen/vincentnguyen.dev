@@ -8,7 +8,7 @@ import {
   ProjectTitle,
   ProjectDescription,
   ProjectDate,
-} from "./Project";
+} from "../common/Project";
 import GithubLanguages from "./GithubLanguages";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
