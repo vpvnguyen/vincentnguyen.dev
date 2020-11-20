@@ -7,7 +7,7 @@ import {
   ProjectDescription,
   ProjectDate,
   ProjectLanguage,
-} from "./Project";
+} from "../common/Project";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";

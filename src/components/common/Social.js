@@ -4,9 +4,9 @@ import {
   LinkedIn as LinkedInIcon,
 } from "@material-ui/icons";
 import { motion } from "framer-motion";
-import Theme from "../ui/Theme";
-import Animate from "../ui/Animate";
-import useStaticSocialQuery from "../utils/hooks/useStaticSocialQuery";
+import Theme from "../../ui/Theme";
+import Animate from "../../ui/Animate";
+import useStaticSocialQuery from "../../utils/hooks/useStaticSocialQuery";
 
 const style = {
   socialLink: {

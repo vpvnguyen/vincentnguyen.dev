@@ -1,5 +1,5 @@
 import React from "react";
-import Social from "../Social";
+import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 

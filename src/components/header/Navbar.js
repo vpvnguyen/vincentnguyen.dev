@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ElevationScroll from "./ElevationScroll";
-import Social from "../Social";
+import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
