@@ -13,7 +13,7 @@ const LayoutComponent = ({ children }) => (
 );
 
 LayoutComponent.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default LayoutComponent;
