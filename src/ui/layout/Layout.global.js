@@ -14,7 +14,7 @@ const style = {
 
 const LayoutGlobal = ({ children }) => {
   const data = useStaticAuthorQuery();
-  const author = data.site.siteMetadata.author;
+  const { author } = data.site.siteMetadata;
 
   return (
     <div style={style.layoutGlobalContainer}>

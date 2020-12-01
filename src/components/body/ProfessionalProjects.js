@@ -71,7 +71,7 @@ const ProjectLanguages = ({ projectLanguages }) => {
 
 const ProfessionalProjects = () => {
   const data = useStaticProProjectsQuery();
-  const professionalProjects = data.site.siteMetadata.professionalProjects;
+  const { professionalProjects } = data.site.siteMetadata;
 
   return (
     <LayoutComponent>

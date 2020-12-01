@@ -51,7 +51,7 @@ const Author = ({ author }) => (
 
 const Resume = () => {
   const data = useStaticResumeQuery();
-  const resume = data.site.siteMetadata.resume;
+  const { resume } = data.site.siteMetadata;
 
   return (
     <Button>
