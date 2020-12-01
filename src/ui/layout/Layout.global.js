@@ -26,7 +26,7 @@ const LayoutGlobal = ({ children }) => {
 };
 
 LayoutGlobal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default LayoutGlobal;
