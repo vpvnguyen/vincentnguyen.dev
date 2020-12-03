@@ -1,6 +1,6 @@
 # vincentnguyen.dev
 
-My portfolio built on Gatsby.js. This application is intended for my personal site and sandbox.
+My portfolio built on Gatsby.js. This application is intended for my personal site and experimental sandbox.
 
 ## Features
 
