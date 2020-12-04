@@ -11,11 +11,11 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 
 ## Objective
 
-Create a scalable and low maintenance portfolio leveraging external services to manage content.
+Create a low maintenance portfolio leveraging external services to manage content.
 
 ### User Profile
 
-User profile and static content are set in `gatsby-config.js`.
+User profile and static content are set in `gatsby-config.js`. This file holds all static content to be generated.
 
 ### Personal Github Projects
 
