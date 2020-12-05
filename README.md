@@ -7,7 +7,7 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 - GithubAPI fetched projects
 - Embeded Twitter timeline
 - GraphQL static querying template
-- Welcome animations
+- Motion animations
 
 ## Objective
 
