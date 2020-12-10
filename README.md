@@ -4,10 +4,21 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 
 ## Features
 
-- GithubAPI fetched projects
-- Embeded Twitter timeline
-- GraphQL static querying template
-- Motion animations
+### Personal Project Admin Portal
+
+Use Github to manage and display projects
+
+### Host Professional Projects
+
+Utilize GraphQL static queries to generate static pages and list and manage projects outside of Github
+
+### Twitter Blog
+
+Embeded Twitter timeline lists most recent tweets as blogs
+
+### Transition Animations
+
+Framer Motion adds a subtle but effective immersive feeling to make the app come alive!
 
 ## Objective
 
