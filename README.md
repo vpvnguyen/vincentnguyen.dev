@@ -4,19 +4,19 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 
 ## Features
 
-### Personal Project Admin Portal
+##### Personal Project Admin Portal
 
 Use Github to manage and display projects
 
-### Host Professional Projects
+#### Host Professional Projects
 
 Utilize GraphQL static queries to generate static pages and list and manage projects outside of Github
 
-### Twitter Blog
+#### Twitter Blog
 
 Embeded Twitter timeline lists most recent tweets as blogs
 
-### Transition Animations
+#### Transition Animations
 
 Framer Motion adds a subtle but effective immersive feeling to make the app come alive!
 
@@ -24,14 +24,14 @@ Framer Motion adds a subtle but effective immersive feeling to make the app come
 
 Create a low maintenance portfolio leveraging external services to manage content.
 
-### User Profile
+#### User Profile
 
 User profile and static content are set in `gatsby-config.js`. This file holds all static content to be generated.
 
-### Personal Github Projects
+#### Personal Github Projects
 
 Github projects are fetched and filtered by repositories containing at least one star.
 
-### Blogging
+#### Blogging
 
 An embeded twitter timeline will list posts for dynamic blogging.
