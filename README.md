@@ -4,7 +4,7 @@ My portfolio built on Gatsby.js. This application is intended for my personal si
 
 ## Features
 
-##### Personal Project Admin Portal
+#### Personal Project Admin Portal
 
 Use Github to manage and display projects
 
