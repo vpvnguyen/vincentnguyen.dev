@@ -15,7 +15,7 @@ const motionVariants = {
   motionTwitterTimeline: Animate.fadeInTwitterTimelineRight(),
 };
 
-const MotionTwitterHeader = ({ children }) => (
+const MotionTwitterHeader = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionTwitterHeader}
     initial={"initial"}
@@ -25,7 +25,7 @@ const MotionTwitterHeader = ({ children }) => (
   </motion.div>
 );
 
-const MotionTwitterTimeline = ({ children }) => (
+const MotionTwitterTimeline = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionTwitterTimeline}
     initial={"initial"}
@@ -36,9 +36,9 @@ const MotionTwitterTimeline = ({ children }) => (
 );
 
 const EmbedTwitterTimeline = () => {
-  const data = useStaticTwitterQuery();
-  const twitterUrl = data.site.siteMetadata.social.twitter.url;
-  const embedTwitterWidget = data.site.siteMetadata.social.twitter.embedWidget;
+  const data: any = useStaticTwitterQuery();
+  const twitterUrl: string = data.site.siteMetadata.social.twitter.url;
+  const embedTwitterWidget: string = data.site.siteMetadata.social.twitter.embedWidget;
   useScript(embedTwitterWidget);
 
   return (
