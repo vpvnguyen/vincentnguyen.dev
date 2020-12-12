@@ -15,9 +15,9 @@ const getProjectLanguages = async (url, user, projectName) => {
 };
 
 const filterByStarredProjects = projects =>
-  projects.reduce((result, project) => {
-    if (project.stargazers_count > 0) result.push(project);
-    return result;
+  projects.reduce((starredProjects, project) => {
+    if (project.stargazers_count > 0) starredProjects.push(project);
+    return starredProjects;
   }, []);
 
 const createProjectStructure = projects =>
