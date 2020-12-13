@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const style = {
   layoutComponentContainer: {
@@ -8,12 +7,8 @@ const style = {
   },
 };
 
-const LayoutComponent = ({ children }) => (
+const LayoutComponent = ({ children }: any) => (
   <section style={style.layoutComponentContainer}>{children}</section>
 );
-
-LayoutComponent.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default LayoutComponent;
