@@ -22,7 +22,7 @@ const motionVariants = {
   motionExperience: Animate.fadeInExperienceRight(),
 };
 
-const MotionExperienceHeader = ({ children }) => (
+const MotionExperienceHeader = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionExperienceHeader}
     initial={"initial"}
@@ -32,7 +32,7 @@ const MotionExperienceHeader = ({ children }) => (
   </motion.div>
 );
 
-const MotionExperience = ({ children }) => (
+const MotionExperience = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionExperience}
     initial={"initial"}
@@ -43,17 +43,17 @@ const MotionExperience = ({ children }) => (
 );
 
 const Experience = () => {
-  const data = useStaticExperienceQuery();
-  const experiences = data.site.siteMetadata.experience;
+  const data: any = useStaticExperienceQuery();
+  const experiences: Array<string> = data.site.siteMetadata.experience;
 
   return (
     <LayoutComponent>
       <MotionExperienceHeader>
         <h1 style={style.experienceHeader}>Experience</h1>
       </MotionExperienceHeader>
-      <div style={style.experienceCotainer}>
+      <div style={style.experienceContainer}>
         <MotionExperience>
-          {experiences.map(experience => (
+          {experiences.map((experience: string) => (
             <div key={experience} style={style.experienceList}>
               {experience}
             </div>
