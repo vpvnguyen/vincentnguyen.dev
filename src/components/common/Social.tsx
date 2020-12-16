@@ -32,11 +32,11 @@ const MotionIcon = ({ children }) => (
 );
 
 const Social = () => {
-  const data = useStaticSocialQuery();
-  const githubUrl = data.site.siteMetadata.social.github.url;
-  const githubUser = data.site.siteMetadata.social.github.user;
-  const linkedinUrl = data.site.siteMetadata.social.linkedin.url;
-  const linkedinUser = data.site.siteMetadata.social.linkedin.user;
+  const data: any = useStaticSocialQuery();
+  const githubUrl: string = data.site.siteMetadata.social.github.url;
+  const githubUser: string = data.site.siteMetadata.social.github.user;
+  const linkedinUrl: string = data.site.siteMetadata.social.linkedin.url;
+  const linkedinUser: string = data.site.siteMetadata.social.linkedin.user;
 
   return (
     <>

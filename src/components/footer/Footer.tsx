@@ -17,8 +17,8 @@ const style = {
 };
 
 const Footer = () => {
-  const data = useStaticAuthorQuery();
-  const { author } = data.site.siteMetadata;
+  const data: any = useStaticAuthorQuery();
+  const author: string = data.site.siteMetadata.author;
 
   return (
     <footer style={style.footerContainer}>
