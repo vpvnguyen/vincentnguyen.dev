@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { navigate } from "gatsby";
 
 export default () => {
-  const route = "/";
+  const route: string = "/";
 
   useEffect(() => {
     navigate(route);

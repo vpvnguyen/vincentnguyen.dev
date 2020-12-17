@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ElevationScroll from "./ElevationScroll";
@@ -7,7 +7,11 @@ import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
 
-const style = {
+interface AuthorProps {
+  author: string;
+}
+
+const style: any = {
   navRoot: {
     backgroundColor: Theme.color().dark,
     height: "70px",
@@ -33,13 +37,13 @@ const style = {
   },
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionButtonText: Animate.scaleUpMenuItem(),
   motionToolbar: Animate.springDownToolBar(),
   motionAuthor: () => Animate.scrollToTop(),
 };
 
-const Author = ({ author }) => (
+const Author: FunctionComponent<AuthorProps> = ({ author }) => (
   <Button
     style={style.author}
     onClick={motionVariants.motionAuthor}
@@ -49,7 +53,7 @@ const Author = ({ author }) => (
   </Button>
 );
 
-const Resume = () => {
+const Resume: FunctionComponent = () => {
   const data = useStaticResumeQuery();
   const { resume } = data.site.siteMetadata;
 
@@ -69,7 +73,7 @@ const Resume = () => {
   );
 };
 
-const MotionToolbar = ({ children }) => (
+const MotionToolbar: FunctionComponent = ({ children }) => (
   <motion.nav
     variants={motionVariants.motionToolbar}
     initial={"initial"}
@@ -79,7 +83,7 @@ const MotionToolbar = ({ children }) => (
   </motion.nav>
 );
 
-const MotionButtonText = ({ children }) => (
+const MotionButtonText: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionButtonText}
     initial={"initial"}
@@ -90,7 +94,7 @@ const MotionButtonText = ({ children }) => (
   </motion.div>
 );
 
-const Navbar = ({ author }) => (
+const Navbar: FunctionComponent<AuthorProps> = ({ author }) => (
   <div style={style.navRoot}>
     <ElevationScroll>
       <AppBar position="fixed" style={style.navContainer}>

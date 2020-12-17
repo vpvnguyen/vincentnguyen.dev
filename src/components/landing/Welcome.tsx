@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
-const style = {
+const style: any = {
   welcomeHeaderContainer: {
     display: "flex",
     flexDirection: "column",
@@ -14,12 +14,12 @@ const style = {
   welcomeHeader: Theme.h1(),
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionWelcomeHeader: Animate.springUpWelcomeHeader(),
   motionWelcomeText: Animate.springUpWelcomeText(),
 };
 
-const MotionWelcomeHeader = ({ children }) => (
+const MotionWelcomeHeader: FunctionComponent = ({ children }) => (
   <motion.span
     variants={motionVariants.motionWelcomeHeader}
     initial={"initial"}
@@ -29,7 +29,7 @@ const MotionWelcomeHeader = ({ children }) => (
   </motion.span>
 );
 
-const MotionWelcomeText = ({ children }) => (
+const MotionWelcomeText: FunctionComponent = ({ children }) => (
   <motion.h2
     variants={motionVariants.motionWelcomeText}
     initial={"initial"}
@@ -39,9 +39,9 @@ const MotionWelcomeText = ({ children }) => (
   </motion.h2>
 );
 
-const Welcome = () => {
-  const data = useStaticAuthorQuery();
-  const { author } = data.site.siteMetadata;
+const Welcome: FunctionComponent = () => {
+  const data: any = useStaticAuthorQuery();
+  const author: string = data.site.siteMetadata.author;
 
   return (
     <div style={style.welcomeHeaderContainer}>

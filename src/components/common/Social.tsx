@@ -8,7 +8,7 @@ import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticSocialQuery from "../../utils/hooks/useStaticSocialQuery";
 
-const style = {
+const style: any = {
   socialLink: {
     margin: ".5rem",
     backgroundColor: "transparent",

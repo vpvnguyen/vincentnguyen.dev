@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
-const style = {
+const style: any = {
   footerContainer: {
     backgroundColor: Theme.color().dark,
     color: Theme.color().accent,
@@ -16,7 +16,7 @@ const style = {
   },
 };
 
-const Footer = () => {
+const Footer: FunctionComponent = () => {
   const data: any = useStaticAuthorQuery();
   const author: string = data.site.siteMetadata.author;
 
