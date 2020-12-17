@@ -15,7 +15,7 @@ import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
 
-const style = {
+const style: any = {
   container: ProjectTheme.container(),
   buttonContainer: ProjectTheme.buttonContainer(),
   sectionLeft: ProjectTheme.sectionLeft(),
@@ -23,12 +23,12 @@ const style = {
   header: ProjectTheme.header(),
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionProjectHeader: Animate.fadeInHeadersLeft(),
   motionProject: Animate.animateProject(),
 };
 
-const MotionProjectHeader = ({ children }) => (
+const MotionProjectHeader = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProjectHeader}
     initial={"initial"}
@@ -38,7 +38,7 @@ const MotionProjectHeader = ({ children }) => (
   </motion.div>
 );
 
-const MotionProject = ({ children }) => (
+const MotionProject = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProject}
     initial={"initial"}
@@ -54,9 +54,9 @@ const GithubProjects = () => {
   const [loading, setLoading] = useState(true);
 
   const data = useStaticGithubApiQuery();
-  const githubUrl = data.site.siteMetadata.api.github.url;
-  const githubUser = data.site.siteMetadata.api.github.user;
-  const pageAmount = data.site.siteMetadata.api.github.pageAmount;
+  const githubUrl: string = data.site.siteMetadata.api.github.url;
+  const githubUser: string = data.site.siteMetadata.api.github.user;
+  const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
 
   useEffect(() => {
     const getGithubProjects = async (githubUrl, githubUser, pageAmount) => {
@@ -87,13 +87,11 @@ const GithubProjects = () => {
         {loading ? (
           <LinearProgress />
         ) : (
-          githubProjects.map(project => (
+          githubProjects.map((project: any) => (
             <MotionProject key={project.name}>
               <ProjectButton
                 key={project.name}
                 href={project.homepage || project.html_url}
-                target="_blank"
-                rel="noreferrer"
               >
                 <div style={style.sectionLeft}>
                   <ProjectTitle
