@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
 import { ProjectLanguage } from "../common/Project";
 import LanguageTheme from "../../ui/LanguageTheme";
 import GithubAPI from "../../utils/api/github.api";
 
 interface GithubLanguagesProps {
-    githubUrl: string
-    githubUser: string
-    projectName: string
+  githubUrl: string;
+  githubUser: string;
+  projectName: string;
 }
 
-const GithubLanguages = ({ githubUrl, githubUser, projectName }: GithubLanguagesProps) => {
+const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
+  githubUrl,
+  githubUser,
+  projectName,
+}) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {

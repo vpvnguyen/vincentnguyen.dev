@@ -1,32 +1,28 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import PropTypes from "prop-types";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
-import Theme from "../../ui/Theme";
+import Theme from "../Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
-const style = {
+const style: any = {
   layoutGlobalContainer: {
     fontFamily: Theme.font().fontFamily,
     fontSize: Theme.font().fontSize,
   },
 };
 
-const LayoutGlobal = ({ children }) => {
-  const data = useStaticAuthorQuery();
-  const { author } = data.site.siteMetadata;
+const LayoutGlobal: FunctionComponent = ({ children }) => {
+  const data: any = useStaticAuthorQuery();
+  const author: string = data.site.siteMetadata.author;
 
   return (
     <div style={style.layoutGlobalContainer}>
-      <Header author={author} />
+      <Header />
       <Navbar author={author} />
       <div>{children}</div>
     </div>
   );
-};
-
-LayoutGlobal.propTypes = {
-  children: PropTypes.element.isRequired,
 };
 
 export default LayoutGlobal;

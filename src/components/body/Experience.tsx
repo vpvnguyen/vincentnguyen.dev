@@ -1,11 +1,11 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery";
 
-const style = {
+const style: any = {
   experienceContainer: {
     display: "flex",
     alignItems: "center",
@@ -17,12 +17,12 @@ const style = {
   experienceHeader: Theme.h1(),
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionExperienceHeader: Animate.fadeInHeadersLeft(),
   motionExperience: Animate.fadeInExperienceRight(),
 };
 
-const MotionExperienceHeader = ({ children }: any) => (
+const MotionExperienceHeader: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionExperienceHeader}
     initial={"initial"}
@@ -32,7 +32,7 @@ const MotionExperienceHeader = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionExperience = ({ children }: any) => (
+const MotionExperience: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionExperience}
     initial={"initial"}
@@ -42,7 +42,7 @@ const MotionExperience = ({ children }: any) => (
   </motion.div>
 );
 
-const Experience = () => {
+const Experience: FunctionComponent = () => {
   const data: any = useStaticExperienceQuery();
   const experiences: Array<string> = data.site.siteMetadata.experience;
 

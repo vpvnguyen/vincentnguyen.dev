@@ -5,18 +5,18 @@ import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectTheme from "../../ui/ProjectTheme";
 
 interface ProjectButtonProps {
-    children: any
-    href: string
+  children: any;
+  href: string;
 }
 
 interface ProjectTitleProps {
-    projectName: string
-    projectHomepage: string
+  projectName: string;
+  projectHomepage: string;
 }
 
 interface ProjectLanguageProps {
-    languageStyle: any
-    languageName: string
+  languageStyle: any;
+  languageName: string;
 }
 
 const style: any = {
@@ -47,7 +47,10 @@ export const ProjectButtonRight = ({ children }: any) => (
   <div style={style.sectionRight}>{children}</div>
 );
 
-export const ProjectTitle = ({ projectName, projectHomepage }: ProjectTitleProps) => (
+export const ProjectTitle = ({
+  projectName,
+  projectHomepage,
+}: ProjectTitleProps) => (
   <h3 style={style.title}>
     {projectName}{" "}
     <span>
@@ -68,6 +71,7 @@ export const ProjectDate = ({ children }: any) => (
   <p style={style.date}>{children}</p>
 );
 
-export const ProjectLanguage = ({ languageStyle, languageName }: ProjectLanguageProps) => (
-  <span style={languageStyle}>{languageName}</span>
-);
+export const ProjectLanguage = ({
+  languageStyle,
+  languageName,
+}: ProjectLanguageProps) => <span style={languageStyle}>{languageName}</span>;

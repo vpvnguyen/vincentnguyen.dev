@@ -1,13 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
 import { CssBaseline } from "@material-ui/core";
 import Images from "../../ui/Images";
 import Theme from "../../ui/Theme";
 
-const Header = ({ author }) => (
+const Header: FunctionComponent = () => (
   <>
     <CssBaseline />
-    <Helmet author={author}>
+    <Helmet>
       <link
         rel="icon"
         type="image/png"

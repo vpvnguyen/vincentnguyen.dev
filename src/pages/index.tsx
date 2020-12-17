@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import LayoutGlobal from "../ui/layout/Layout.global";
 import Landing from "../components/landing/Landing";
 import ProfessionalProjects from "../components/body/ProfessionalProjects";
@@ -8,7 +8,7 @@ import Experience from "../components/body/Experience";
 import EmbedTwitterTimeline from "../components/body/EmbedTwitterTimeline";
 import Background from "../components/landing/Background";
 
-const style = {
+const style: any = {
   pageRoot: {
     overflow: "hidden",
   },
@@ -36,7 +36,7 @@ const style = {
   },
 };
 
-const IndexPage = () => (
+const IndexPage: FunctionComponent = () => (
   <LayoutGlobal>
     <div style={style.pageRoot}>
       <div style={style.pageContainer}>
