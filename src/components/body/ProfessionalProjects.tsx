@@ -61,8 +61,8 @@ const ProjectLanguages = ({ projectLanguages }: any) => {
         languages.map((language, index) => (
           <ProjectLanguage
             key={`${language}-${index}`}
-            style={language.style}
-            name={language.name}
+            languageStyle={language.style}
+            languageName={language.name}
           />
         ))}
     </>

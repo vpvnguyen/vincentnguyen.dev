@@ -4,7 +4,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectTheme from "../../ui/ProjectTheme";
 
-const style = {
+interface ProjectButtonProps {
+    children: any
+    href: string
+}
+
+interface ProjectTitleProps {
+    projectName: string
+    projectHomepage: string
+}
+
+interface ProjectLanguageProps {
+    languageStyle: any
+    languageName: string
+}
+
+const style: any = {
   buttonContainer: ProjectTheme.buttonContainer(),
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
@@ -13,7 +28,7 @@ const style = {
   date: ProjectTheme.date(),
 };
 
-export const ProjectButton = ({ children, href }) => (
+export const ProjectButton = ({ children, href }: ProjectButtonProps) => (
   <Button
     style={style.buttonContainer}
     href={href}
@@ -24,15 +39,15 @@ export const ProjectButton = ({ children, href }) => (
   </Button>
 );
 
-export const ProjectButtonLeft = ({ children }) => (
+export const ProjectButtonLeft = ({ children }: any) => (
   <div style={style.sectionLeft}>{children}</div>
 );
 
-export const ProjectButtonRight = ({ children }) => (
+export const ProjectButtonRight = ({ children }: any) => (
   <div style={style.sectionRight}>{children}</div>
 );
 
-export const ProjectTitle = ({ projectName, projectHomepage }) => (
+export const ProjectTitle = ({ projectName, projectHomepage }: ProjectTitleProps) => (
   <h3 style={style.title}>
     {projectName}{" "}
     <span>
@@ -45,14 +60,14 @@ export const ProjectTitle = ({ projectName, projectHomepage }) => (
   </h3>
 );
 
-export const ProjectDescription = ({ children }) => (
+export const ProjectDescription = ({ children }: any) => (
   <p style={style.description}>{children}</p>
 );
 
-export const ProjectDate = ({ children }) => (
+export const ProjectDate = ({ children }: any) => (
   <p style={style.date}>{children}</p>
 );
 
-export const ProjectLanguage = ({ style, name }) => (
-  <span style={style}>{name}</span>
+export const ProjectLanguage = ({ languageStyle, languageName }: ProjectLanguageProps) => (
+  <span style={languageStyle}>{languageName}</span>
 );
