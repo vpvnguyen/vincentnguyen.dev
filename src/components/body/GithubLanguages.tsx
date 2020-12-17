@@ -4,7 +4,13 @@ import { ProjectLanguage } from "../common/Project";
 import LanguageTheme from "../../ui/LanguageTheme";
 import GithubAPI from "../../utils/api/github.api";
 
-const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
+interface GithubLanguagesProps {
+    githubUrl: string
+    githubUser: string
+    projectName: string
+}
+
+const GithubLanguages = ({ githubUrl, githubUser, projectName }: GithubLanguagesProps) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
@@ -14,7 +20,7 @@ const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
       projectName
     ) => {
       try {
-        let languages = await GithubAPI.fetchProjectLanguages(
+        let languages: Array<string> = await GithubAPI.fetchProjectLanguages(
           githubUrl,
           githubUser,
           projectName
@@ -33,11 +39,11 @@ const GithubLanguages = ({ githubUrl, githubUser, projectName }) => {
     <>
       {languages ? (
         <div>
-          {languages.map((language, index) => (
+          {languages.map((language: any, index: any) => (
             <ProjectLanguage
               key={`${projectName}-${index}`}
-              style={language.style}
-              name={language.name}
+              languageStyle={language.style}
+              languageName={language.name}
             />
           ))}
         </div>
