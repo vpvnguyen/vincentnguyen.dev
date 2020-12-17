@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { LinearProgress } from "@material-ui/core";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
@@ -28,7 +28,7 @@ const motionVariants: any = {
   motionProject: Animate.animateProject(),
 };
 
-const MotionProjectHeader = ({ children }: any) => (
+const MotionProjectHeader: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionProjectHeader}
     initial={"initial"}
@@ -38,7 +38,7 @@ const MotionProjectHeader = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionProject = ({ children }: any) => (
+const MotionProject: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionProject}
     initial={"initial"}
@@ -49,7 +49,7 @@ const MotionProject = ({ children }: any) => (
   </motion.div>
 );
 
-const GithubProjects = () => {
+const GithubProjects: FunctionComponent = () => {
   const [githubProjects, setGithubProjects] = useState(null);
   const [loading, setLoading] = useState(true);
 

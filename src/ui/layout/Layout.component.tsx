@@ -1,13 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-const style = {
+const style: any = {
   layoutComponentContainer: {
     margin: "auto",
     padding: "1em",
   },
 };
 
-const LayoutComponent = ({ children }: any) => (
+const LayoutComponent: FunctionComponent = ({ children }) => (
   <section style={style.layoutComponentContainer}>{children}</section>
 );
 

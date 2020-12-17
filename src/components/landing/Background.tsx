@@ -1,9 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { FunctionComponent } from "react";
 import Theme from "../../ui/Theme";
 import Images from "../../ui/Images";
 
-const style = {
+const style: any = {
   background: {
     backgroundImage: `
         linear-gradient(
@@ -19,12 +18,8 @@ const style = {
   },
 };
 
-const Background = ({ children }) => (
+const Background: FunctionComponent = ({ children }) => (
   <div style={style.background}>{children}</div>
 );
-
-Background.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default Background;

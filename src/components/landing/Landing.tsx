@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import Welcome from "./Welcome";
 import Theme from "../../ui/Theme";
 
-const style = {
+const style: any = {
   landingContainer: {
     color: Theme.color().light,
     padding: "10rem 0rem 15rem 0rem",
@@ -13,7 +13,7 @@ const style = {
   },
 };
 
-const Landing = () => (
+const Landing: FunctionComponent = () => (
   <LayoutComponent>
     <div style={style.landingContainer}>
       <div style={style.landingMessage}>

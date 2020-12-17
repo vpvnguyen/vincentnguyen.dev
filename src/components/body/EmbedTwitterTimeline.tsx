@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import Theme from "../../ui/Theme";
@@ -6,16 +6,16 @@ import Animate from "../../ui/Animate";
 import useStaticTwitterQuery from "../../utils/hooks/useStaticTwitterQuery";
 import useScript from "../../utils/hooks/useScript";
 
-const style = {
+const style: any = {
   twitterHeader: Theme.h1(),
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionTwitterHeader: Animate.fadeInHeadersLeft(),
   motionTwitterTimeline: Animate.fadeInTwitterTimelineRight(),
 };
 
-const MotionTwitterHeader = ({ children }: any) => (
+const MotionTwitterHeader: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionTwitterHeader}
     initial={"initial"}
@@ -25,7 +25,7 @@ const MotionTwitterHeader = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionTwitterTimeline = ({ children }: any) => (
+const MotionTwitterTimeline: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionTwitterTimeline}
     initial={"initial"}
@@ -35,10 +35,11 @@ const MotionTwitterTimeline = ({ children }: any) => (
   </motion.div>
 );
 
-const EmbedTwitterTimeline = () => {
+const EmbedTwitterTimeline: FunctionComponent = () => {
   const data: any = useStaticTwitterQuery();
   const twitterUrl: string = data.site.siteMetadata.social.twitter.url;
-  const embedTwitterWidget: string = data.site.siteMetadata.social.twitter.embedWidget;
+  const embedTwitterWidget: string =
+    data.site.siteMetadata.social.twitter.embedWidget;
   useScript(embedTwitterWidget);
 
   return (

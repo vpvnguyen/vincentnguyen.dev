@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import {
@@ -13,6 +13,10 @@ import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 
+interface ProjectLanguagesProps {
+  projectLanguages: any;
+}
+
 const style: any = {
   container: ProjectTheme.container(),
   buttonContainer: ProjectTheme.buttonContainer(),
@@ -26,7 +30,7 @@ const motionVariants: any = {
   motionProProject: Animate.animateProject(),
 };
 
-const MotionProProjectHeader = ({ children }: any) => (
+const MotionProProjectHeader: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionProProjectHeader}
     initial={"initial"}
@@ -36,7 +40,7 @@ const MotionProProjectHeader = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionProProject = ({ children }: any) => (
+const MotionProProject: FunctionComponent = ({ children }) => (
   <motion.div
     variants={motionVariants.motionProProject}
     initial={"initial"}
@@ -47,11 +51,15 @@ const MotionProProject = ({ children }: any) => (
   </motion.div>
 );
 
-const ProjectLanguages = ({ projectLanguages }: any) => {
+const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
+  projectLanguages,
+}) => {
   const [languages, setLanguages] = useState(null);
 
   useEffect(() => {
-    const languages: Array<string> = LanguageTheme.getLanguageStyle(projectLanguages);
+    const languages: Array<string> = LanguageTheme.getLanguageStyle(
+      projectLanguages
+    );
     setLanguages(languages);
   }, [projectLanguages]);
 
@@ -71,7 +79,8 @@ const ProjectLanguages = ({ projectLanguages }: any) => {
 
 const ProfessionalProjects = () => {
   const data: any = useStaticProProjectsQuery();
-  const professionalProjects: Array<string> = data.site.siteMetadata.professionalProjects;
+  const professionalProjects: Array<string> =
+    data.site.siteMetadata.professionalProjects;
 
   return (
     <LayoutComponent>
@@ -82,10 +91,7 @@ const ProfessionalProjects = () => {
         {professionalProjects &&
           professionalProjects.map((project: any) => (
             <MotionProProject key={project.name}>
-              <ProjectButton
-                key={project.name}
-                href={project.url}
-              >
+              <ProjectButton key={project.name} href={project.url}>
                 <div style={style.sectionLeft}>
                   <ProjectTitle
                     projectName={project.name}
