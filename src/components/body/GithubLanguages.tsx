@@ -24,7 +24,7 @@ const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
       projectName
     ) => {
       try {
-        let languages: Array<string> = await GithubAPI.fetchProjectLanguages(
+        let languages = await GithubAPI.fetchProjectLanguages(
           githubUrl,
           githubUser,
           projectName
@@ -43,7 +43,7 @@ const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
     <>
       {languages ? (
         <div>
-          {languages.map((language: any, index: any) => (
+          {languages.map((language: any, index: number) => (
             <ProjectLanguage
               key={`${projectName}-${index}`}
               languageStyle={language.style}
