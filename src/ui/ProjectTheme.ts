@@ -1,36 +1,36 @@
 import Theme from "./Theme";
 
 class ProjectTheme extends Theme {
-  static container = () => ({
+  public static container = () => ({
     display: "flex",
     flexDirection: "column",
   });
 
-  static buttonContainer = () => ({
+  public static buttonContainer = () => ({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    fontFamily: super.font().fontFamily,
+    fontFamily: Theme.font().fontFamily,
   });
 
-  static sectionLeft = () => ({
+  public static sectionLeft = () => ({
     display: "flex",
     flexDirection: "column",
   });
 
-  static sectionRight = () => ({
+  public static sectionRight = () => ({
     justifyContent: "flex-end",
   });
 
-  static header = () => super.h1();
+  public static header = () => Theme.h1();
 
-  static title = () => super.h3();
+  public static title = () => Theme.h3();
 
-  static description = () => ({
+  public static description = () => ({
     fontSize: ".7rem",
   });
 
-  static date = () => ({
+  public static date = () => ({
     fontSize: ".6rem",
     paddingTop: "1rem",
     fontStyle: "oblique",

@@ -1,29 +1,29 @@
 class Theme {
-  static fontUrl = () =>
+  public static fontUrl = () =>
     "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap";
 
-  static font = () => ({
+  public static font = () => ({
     fontFamily: "Source Code Pro, monospace",
     fontSize: "16px",
   });
 
-  static color = () => ({
+  public static color = () => ({
     light: "#FFFFFF",
     dark: "#282828",
     accent: "#03DAC5",
   });
 
-  static h1 = () => ({
-    textDecoration: `underline ${this.color().accent}`,
+  public static h1 = () => ({
+    textDecoration: `underline ${Theme.color().accent}`,
   });
 
-  static h3 = () => ({
+  public static h3 = () => ({
     fontSize: "1.3em",
   });
 
-  static projectBoxShadow = () => `0px 1px 10px #CCC`;
+  public static projectBoxShadow = () => `0px 1px 10px #CCC`;
 
-  static getDefaultLanguageStyle = () => ({
+  public static getDefaultLanguageStyle = () => ({
     fontSize: ".75em",
     marginLeft: "3px",
     padding: "5px",
@@ -32,7 +32,7 @@ class Theme {
     color: "black",
   });
 
-  static languages = () => ({
+  public static languages = () => ({
     default: {
       border: "#60656C",
       background: "#EEEEEE",
