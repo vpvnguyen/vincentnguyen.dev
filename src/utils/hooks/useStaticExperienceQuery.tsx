@@ -1,11 +1,11 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const useStaticExperienceQuery = () =>
-  useStaticQuery(graphql`
+const useStaticExperienceQuery: any = () =>
+  useStaticQuery<any>(graphql`
     query siteExperienceQuery {
       site {
         siteMetadata {
-          experience 
+          experience
         }
       }
     }

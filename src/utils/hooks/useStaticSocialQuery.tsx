@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const useStaticSocialQuery = () =>
-  useStaticQuery(graphql`
+const useStaticSocialQuery: any = () =>
+  useStaticQuery<any>(graphql`
     query siteSocialQuery {
       site {
         siteMetadata {
