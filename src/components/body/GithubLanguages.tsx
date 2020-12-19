@@ -15,9 +15,9 @@ const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
   githubUser,
   projectName,
 }) => {
-  const [languages, setLanguages] = useState(null);
+  const [languages, setLanguages] = useState<Array<any>>(null);
 
-  useEffect(() => {
+  useEffect((): void => {
     const getGithubProjectLanguages = async (
       githubUrl,
       githubUser,

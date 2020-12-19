@@ -54,12 +54,10 @@ const MotionProProject: FunctionComponent = ({ children }) => (
 const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
   projectLanguages,
 }) => {
-  const [languages, setLanguages] = useState(null);
+  const [languages, setLanguages] = useState<Array<any>>(null);
 
-  useEffect(() => {
-    const languages: Array<string> = LanguageTheme.getLanguageStyle(
-      projectLanguages
-    );
+  useEffect((): void => {
+    const languages = LanguageTheme.getLanguageStyle(projectLanguages);
     setLanguages(languages);
   }, [projectLanguages]);
 
