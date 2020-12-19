@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const useStaticGithubApiQuery = () =>
-  useStaticQuery(graphql`
+const useStaticGithubApiQuery: any = () =>
+  useStaticQuery<any>(graphql`
     query siteGithubApiQuery {
       site {
         siteMetadata {
