@@ -1,8 +1,8 @@
 class Images {
-  static getBackground = (): string =>
+  public static getBackground = (): string =>
     "https://s3.us-east-2.amazonaws.com/vincentnguyen.dev-images/hb.jpg";
 
-  static getFavicon = (): string =>
+  public static getFavicon = (): string =>
     "https://s3.us-east-2.amazonaws.com/vincentnguyen.dev-images/dev-icon.png";
 }
 
