@@ -50,15 +50,15 @@ const MotionProject: FunctionComponent = ({ children }) => (
 );
 
 const GithubProjects: FunctionComponent = () => {
-  const [githubProjects, setGithubProjects] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [githubProjects, setGithubProjects] = useState<Array<any>>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const data = useStaticGithubApiQuery();
   const githubUrl: string = data.site.siteMetadata.api.github.url;
   const githubUser: string = data.site.siteMetadata.api.github.user;
   const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
 
-  useEffect(() => {
+  useEffect((): void => {
     const getGithubProjects = async (githubUrl, githubUser, pageAmount) => {
       try {
         const githubProjects = await GithubAPI.fetchGithubProjects(

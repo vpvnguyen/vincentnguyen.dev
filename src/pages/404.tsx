@@ -4,7 +4,7 @@ import { navigate } from "gatsby";
 export default () => {
   const route: string = "/";
 
-  useEffect(() => {
+  useEffect((): void => {
     navigate(route);
   }, [route]);
 
