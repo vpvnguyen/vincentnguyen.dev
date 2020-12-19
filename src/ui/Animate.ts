@@ -1,13 +1,15 @@
 import Theme from "./Theme";
 
 class Animate extends Theme {
-  static whileHoverScale = () => ({ scale: 1.1 });
+  private static readonly hoverScale = { scale: 1.1 };
 
-  static scrollToTop = () => {
+  public static whileHoverScale = () => Animate.hoverScale;
+
+  public static scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  static springDownToolBar = () => ({
+  public static springDownToolBar = () => ({
     initial: {
       opacity: 0,
       y: -10,
@@ -22,7 +24,7 @@ class Animate extends Theme {
     },
   });
 
-  static springUpWelcomeHeader = () => ({
+  public static springUpWelcomeHeader = () => ({
     initial: {
       opacity: 0,
       y: 20,
@@ -37,7 +39,7 @@ class Animate extends Theme {
     },
   });
 
-  static springUpWelcomeText = () => ({
+  public static springUpWelcomeText = () => ({
     initial: {
       opacity: 0,
       y: 20,
@@ -53,7 +55,7 @@ class Animate extends Theme {
     },
   });
 
-  static fadeInHeadersLeft = () => ({
+  public static fadeInHeadersLeft = () => ({
     initial: {
       opacity: 0,
       x: 20,
@@ -69,7 +71,7 @@ class Animate extends Theme {
     },
   });
 
-  static fadeInTwitterTimelineRight = () => ({
+  public static fadeInTwitterTimelineRight = () => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -85,7 +87,7 @@ class Animate extends Theme {
     },
   });
 
-  static fadeInExperienceRight = () => ({
+  public static fadeInExperienceRight = () => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -101,7 +103,7 @@ class Animate extends Theme {
     },
   });
 
-  static animateProject = () => ({
+  public static animateProject = () => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -115,29 +117,29 @@ class Animate extends Theme {
       },
     },
     whileHover: {
-      webkitBoxShadow: super.projectBoxShadow() /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */,
-      mozBoxShadow: super.projectBoxShadow() /* Firefox 3.5 - 3.6 */,
-      boxShadow: super.projectBoxShadow() /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */,
+      webkitBoxShadow: Theme.projectBoxShadow() /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */,
+      mozBoxShadow: Theme.projectBoxShadow() /* Firefox 3.5 - 3.6 */,
+      boxShadow: Theme.projectBoxShadow() /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */,
     },
   });
 
-  static scaleUpMenuItem = () => ({
+  public static scaleUpMenuItem = () => ({
     initial: {
       cursor: "pointer",
     },
-    whileHover: this.whileHoverScale(),
+    whileHover: Animate.hoverScale,
     whileTap: {
-      color: super.color().dark,
+      color: Theme.color().dark,
     },
   });
 
-  static scaleUpSocialIcons = () => ({
+  public static scaleUpSocialIcons = () => ({
     initial: {
       cursor: "pointer",
     },
-    whileHover: this.whileHoverScale(),
+    whileHover: Animate.hoverScale,
     whileTap: {
-      color: super.color().dark,
+      color: Theme.color().dark,
     },
   });
 }
