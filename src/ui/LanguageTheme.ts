@@ -1,9 +1,7 @@
 import Theme from "./Theme";
-import { StyleProps, LanguageThemeProps } from "./Theme";
-interface LanguageStyle {
-  name: string;
-  style: object;
-}
+import { StyleProps } from "../types/ui.types/StyleProps";
+import { LanguageStyle } from "./../types/ui.types/LanguageStyle";
+import { LanguageThemeProps } from "../types/ui.types/LanguageThemeProps";
 
 class LanguageTheme extends Theme {
   private static setLanguageThemeStyle = (
