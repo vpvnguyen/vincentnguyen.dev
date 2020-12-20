@@ -1,15 +1,40 @@
 import Theme from "./Theme";
+import { StyleProps } from "./Theme";
+
+interface MotionVariants {
+  initial: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    cursor?: string;
+  };
+  animate?: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    transition?: {
+      type: string;
+      damping?: number;
+      delay?: number;
+      duration?: number;
+    };
+  };
+  whileHover?: any;
+  whileTap?: {
+    color?: string;
+  };
+}
 
 class Animate extends Theme {
-  private static readonly hoverScale = { scale: 1.1 };
+  private static readonly hoverScale: StyleProps = { scale: 1.1 };
 
-  public static whileHoverScale = () => Animate.hoverScale;
+  public static whileHoverScale = (): StyleProps => Animate.hoverScale;
 
-  public static scrollToTop = () => {
+  public static scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  public static springDownToolBar = () => ({
+  public static springDownToolBar = (): MotionVariants => ({
     initial: {
       opacity: 0,
       y: -10,
@@ -24,7 +49,7 @@ class Animate extends Theme {
     },
   });
 
-  public static springUpWelcomeHeader = () => ({
+  public static springUpWelcomeHeader = (): MotionVariants => ({
     initial: {
       opacity: 0,
       y: 20,
@@ -39,7 +64,7 @@ class Animate extends Theme {
     },
   });
 
-  public static springUpWelcomeText = () => ({
+  public static springUpWelcomeText = (): MotionVariants => ({
     initial: {
       opacity: 0,
       y: 20,
@@ -55,7 +80,7 @@ class Animate extends Theme {
     },
   });
 
-  public static fadeInHeadersLeft = () => ({
+  public static fadeInHeadersLeft = (): MotionVariants => ({
     initial: {
       opacity: 0,
       x: 20,
@@ -71,7 +96,7 @@ class Animate extends Theme {
     },
   });
 
-  public static fadeInTwitterTimelineRight = () => ({
+  public static fadeInTwitterTimelineRight = (): MotionVariants => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -87,7 +112,7 @@ class Animate extends Theme {
     },
   });
 
-  public static fadeInExperienceRight = () => ({
+  public static fadeInExperienceRight = (): MotionVariants => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -103,7 +128,7 @@ class Animate extends Theme {
     },
   });
 
-  public static animateProject = () => ({
+  public static animateProject = (): MotionVariants => ({
     initial: {
       opacity: 0,
       x: -5,
@@ -123,7 +148,7 @@ class Animate extends Theme {
     },
   });
 
-  public static scaleUpMenuItem = () => ({
+  public static scaleUpMenuItem = (): MotionVariants => ({
     initial: {
       cursor: "pointer",
     },
@@ -133,7 +158,7 @@ class Animate extends Theme {
     },
   });
 
-  public static scaleUpSocialIcons = () => ({
+  public static scaleUpSocialIcons = (): MotionVariants => ({
     initial: {
       cursor: "pointer",
     },

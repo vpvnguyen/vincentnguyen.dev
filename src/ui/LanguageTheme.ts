@@ -1,5 +1,5 @@
 import Theme from "./Theme";
-
+import { StyleProps, LanguageThemeProps } from "./Theme";
 interface LanguageStyle {
   name: string;
   style: object;
@@ -11,8 +11,8 @@ class LanguageTheme extends Theme {
     key: string,
     index: number
   ): LanguageStyle => {
-    const languages = Theme.languages();
-    let style = Theme.getDefaultLanguageStyle();
+    const languages: LanguageThemeProps = Theme.languages();
+    let style: StyleProps = Theme.getDefaultLanguageStyle();
 
     style.background = languages[key].background;
     style.color = languages[key].color;
@@ -23,8 +23,8 @@ class LanguageTheme extends Theme {
     languageArray: Array<string>,
     index: number
   ): LanguageStyle => {
-    const languages = Theme.languages();
-    let style = Theme.getDefaultLanguageStyle();
+    const languages: LanguageThemeProps = Theme.languages();
+    let style: StyleProps = Theme.getDefaultLanguageStyle();
 
     style.background = languages.default.background;
     return { name: languageArray[index], style };

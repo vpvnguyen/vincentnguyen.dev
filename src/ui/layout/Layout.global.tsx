@@ -12,7 +12,7 @@ const style: any = {
   },
 };
 
-const LayoutGlobal: FunctionComponent = ({ children }) => {
+const LayoutGlobal: FunctionComponent = ({ children }: any) => {
   const data: any = useStaticAuthorQuery();
   const author: string = data.site.siteMetadata.author;
 

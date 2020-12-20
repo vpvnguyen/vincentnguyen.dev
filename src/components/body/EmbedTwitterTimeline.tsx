@@ -15,7 +15,7 @@ const motionVariants: any = {
   motionTwitterTimeline: Animate.fadeInTwitterTimelineRight(),
 };
 
-const MotionTwitterHeader: FunctionComponent = ({ children }) => (
+const MotionTwitterHeader: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionTwitterHeader}
     initial={"initial"}
@@ -25,7 +25,7 @@ const MotionTwitterHeader: FunctionComponent = ({ children }) => (
   </motion.div>
 );
 
-const MotionTwitterTimeline: FunctionComponent = ({ children }) => (
+const MotionTwitterTimeline: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionTwitterTimeline}
     initial={"initial"}
