@@ -1,29 +1,130 @@
+export interface StyleProps {
+  display?: string;
+  flexDirection?: string;
+  justifyContent?: string;
+  fontFamily?: string;
+  fontSize?: string;
+  fontStyle?: string;
+  textDecoration?: string;
+  scale?: number;
+  marginLeft?: string;
+  padding?: string;
+  paddingTop?: string;
+  borderRadius?: string;
+  background?: string;
+  color?: string;
+  light?: string;
+  dark?: string;
+  accent?: string;
+}
+
+export interface LanguageThemeProps {
+  default?: {
+    border: string;
+    background: string;
+  };
+  html?: {
+    border: string;
+    background: string;
+  };
+  css?: { border: string; background: string };
+  javascript?: {
+    border: string;
+    background: string;
+  };
+  typescript?: {
+    border: string;
+    background: string;
+  };
+  php?: { border: string; background: string };
+  ruby?: {
+    border: string;
+    background: string;
+  };
+  python?: {
+    border: string;
+    background: string;
+  };
+  java?: {
+    border: string;
+    background: string;
+  };
+  swift?: {
+    border: string;
+    background: string;
+  };
+  go?: { border: string; background: string };
+  r?: { border: string; background: string };
+  dart?: {
+    border: string;
+    background: string;
+  };
+  kotlin?: {
+    border: string;
+    background: string;
+  };
+  c?: { border: string; background: string };
+  "c#"?: {
+    border: string;
+    background: string;
+  };
+  "c++"?: {
+    border: string;
+    background: string;
+  };
+  "objective-c"?: {
+    border: string;
+    background: string;
+  };
+  sql?: { border: string; background: string };
+  mysql?: {
+    border: string;
+    background: string;
+  };
+  tsql?: {
+    border: string;
+    background: string;
+  };
+  shell?: {
+    border: string;
+    background: string;
+  };
+  laravel?: {
+    border: string;
+    background: string;
+  };
+  drupal?: {
+    border: string;
+    background: string;
+  };
+}
+
 class Theme {
-  public static fontUrl = () =>
+  public static fontUrl = (): string =>
     "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap";
 
-  public static font = () => ({
+  public static font = (): StyleProps => ({
     fontFamily: "Source Code Pro, monospace",
     fontSize: "16px",
   });
 
-  public static color = () => ({
+  public static color = (): StyleProps => ({
     light: "#FFFFFF",
     dark: "#282828",
     accent: "#03DAC5",
   });
 
-  public static h1 = () => ({
+  public static h1 = (): StyleProps => ({
     textDecoration: `underline ${Theme.color().accent}`,
   });
 
-  public static h3 = () => ({
+  public static h3 = (): StyleProps => ({
     fontSize: "1.3em",
   });
 
-  public static projectBoxShadow = () => `0px 1px 10px #CCC`;
+  public static projectBoxShadow = (): string => `0px 1px 10px #CCC`;
 
-  public static getDefaultLanguageStyle = () => ({
+  public static getDefaultLanguageStyle = (): StyleProps => ({
     fontSize: ".75em",
     marginLeft: "3px",
     padding: "5px",
@@ -32,7 +133,7 @@ class Theme {
     color: "black",
   });
 
-  public static languages = () => ({
+  public static languages = (): LanguageThemeProps => ({
     default: {
       border: "#60656C",
       background: "#EEEEEE",
