@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Button } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +28,10 @@ const style: any = {
   date: ProjectTheme.date(),
 };
 
-export const ProjectButton = ({ children, href }: ProjectButtonProps) => (
+export const ProjectButton: FunctionComponent<ProjectButtonProps> = ({
+  children,
+  href,
+}) => (
   <Button
     style={style.buttonContainer}
     href={href}
@@ -39,18 +42,18 @@ export const ProjectButton = ({ children, href }: ProjectButtonProps) => (
   </Button>
 );
 
-export const ProjectButtonLeft = ({ children }: any) => (
+export const ProjectButtonLeft: FunctionComponent = ({ children }: any) => (
   <div style={style.sectionLeft}>{children}</div>
 );
 
-export const ProjectButtonRight = ({ children }: any) => (
+export const ProjectButtonRight: FunctionComponent = ({ children }: any) => (
   <div style={style.sectionRight}>{children}</div>
 );
 
-export const ProjectTitle = ({
+export const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
   projectName,
   projectHomepage,
-}: ProjectTitleProps) => (
+}) => (
   <h3 style={style.title}>
     {projectName}{" "}
     <span>
@@ -63,15 +66,15 @@ export const ProjectTitle = ({
   </h3>
 );
 
-export const ProjectDescription = ({ children }: any) => (
+export const ProjectDescription: FunctionComponent = ({ children }: any) => (
   <p style={style.description}>{children}</p>
 );
 
-export const ProjectDate = ({ children }: any) => (
+export const ProjectDate: FunctionComponent = ({ children }: any) => (
   <p style={style.date}>{children}</p>
 );
 
-export const ProjectLanguage = ({
+export const ProjectLanguage: FunctionComponent<ProjectLanguageProps> = ({
   languageStyle,
   languageName,
-}: ProjectLanguageProps) => <span style={languageStyle}>{languageName}</span>;
+}) => <span style={languageStyle}>{languageName}</span>;

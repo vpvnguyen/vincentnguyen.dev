@@ -54,8 +54,8 @@ const Author: FunctionComponent<AuthorProps> = ({ author }) => (
 );
 
 const Resume: FunctionComponent = () => {
-  const data = useStaticResumeQuery();
-  const { resume } = data.site.siteMetadata;
+  const data: any = useStaticResumeQuery();
+  const resume: string = data.site.siteMetadata.resume;
 
   return (
     <Button>
@@ -73,7 +73,7 @@ const Resume: FunctionComponent = () => {
   );
 };
 
-const MotionToolbar: FunctionComponent = ({ children }) => (
+const MotionToolbar: FunctionComponent = ({ children }: any) => (
   <motion.nav
     variants={motionVariants.motionToolbar}
     initial={"initial"}
@@ -83,7 +83,7 @@ const MotionToolbar: FunctionComponent = ({ children }) => (
   </motion.nav>
 );
 
-const MotionButtonText: FunctionComponent = ({ children }) => (
+const MotionButtonText: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionButtonText}
     initial={"initial"}

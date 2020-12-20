@@ -28,7 +28,7 @@ const motionVariants: any = {
   motionProject: Animate.animateProject(),
 };
 
-const MotionProjectHeader: FunctionComponent = ({ children }) => (
+const MotionProjectHeader: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProjectHeader}
     initial={"initial"}
@@ -38,7 +38,7 @@ const MotionProjectHeader: FunctionComponent = ({ children }) => (
   </motion.div>
 );
 
-const MotionProject: FunctionComponent = ({ children }) => (
+const MotionProject: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProject}
     initial={"initial"}
@@ -53,7 +53,7 @@ const GithubProjects: FunctionComponent = () => {
   const [githubProjects, setGithubProjects] = useState<Array<any>>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const data = useStaticGithubApiQuery();
+  const data: any = useStaticGithubApiQuery();
   const githubUrl: string = data.site.siteMetadata.api.github.url;
   const githubUser: string = data.site.siteMetadata.api.github.user;
   const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
