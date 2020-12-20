@@ -3,12 +3,7 @@ import { CircularProgress } from "@material-ui/core";
 import { ProjectLanguage } from "../common/Project";
 import LanguageTheme from "../../ui/LanguageTheme";
 import GithubAPI from "../../utils/api/github.api";
-
-interface GithubLanguagesProps {
-  githubUrl: string;
-  githubUser: string;
-  projectName: string;
-}
+import { GithubLanguagesProps } from "../../types/component.types/GithubLanguagesProps";
 
 const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
   githubUrl,

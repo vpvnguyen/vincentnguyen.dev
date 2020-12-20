@@ -1,29 +1,6 @@
 import Theme from "./Theme";
-import { StyleProps } from "./Theme";
-
-interface MotionVariants {
-  initial: {
-    opacity?: number;
-    x?: number;
-    y?: number;
-    cursor?: string;
-  };
-  animate?: {
-    opacity?: number;
-    x?: number;
-    y?: number;
-    transition?: {
-      type: string;
-      damping?: number;
-      delay?: number;
-      duration?: number;
-    };
-  };
-  whileHover?: any;
-  whileTap?: {
-    color?: string;
-  };
-}
+import { StyleProps } from "../types/ui.types/StyleProps";
+import { MotionVariants } from "./../types/ui.types/MotionVariants";
 
 class Animate extends Theme {
   private static readonly hoverScale: StyleProps = { scale: 1.1 };
