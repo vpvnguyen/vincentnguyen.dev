@@ -1,5 +1,5 @@
 import Theme from "./Theme";
-import { StyleProps } from "./Theme";
+import { StyleProps } from "../types/ui.types/StyleProps";
 
 class ProjectTheme extends Theme {
   public static container = (): StyleProps => ({
