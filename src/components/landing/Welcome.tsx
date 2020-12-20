@@ -19,7 +19,7 @@ const motionVariants: any = {
   motionWelcomeText: Animate.springUpWelcomeText(),
 };
 
-const MotionWelcomeHeader: FunctionComponent = ({ children }) => (
+const MotionWelcomeHeader: FunctionComponent = ({ children }: any) => (
   <motion.span
     variants={motionVariants.motionWelcomeHeader}
     initial={"initial"}
@@ -29,7 +29,7 @@ const MotionWelcomeHeader: FunctionComponent = ({ children }) => (
   </motion.span>
 );
 
-const MotionWelcomeText: FunctionComponent = ({ children }) => (
+const MotionWelcomeText: FunctionComponent = ({ children }: any) => (
   <motion.h2
     variants={motionVariants.motionWelcomeText}
     initial={"initial"}

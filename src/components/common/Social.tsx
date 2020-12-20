@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
@@ -16,11 +16,11 @@ const style: any = {
   },
 };
 
-const motionVariants = {
+const motionVariants: any = {
   motionIcon: Animate.scaleUpSocialIcons(),
 };
 
-const MotionIcon = ({ children }) => (
+const MotionIcon: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionIcon}
     initial={"initial"}
@@ -31,7 +31,7 @@ const MotionIcon = ({ children }) => (
   </motion.div>
 );
 
-const Social = () => {
+const Social: FunctionComponent = () => {
   const data: any = useStaticSocialQuery();
   const githubUrl: string = data.site.siteMetadata.social.github.url;
   const githubUser: string = data.site.siteMetadata.social.github.user;

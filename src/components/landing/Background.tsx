@@ -18,7 +18,7 @@ const style: any = {
   },
 };
 
-const Background: FunctionComponent = ({ children }) => (
+const Background: FunctionComponent = ({ children }: any) => (
   <div style={style.background}>{children}</div>
 );
 

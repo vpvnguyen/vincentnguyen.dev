@@ -7,7 +7,7 @@ const style: any = {
   },
 };
 
-const LayoutComponent: FunctionComponent = ({ children }) => (
+const LayoutComponent: FunctionComponent = ({ children }: any) => (
   <section style={style.layoutComponentContainer}>{children}</section>
 );
 

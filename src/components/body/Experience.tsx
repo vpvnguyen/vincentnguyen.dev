@@ -22,7 +22,7 @@ const motionVariants: any = {
   motionExperience: Animate.fadeInExperienceRight(),
 };
 
-const MotionExperienceHeader: FunctionComponent = ({ children }) => (
+const MotionExperienceHeader: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionExperienceHeader}
     initial={"initial"}
@@ -32,7 +32,7 @@ const MotionExperienceHeader: FunctionComponent = ({ children }) => (
   </motion.div>
 );
 
-const MotionExperience: FunctionComponent = ({ children }) => (
+const MotionExperience: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionExperience}
     initial={"initial"}

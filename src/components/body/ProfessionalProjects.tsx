@@ -75,7 +75,7 @@ const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
   );
 };
 
-const ProfessionalProjects = () => {
+const ProfessionalProjects: FunctionComponent = () => {
   const data: any = useStaticProProjectsQuery();
   const professionalProjects: Array<string> =
     data.site.siteMetadata.professionalProjects;
