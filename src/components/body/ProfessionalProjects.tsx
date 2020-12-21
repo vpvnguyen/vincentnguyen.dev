@@ -12,10 +12,7 @@ import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
-
-interface ProjectLanguagesProps {
-  projectLanguages: any;
-}
+import { ProjectLanguagesProps } from "../../types/component.types/ProjectLanguagesProps";
 
 const style: any = {
   container: ProjectTheme.container(),

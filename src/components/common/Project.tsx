@@ -3,21 +3,11 @@ import { Button } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectTheme from "../../ui/ProjectTheme";
-
-interface ProjectButtonProps {
-  children: any;
-  href: string;
-}
-
-interface ProjectTitleProps {
-  projectName: string;
-  projectHomepage: string;
-}
-
-interface ProjectLanguageProps {
-  languageStyle: any;
-  languageName: string;
-}
+import {
+  ProjectButtonProps,
+  ProjectTitleProps,
+  ProjectLanguageProps,
+} from "../../types/component.types/ProjectProps";
 
 const style: any = {
   buttonContainer: ProjectTheme.buttonContainer(),
