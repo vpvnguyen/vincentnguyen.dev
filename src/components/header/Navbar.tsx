@@ -6,10 +6,7 @@ import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
-
-interface AuthorProps {
-  author: string;
-}
+import { AuthorProps } from "../../types/component.types/NavbarProps";
 
 const style: any = {
   navRoot: {
