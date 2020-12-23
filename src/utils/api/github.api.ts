@@ -3,7 +3,7 @@ import {
   GithubProjectResponse,
   ProjectLanguagesResponse,
   ProjectStructure,
-} from "../../types/api.types/github.api.types";
+} from "../../types/api.types/GithubApiProps";
 
 const getGithubProjects = async (
   url: string,
