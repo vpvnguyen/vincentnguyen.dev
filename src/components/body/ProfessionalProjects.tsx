@@ -27,7 +27,7 @@ const motionVariants: any = {
   motionProProject: Animate.animateProject(),
 };
 
-const MotionProProjectHeader: FunctionComponent = ({ children }) => (
+const MotionProProjectHeader: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProProjectHeader}
     initial={"initial"}
@@ -37,7 +37,7 @@ const MotionProProjectHeader: FunctionComponent = ({ children }) => (
   </motion.div>
 );
 
-const MotionProProject: FunctionComponent = ({ children }) => (
+const MotionProProject: FunctionComponent = ({ children }: any) => (
   <motion.div
     variants={motionVariants.motionProProject}
     initial={"initial"}
@@ -61,7 +61,7 @@ const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
   return (
     <>
       {languages &&
-        languages.map((language, index) => (
+        languages.map((language: any, index: number) => (
           <ProjectLanguage
             key={`${language}-${index}`}
             languageStyle={language.style}

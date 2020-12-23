@@ -1,3 +1,3 @@
 export interface ProjectLanguagesProps {
-    projectLanguages: any;
-  }
+  projectLanguages: any;
+}
