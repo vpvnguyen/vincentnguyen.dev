@@ -1,28 +1,9 @@
 import axios, { AxiosResponse } from "axios";
-
-interface GithubProjectResponse {
-  url: string;
-  user: string;
-  pageAmount: string;
-}
-
-interface ProjectLanguagesResponse {
-  url: string;
-  user: string;
-  projectName: string;
-}
-
-interface ProjectStructure {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  homepage: string;
-  language: string;
-  created_at: Date;
-  updated_at: Date;
-  pushed_at: Date;
-}
+import {
+  GithubProjectResponse,
+  ProjectLanguagesResponse,
+  ProjectStructure,
+} from "../../types/api.types/github.api.types";
 
 const getGithubProjects = async (
   url: string,
