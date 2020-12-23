@@ -59,7 +59,11 @@ const GithubProjects: FunctionComponent = () => {
   const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
 
   useEffect((): void => {
-    const getGithubProjects = async (githubUrl, githubUser, pageAmount) => {
+    const getGithubProjects = async (
+      githubUrl: string,
+      githubUser: string,
+      pageAmount: string
+    ) => {
       try {
         const githubProjects = await GithubAPI.fetchGithubProjects(
           githubUrl,
