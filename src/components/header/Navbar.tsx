@@ -6,7 +6,7 @@ import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
-import { AuthorProps } from "../../types/component.types/NavbarProps";
+import { StaticQueryProps } from "../../types/staticQuery.types/StaticQueryProps";
 
 const style: any = {
   navRoot: {
@@ -40,7 +40,7 @@ const motionVariants: any = {
   motionAuthor: () => Animate.scrollToTop(),
 };
 
-const Author: FunctionComponent<AuthorProps> = ({ author }) => (
+const Author: FunctionComponent<StaticQueryProps> = ({ author }) => (
   <Button
     style={style.author}
     onClick={motionVariants.motionAuthor}
@@ -91,7 +91,7 @@ const MotionButtonText: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const Navbar: FunctionComponent<AuthorProps> = ({ author }) => (
+const Navbar: FunctionComponent<StaticQueryProps> = ({ author }) => (
   <div style={style.navRoot}>
     <ElevationScroll>
       <AppBar position="fixed" style={style.navContainer}>
