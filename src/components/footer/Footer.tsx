@@ -7,6 +7,12 @@ const style: any = {
   footerContainer: {
     backgroundColor: Theme.color().dark,
     color: Theme.color().accent,
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: "100%",
+    // textAlign: "center",
   },
   footerContent: {
     display: "flex",
