@@ -1,6 +1,6 @@
 import Theme from "./Theme";
 import { StyleProps } from "../types/ui.types/StyleProps";
-import { LanguageStyleProps } from "./../types/ui.types/LanguageStyle";
+import { LanguageStyleProps } from "./../types/ui.types/LanguageStyleProps";
 import { LanguageThemeProps } from "../types/ui.types/LanguageThemeProps";
 
 class LanguageTheme extends Theme {
