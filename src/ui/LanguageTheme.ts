@@ -1,6 +1,6 @@
 import Theme from "./Theme";
 import { StyleProps } from "../types/ui.types/StyleProps";
-import { LanguageStyle } from "./../types/ui.types/LanguageStyle";
+import { LanguageStyleProps } from "./../types/ui.types/LanguageStyleProps";
 import { LanguageThemeProps } from "../types/ui.types/LanguageThemeProps";
 
 class LanguageTheme extends Theme {
@@ -8,7 +8,7 @@ class LanguageTheme extends Theme {
     languageArray: Array<string>,
     key: string,
     index: number
-  ): LanguageStyle => {
+  ): LanguageStyleProps => {
     const languages: LanguageThemeProps = Theme.languages();
     let style: StyleProps = Theme.getDefaultLanguageStyle();
 
@@ -20,7 +20,7 @@ class LanguageTheme extends Theme {
   private static setLanguageDefaultStyle = (
     languageArray: Array<string>,
     index: number
-  ): LanguageStyle => {
+  ): LanguageStyleProps => {
     const languages: LanguageThemeProps = Theme.languages();
     let style: StyleProps = Theme.getDefaultLanguageStyle();
 
@@ -35,7 +35,7 @@ class LanguageTheme extends Theme {
     languageArray: Array<string>,
     key: string,
     index: number
-  ): LanguageStyle => {
+  ): LanguageStyleProps => {
     if (LanguageTheme.hasTheme(key)) {
       return LanguageTheme.setLanguageThemeStyle(languageArray, key, index);
     }

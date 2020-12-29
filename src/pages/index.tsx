@@ -57,8 +57,8 @@ const IndexPage: FunctionComponent = () => (
           </div>
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
   </LayoutGlobal>
 );
 
