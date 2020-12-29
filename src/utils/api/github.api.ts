@@ -28,13 +28,13 @@ const getProjectLanguages = async (
 };
 
 const filterByStarredProjects = (projects: any): Array<any> =>
-  projects.reduce((starredProjects, project) => {
+  projects.reduce((starredProjects: Array<any>, project: any) => {
     if (project.stargazers_count > 0) starredProjects.push(project);
     return starredProjects;
   }, []);
 
 const createProjectStructure = (projects: any): ProjectStructure =>
-  projects.map(project => ({
+  projects.map((project: any) => ({
     id: project.id,
     name: project.name,
     description: project.description,
@@ -47,10 +47,12 @@ const createProjectStructure = (projects: any): ProjectStructure =>
   }));
 
 const sortProjectsByDateDesc = (projects: any): Array<any> =>
-  projects.sort((a, b) => b.pushed_at - a.pushed_at);
+  projects.sort((a: any, b: any) => b.pushed_at - a.pushed_at);
 
 const setLangaugeNamesToLowerCase = (languages: any): Array<string> =>
-  Object.keys(languages).map(languageName => languageName.toLowerCase());
+  Object.keys(languages).map((languageName: string) =>
+    languageName.toLowerCase()
+  );
 
 class GithubApi {
   static fetchGithubProjects = async (
