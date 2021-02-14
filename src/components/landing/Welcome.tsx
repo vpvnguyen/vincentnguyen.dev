@@ -20,13 +20,13 @@ const motionVariants: any = {
 };
 
 const MotionWelcomeHeader: FunctionComponent = ({ children }: any) => (
-  <motion.span
+  <motion.div
     variants={motionVariants.motionWelcomeHeader}
     initial={"initial"}
     animate={"animate"}
   >
     {children}
-  </motion.span>
+  </motion.div>
 );
 
 const MotionWelcomeText: FunctionComponent = ({ children }: any) => (

@@ -17,6 +17,7 @@ class Theme {
   });
 
   public static h1 = (): StyleProps => ({
+    fontSize: "2rem",
     textDecoration: `underline ${Theme.color().accent}`,
   });
 

@@ -8,9 +8,9 @@ class ProjectTheme extends Theme {
   });
 
   public static buttonContainer = (): StyleProps => ({
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    // display: "flex",
+    // flexDirection: "column",
+    // justifyContent: "space-between",
     fontFamily: Theme.font().fontFamily,
   });
 

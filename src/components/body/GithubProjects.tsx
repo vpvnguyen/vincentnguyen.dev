@@ -16,8 +16,15 @@ import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
 
 const style: any = {
-  container: ProjectTheme.container(),
-  buttonContainer: ProjectTheme.buttonContainer(),
+  // container: ProjectTheme.container(),
+  container: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  // buttonContainer: ProjectTheme.buttonContainer(),
+  buttonContainer: {
+    display: "flex",
+  },
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
@@ -96,24 +103,30 @@ const GithubProjects: FunctionComponent = () => {
               <ProjectButton
                 key={project.name}
                 href={project.homepage || project.html_url}
+                // style={style.buttonContainer}
               >
-                <div style={style.sectionLeft}>
+                <div className={style.buttonContainer}>
+                  {/* <div style={style.sectionLeft}> */}
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.homepage}
                   />
                   <ProjectDescription>{project.description}</ProjectDescription>
-                  <ProjectDate>
-                    {dayjs(project.pushed_at).format("MMM-YYYY")}
-                  </ProjectDate>
-                </div>
 
-                <div style={style.sectionRight}>
                   <GithubLanguages
                     githubUrl={githubUrl}
                     githubUser={githubUser}
                     projectName={project.name}
                   />
+
+                  <ProjectDate>
+                    {dayjs(project.pushed_at).format("MMM-YYYY")}
+                  </ProjectDate>
+                  {/* </div> */}
+
+                  {/* <div style={style.sectionRight}> */}
+
+                  {/* </div> */}
                 </div>
               </ProjectButton>
             </MotionProject>
