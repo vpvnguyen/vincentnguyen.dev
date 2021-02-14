@@ -15,7 +15,7 @@ const style: any = {
   pageContainer: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
   },
   sectionLanding: {
     flex: "1 100%",
