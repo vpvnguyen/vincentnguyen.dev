@@ -18,6 +18,7 @@ const style: any = {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "1280px",
+    textAlign: "center",
   },
   sectionContentLeft: {
     flex: 2,

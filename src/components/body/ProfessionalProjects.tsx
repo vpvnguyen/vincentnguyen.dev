@@ -15,8 +15,17 @@ import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQue
 import { ProjectLanguagesProps } from "../../types/component.types/ProjectLanguagesProps";
 
 const style: any = {
-  container: ProjectTheme.container(),
-  buttonContainer: ProjectTheme.buttonContainer(),
+  // container: ProjectTheme.container(),
+  // buttonContainer: ProjectTheme.buttonContainer(),
+  container: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  // buttonContainer: ProjectTheme.buttonContainer(),
+  buttonContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
@@ -87,18 +96,21 @@ const ProfessionalProjects: FunctionComponent = () => {
           professionalProjects.map((project: any) => (
             <MotionProProject key={project.name}>
               <ProjectButton key={project.name} href={project.url}>
-                <div style={style.sectionLeft}>
+                <div style={style.buttonContainer}>
+                  {/* <div style={style.container}> */}
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.url}
                   />
 
                   <ProjectDescription>{project.description}</ProjectDescription>
-                  <ProjectDate>{project.date}</ProjectDate>
-                </div>
-
-                <div style={style.sectionRight}>
                   <ProjectLanguages projectLanguages={project.languages} />
+
+                  <ProjectDate>{project.date}</ProjectDate>
+                  {/* </div> */}
+
+                  {/* <div style={style.sectionRight}> */}
+                  {/* </div> */}
                 </div>
               </ProjectButton>
             </MotionProProject>
