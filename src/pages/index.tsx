@@ -9,17 +9,10 @@ import EmbedTwitterTimeline from "../components/body/EmbedTwitterTimeline";
 import Background from "../components/landing/Background";
 
 const style: any = {
-  pageRoot: {
-    overflow: "hidden",
-  },
   pageContainer: {
     display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-evenly",
-  },
-  sectionLanding: {
-    flex: "1 100%",
-    textAlign: "center",
+    flexDirection: "column",
+    alignItems: "center",
   },
   sectionContent: {
     display: "flex",
@@ -38,23 +31,19 @@ const style: any = {
 
 const IndexPage: FunctionComponent = () => (
   <LayoutGlobal>
-    <div style={style.pageRoot}>
-      <div style={style.pageContainer}>
-        <div style={style.sectionLanding}>
-          <Background>
-            <Landing />
-          </Background>
-        </div>
+    <div style={style.pageContainer}>
+      <Background>
+        <Landing />
+      </Background>
 
-        <div style={style.sectionContent}>
-          <div style={style.sectionContentLeft}>
-            <ProfessionalProjects />
-            <GithubProjects />
-          </div>
-          <div style={style.sectionContentRight}>
-            <Experience />
-            <EmbedTwitterTimeline />
-          </div>
+      <div style={style.sectionContent}>
+        <div style={style.sectionContentLeft}>
+          <ProfessionalProjects />
+          <GithubProjects />
+        </div>
+        <div style={style.sectionContentRight}>
+          <Experience />
+          <EmbedTwitterTimeline />
         </div>
       </div>
     </div>
