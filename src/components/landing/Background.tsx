@@ -15,6 +15,10 @@ const style: any = {
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundColor: Theme.color().light,
+    color: Theme.color().light,
+    width: "100%",
+    padding: "10rem 0rem 15rem 0rem",
+    textAlign: "center",
   },
 };
 
