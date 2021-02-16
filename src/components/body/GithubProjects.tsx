@@ -21,10 +21,6 @@ const style: any = {
     display: "flex",
     flexDirection: "column",
   },
-  // buttonContainer: ProjectTheme.buttonContainer(),
-  buttonContainer: {
-    display: "flex",
-  },
   sectionLeft: ProjectTheme.sectionLeft(),
   sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
@@ -103,10 +99,8 @@ const GithubProjects: FunctionComponent = () => {
               <ProjectButton
                 key={project.name}
                 href={project.homepage || project.html_url}
-                // style={style.buttonContainer}
               >
-                <div className={style.buttonContainer}>
-                  {/* <div style={style.sectionLeft}> */}
+                <div>
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.homepage}
@@ -122,11 +116,6 @@ const GithubProjects: FunctionComponent = () => {
                   <ProjectDate>
                     {dayjs(project.pushed_at).format("MMM-YYYY")}
                   </ProjectDate>
-                  {/* </div> */}
-
-                  {/* <div style={style.sectionRight}> */}
-
-                  {/* </div> */}
                 </div>
               </ProjectButton>
             </MotionProject>
