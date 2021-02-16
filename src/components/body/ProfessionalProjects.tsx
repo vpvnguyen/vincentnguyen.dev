@@ -16,13 +16,7 @@ import { ProjectLanguagesProps } from "../../types/component.types/ProjectLangua
 
 const style: any = {
   // container: ProjectTheme.container(),
-  // buttonContainer: ProjectTheme.buttonContainer(),
   container: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  // buttonContainer: ProjectTheme.buttonContainer(),
-  buttonContainer: {
     display: "flex",
     flexDirection: "column",
   },
@@ -96,8 +90,7 @@ const ProfessionalProjects: FunctionComponent = () => {
           professionalProjects.map((project: any) => (
             <MotionProProject key={project.name}>
               <ProjectButton key={project.name} href={project.url}>
-                <div style={style.buttonContainer}>
-                  {/* <div style={style.container}> */}
+                <div>
                   <ProjectTitle
                     projectName={project.name}
                     projectHomepage={project.url}
@@ -107,10 +100,6 @@ const ProfessionalProjects: FunctionComponent = () => {
                   <ProjectLanguages projectLanguages={project.languages} />
 
                   <ProjectDate>{project.date}</ProjectDate>
-                  {/* </div> */}
-
-                  {/* <div style={style.sectionRight}> */}
-                  {/* </div> */}
                 </div>
               </ProjectButton>
             </MotionProProject>
