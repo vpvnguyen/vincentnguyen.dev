@@ -44,7 +44,7 @@ const Experience: FunctionComponent = () => {
   return (
     <LayoutComponent>
       <MotionExperienceHeader>
-        <h1 style={style.experienceHeader}>Experience</h1>
+        <h1 style={style.experienceHeader}>EXPERIENCE</h1>
       </MotionExperienceHeader>
       <MotionExperience>
         <div style={style.experienceContainer}>
