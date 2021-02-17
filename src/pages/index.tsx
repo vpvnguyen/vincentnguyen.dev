@@ -3,28 +3,22 @@ import LayoutGlobal from "../ui/layout/Layout.global";
 import Landing from "../components/landing/Landing";
 import ProfessionalProjects from "../components/body/ProfessionalProjects";
 import GithubProjects from "../components/body/GithubProjects";
-import Footer from "../components/footer/Footer";
 import Experience from "../components/body/Experience";
 import EmbedTwitterTimeline from "../components/body/EmbedTwitterTimeline";
 import Background from "../components/landing/Background";
 
 const style: any = {
-  pageRoot: {
-    overflow: "hidden",
-  },
   pageContainer: {
     display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-evenly",
-  },
-  sectionLanding: {
-    flex: "1 100%",
-    textAlign: "center",
+    flexDirection: "column",
+    alignItems: "center",
   },
   sectionContent: {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "1280px",
+    textAlign: "center",
+    marginBottom: "5rem",
   },
   sectionContentLeft: {
     flex: 2,
@@ -38,27 +32,22 @@ const style: any = {
 
 const IndexPage: FunctionComponent = () => (
   <LayoutGlobal>
-    <div style={style.pageRoot}>
-      <div style={style.pageContainer}>
-        <div style={style.sectionLanding}>
-          <Background>
-            <Landing />
-          </Background>
-        </div>
+    <div style={style.pageContainer}>
+      <Background>
+        <Landing />
+      </Background>
 
-        <div style={style.sectionContent}>
-          <div style={style.sectionContentLeft}>
-            <ProfessionalProjects />
-            <GithubProjects />
-          </div>
-          <div style={style.sectionContentRight}>
-            <Experience />
-            <EmbedTwitterTimeline />
-          </div>
+      <div style={style.sectionContent}>
+        <div style={style.sectionContentLeft}>
+          <ProfessionalProjects />
+          <GithubProjects />
+        </div>
+        <div style={style.sectionContentRight}>
+          <Experience />
+          <EmbedTwitterTimeline />
         </div>
       </div>
     </div>
-    <Footer />
   </LayoutGlobal>
 );
 

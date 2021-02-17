@@ -7,12 +7,7 @@ import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery
 
 const style: any = {
   experienceContainer: {
-    display: "flex",
-    alignItems: "center",
-  },
-  experienceList: {
-    paddingLeft: ".5rem",
-    paddingBottom: ".5rem",
+    textAlign: "center",
   },
   experienceHeader: Theme.h1(),
 };
@@ -49,17 +44,15 @@ const Experience: FunctionComponent = () => {
   return (
     <LayoutComponent>
       <MotionExperienceHeader>
-        <h1 style={style.experienceHeader}>Experience</h1>
+        <h1 style={style.experienceHeader}>EXPERIENCE</h1>
       </MotionExperienceHeader>
-      <div style={style.experienceContainer}>
-        <MotionExperience>
+      <MotionExperience>
+        <div style={style.experienceContainer}>
           {experiences.map((experience: string) => (
-            <div key={experience} style={style.experienceList}>
-              {experience}
-            </div>
+            <p key={experience}>{experience}</p>
           ))}
-        </MotionExperience>
-      </div>
+        </div>
+      </MotionExperience>
     </LayoutComponent>
   );
 };

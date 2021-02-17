@@ -3,6 +3,7 @@ import { LinearProgress } from "@material-ui/core";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
+import LayoutProject from "../../ui/layout/Layout.project";
 import {
   ProjectButton,
   ProjectTitle,
@@ -16,17 +17,6 @@ import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
 
 const style: any = {
-  // container: ProjectTheme.container(),
-  container: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  // buttonContainer: ProjectTheme.buttonContainer(),
-  buttonContainer: {
-    display: "flex",
-  },
-  sectionLeft: ProjectTheme.sectionLeft(),
-  sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
 };
 
@@ -91,10 +81,11 @@ const GithubProjects: FunctionComponent = () => {
     <LayoutComponent>
       <MotionProjectHeader>
         <h1 style={style.header}>
-          {loading ? "Loading Personal Projects..." : "Personal Projects"}
+          {loading ? "Loading Personal Projects..." : "GITHUB PROJECTS"}
         </h1>
       </MotionProjectHeader>
-      <div style={style.container}>
+
+      <LayoutProject>
         {loading ? (
           <LinearProgress />
         ) : (
@@ -103,36 +94,27 @@ const GithubProjects: FunctionComponent = () => {
               <ProjectButton
                 key={project.name}
                 href={project.homepage || project.html_url}
-                // style={style.buttonContainer}
               >
-                <div className={style.buttonContainer}>
-                  {/* <div style={style.sectionLeft}> */}
-                  <ProjectTitle
-                    projectName={project.name}
-                    projectHomepage={project.homepage}
-                  />
-                  <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectTitle
+                  projectName={project.name}
+                  projectHomepage={project.homepage}
+                />
+                <ProjectDescription>{project.description}</ProjectDescription>
 
-                  <GithubLanguages
-                    githubUrl={githubUrl}
-                    githubUser={githubUser}
-                    projectName={project.name}
-                  />
+                <GithubLanguages
+                  githubUrl={githubUrl}
+                  githubUser={githubUser}
+                  projectName={project.name}
+                />
 
-                  <ProjectDate>
-                    {dayjs(project.pushed_at).format("MMM-YYYY")}
-                  </ProjectDate>
-                  {/* </div> */}
-
-                  {/* <div style={style.sectionRight}> */}
-
-                  {/* </div> */}
-                </div>
+                <ProjectDate>
+                  {dayjs(project.pushed_at).format("MMM-YYYY")}
+                </ProjectDate>
               </ProjectButton>
             </MotionProject>
           ))
         )}
-      </div>
+      </LayoutProject>
     </LayoutComponent>
   );
 };

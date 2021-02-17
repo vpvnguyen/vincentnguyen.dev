@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
+import LayoutProject from "../../ui/layout/Layout.project";
 import {
   ProjectButton,
   ProjectTitle,
@@ -15,10 +16,6 @@ import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQue
 import { ProjectLanguagesProps } from "../../types/component.types/ProjectLanguagesProps";
 
 const style: any = {
-  container: ProjectTheme.container(),
-  buttonContainer: ProjectTheme.buttonContainer(),
-  sectionLeft: ProjectTheme.sectionLeft(),
-  sectionRight: ProjectTheme.sectionRight(),
   header: ProjectTheme.header(),
 };
 
@@ -80,30 +77,28 @@ const ProfessionalProjects: FunctionComponent = () => {
   return (
     <LayoutComponent>
       <MotionProProjectHeader>
-        <h1 style={style.header}>Professional Projects</h1>
+        <h1 style={style.header}>PROFESSIONAL PROJECTS</h1>
       </MotionProProjectHeader>
-      <div style={style.container}>
+
+      <LayoutProject>
         {professionalProjects &&
           professionalProjects.map((project: any) => (
             <MotionProProject key={project.name}>
               <ProjectButton key={project.name} href={project.url}>
-                <div style={style.sectionLeft}>
-                  <ProjectTitle
-                    projectName={project.name}
-                    projectHomepage={project.url}
-                  />
+                <ProjectTitle
+                  projectName={project.name}
+                  projectHomepage={project.url}
+                />
 
-                  <ProjectDescription>{project.description}</ProjectDescription>
-                  <ProjectDate>{project.date}</ProjectDate>
-                </div>
+                <ProjectDescription>{project.description}</ProjectDescription>
 
-                <div style={style.sectionRight}>
-                  <ProjectLanguages projectLanguages={project.languages} />
-                </div>
+                <ProjectLanguages projectLanguages={project.languages} />
+
+                <ProjectDate>{project.date}</ProjectDate>
               </ProjectButton>
             </MotionProProject>
           ))}
-      </div>
+      </LayoutProject>
     </LayoutComponent>
   );
 };

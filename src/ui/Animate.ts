@@ -119,8 +119,9 @@ class Animate extends Theme {
       },
     },
     whileHover: {
-      webkitBoxShadow: Theme.projectBoxShadow() /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */,
-      mozBoxShadow: Theme.projectBoxShadow() /* Firefox 3.5 - 3.6 */,
+      borderRadius: "20px",
+      WebkitBoxShadow: Theme.projectBoxShadow() /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */,
+      MozBoxShadow: Theme.projectBoxShadow() /* Firefox 3.5 - 3.6 */,
       boxShadow: Theme.projectBoxShadow() /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */,
     },
   });

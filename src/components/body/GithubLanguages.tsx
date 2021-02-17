@@ -36,19 +36,16 @@ const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
 
   return (
     <>
-      {languages ? (
-        <div>
-          {languages.map((language: any, index: number) => (
-            <ProjectLanguage
-              key={`${projectName}-${index}`}
-              languageStyle={language.style}
-              languageName={language.name}
-            />
-          ))}
-        </div>
-      ) : (
-        <CircularProgress />
-      )}
+      {languages &&
+        languages.map((language: any, index: number) => (
+          <ProjectLanguage
+            key={`${projectName}-${index}`}
+            languageStyle={language.style}
+            languageName={language.name}
+          />
+        ))}
+
+      {/* <CircularProgress /> */}
     </>
   );
 };

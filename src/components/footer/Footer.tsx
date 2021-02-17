@@ -4,7 +4,7 @@ import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
 const style: any = {
-  footerContainer: {
+  root: {
     backgroundColor: Theme.color().dark,
     color: Theme.color().accent,
     position: "absolute",
@@ -12,13 +12,15 @@ const style: any = {
     right: 0,
     bottom: 0,
     width: "100%",
-    // textAlign: "center",
   },
-  footerContent: {
+  footerContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: ".3rem",
+  },
+  footerContent: {
+    margin: ".25em",
   },
 };
 
@@ -27,9 +29,11 @@ const Footer: FunctionComponent = () => {
   const author: string = data.site.siteMetadata.author;
 
   return (
-    <footer style={style.footerContainer}>
-      <div style={style.footerContent}>
-        © {new Date().getFullYear()} {author}
+    <footer style={style.root}>
+      <div style={style.footerContainer}>
+        <div style={style.footerContent}>
+          © {new Date().getFullYear()} {author}
+        </div>
         <Social />
       </div>
     </footer>
