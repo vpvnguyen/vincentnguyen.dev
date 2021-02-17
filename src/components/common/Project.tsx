@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import { Button } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectTheme from "../../ui/ProjectTheme";
@@ -10,34 +9,19 @@ import {
 } from "../../types/component.types/ProjectProps";
 
 const style: any = {
-  buttonContainer: ProjectTheme.buttonContainer(),
-  sectionLeft: ProjectTheme.sectionLeft(),
-  sectionRight: ProjectTheme.sectionRight(),
   title: ProjectTheme.title(),
   description: ProjectTheme.description(),
   date: ProjectTheme.date(),
+  buttonLink: ProjectTheme.buttonLink(),
 };
 
 export const ProjectButton: FunctionComponent<ProjectButtonProps> = ({
   children,
   href,
 }) => (
-  <Button
-    style={style.buttonContainer}
-    href={href}
-    rel="noreferrer"
-    target="_blank"
-  >
+  <a href={href} style={style.buttonLink} rel="noreferrer" target="_blank">
     {children}
-  </Button>
-);
-
-export const ProjectButtonLeft: FunctionComponent = ({ children }: any) => (
-  <div style={style.sectionLeft}>{children}</div>
-);
-
-export const ProjectButtonRight: FunctionComponent = ({ children }: any) => (
-  <div style={style.sectionRight}>{children}</div>
+  </a>
 );
 
 export const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
@@ -45,7 +29,7 @@ export const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
   projectHomepage,
 }) => (
   <h3 style={style.title}>
-    {projectName}{" "}
+    {projectName.toUpperCase()}{" "}
     <span>
       {projectHomepage ? (
         <FontAwesomeIcon icon={faGlobe} title="Live Demo" />

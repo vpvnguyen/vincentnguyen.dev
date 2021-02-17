@@ -5,7 +5,7 @@ export interface StyleProps {
   fontFamily?: string;
   fontSize?: string;
   fontStyle?: string;
-  textDecoration?: string;
+  fontWeight?: number;
   scale?: number;
   marginLeft?: string;
   padding?: string;
@@ -16,4 +16,7 @@ export interface StyleProps {
   light?: string;
   dark?: string;
   accent?: string;
+  margin?: number;
+  textDecoration?: string;
+  letterSpacing?: string;
 }

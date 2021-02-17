@@ -7,20 +7,10 @@ class ProjectTheme extends Theme {
     flexDirection: "column",
   });
 
-  public static buttonContainer = (): StyleProps => ({
-    // display: "flex",
-    // flexDirection: "column",
-    // justifyContent: "space-between",
-    fontFamily: Theme.font().fontFamily,
-  });
-
-  public static sectionLeft = (): StyleProps => ({
-    display: "flex",
-    flexDirection: "column",
-  });
-
-  public static sectionRight = (): StyleProps => ({
-    justifyContent: "flex-end",
+  public static buttonLink = (): StyleProps => ({
+    padding: "1rem",
+    textDecoration: "none",
+    color: "#000",
   });
 
   public static header = (): StyleProps => Theme.h1();
@@ -28,12 +18,11 @@ class ProjectTheme extends Theme {
   public static title = (): StyleProps => Theme.h3();
 
   public static description = (): StyleProps => ({
-    fontSize: ".7rem",
+    fontSize: "1rem",
   });
 
   public static date = (): StyleProps => ({
-    fontSize: ".6rem",
-    paddingTop: "1rem",
+    fontSize: ".75rem",
     fontStyle: "oblique",
   });
 }

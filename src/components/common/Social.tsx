@@ -10,7 +10,7 @@ import useStaticSocialQuery from "../../utils/hooks/useStaticSocialQuery";
 
 const style: any = {
   socialLink: {
-    margin: ".5rem",
+    margin: ".25em",
     backgroundColor: "transparent",
     color: Theme.color().accent,
   },

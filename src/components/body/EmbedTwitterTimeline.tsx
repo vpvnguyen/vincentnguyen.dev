@@ -45,7 +45,7 @@ const EmbedTwitterTimeline: FunctionComponent = () => {
   return (
     <LayoutComponent>
       <MotionTwitterHeader>
-        <h1 style={style.twitterHeader}>Tweets</h1>
+        <h1 style={style.twitterHeader}>TWEETS</h1>
       </MotionTwitterHeader>
       <MotionTwitterTimeline>
         <a

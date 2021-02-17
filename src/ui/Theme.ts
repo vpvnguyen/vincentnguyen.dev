@@ -3,10 +3,10 @@ import { LanguageThemeProps } from "../types/ui.types/LanguageThemeProps";
 
 class Theme {
   public static fontUrl = (): string =>
-    "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap";
+    "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
 
   public static font = (): StyleProps => ({
-    fontFamily: "Source Code Pro, monospace",
+    fontFamily: "'Roboto', sans-serif",
     fontSize: "16px",
   });
 
@@ -17,12 +17,15 @@ class Theme {
   });
 
   public static h1 = (): StyleProps => ({
-    fontSize: "2rem",
+    fontSize: "2.5rem",
+    fontWeight: 700,
     textDecoration: `underline ${Theme.color().accent}`,
   });
 
   public static h3 = (): StyleProps => ({
-    fontSize: "1.3em",
+    fontSize: "1.25rem",
+    fontWeight: 700,
+    margin: 0,
   });
 
   public static projectBoxShadow = (): string => `0px 1px 10px #CCC`;
