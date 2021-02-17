@@ -46,7 +46,7 @@ const Welcome: FunctionComponent = () => {
   return (
     <div style={style.welcomeHeaderContainer}>
       <MotionWelcomeHeader>
-        <h1 style={style.welcomeHeader}>{author}</h1>
+        <h1 style={style.welcomeHeader}>{author.toUpperCase()}</h1>
       </MotionWelcomeHeader>
       <MotionWelcomeText>
         I enjoy breaking and building things
