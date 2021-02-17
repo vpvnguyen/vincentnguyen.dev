@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
+import Footer from "../../components/footer/Footer";
 import Theme from "../Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
 
@@ -26,7 +27,8 @@ const LayoutGlobal: FunctionComponent = ({ children }: any) => {
     <div style={style.root}>
       <Header />
       <Navbar author={author} />
-      <div>{children}</div>
+      {children}
+      <Footer />
     </div>
   );
 };
