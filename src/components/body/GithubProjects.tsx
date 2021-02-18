@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
-import { LinearProgress } from "@material-ui/core";
+import { LoaderThreeDots } from "../common/Loader";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import LayoutComponent from "../../ui/layout/Layout.component";
@@ -68,10 +68,10 @@ const GithubProjects: FunctionComponent = () => {
           pageAmount
         );
         await setGithubProjects(githubProjects);
-        setLoading(false);
       } catch (error) {
         await setGithubProjects(null);
       }
+      setLoading(false);
     };
 
     getGithubProjects(githubUrl, githubUser, pageAmount);
@@ -87,7 +87,7 @@ const GithubProjects: FunctionComponent = () => {
 
       <LayoutProject>
         {loading ? (
-          <LinearProgress />
+          <LoaderThreeDots />
         ) : (
           githubProjects.map((project: any) => (
             <MotionProject key={project.name}>
