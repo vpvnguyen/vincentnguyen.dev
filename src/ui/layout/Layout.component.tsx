@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 
 const style: any = {
   layoutComponentContainer: {
-    margin: "1em",
+    margin: "3rem",
   },
 };
 

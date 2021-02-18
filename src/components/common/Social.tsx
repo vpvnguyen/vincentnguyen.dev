@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from "react";
-import {
-  GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
-} from "@material-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
@@ -11,6 +9,7 @@ import useStaticSocialQuery from "../../utils/hooks/useStaticSocialQuery";
 const style: any = {
   socialLink: {
     margin: ".25em",
+    fontSize: "1.5em",
     backgroundColor: "transparent",
     color: Theme.color().accent,
   },
@@ -47,7 +46,7 @@ const Social: FunctionComponent = () => {
           rel="noreferrer"
           target="_blank"
         >
-          <GitHubIcon />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
       </MotionIcon>
 
@@ -58,7 +57,7 @@ const Social: FunctionComponent = () => {
           rel="noreferrer"
           target="_blank"
         >
-          <LinkedInIcon />
+          <FontAwesomeIcon icon={faLinkedin} />
         </a>
       </MotionIcon>
     </>

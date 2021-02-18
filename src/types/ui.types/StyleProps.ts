@@ -16,7 +16,7 @@ export interface StyleProps {
   light?: string;
   dark?: string;
   accent?: string;
-  margin?: number;
+  margin?: number | string;
   textDecoration?: string;
   letterSpacing?: string;
 }

@@ -19,13 +19,14 @@ class Theme {
   public static h1 = (): StyleProps => ({
     fontSize: "2.5rem",
     fontWeight: 700,
+    margin: "1rem",
     textDecoration: `underline ${Theme.color().accent}`,
   });
 
   public static h3 = (): StyleProps => ({
     fontSize: "1.25rem",
+    margin: ".5rem",
     fontWeight: 700,
-    margin: 0,
   });
 
   public static projectBoxShadow = (): string => `0px 1px 10px #CCC`;
@@ -35,8 +36,8 @@ class Theme {
     marginLeft: "3px",
     padding: "5px",
     borderRadius: "20px",
-    background: "white",
-    color: "black",
+    background: "#FFFFFF",
+    color: "#000000",
   });
 
   public static languages = (): LanguageThemeProps => ({

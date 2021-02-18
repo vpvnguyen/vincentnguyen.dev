@@ -10,6 +10,9 @@ const style: any = {
     textAlign: "center",
   },
   experienceHeader: Theme.h1(),
+  experience: {
+    padding: ".5rem",
+  },
 };
 
 const motionVariants: any = {
@@ -49,7 +52,9 @@ const Experience: FunctionComponent = () => {
       <MotionExperience>
         <div style={style.experienceContainer}>
           {experiences.map((experience: string) => (
-            <p key={experience}>{experience}</p>
+            <p key={experience} style={style.experience}>
+              {experience}
+            </p>
           ))}
         </div>
       </MotionExperience>

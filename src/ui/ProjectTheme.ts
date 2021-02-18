@@ -19,11 +19,17 @@ class ProjectTheme extends Theme {
 
   public static description = (): StyleProps => ({
     fontSize: "1rem",
+    padding: ".5rem",
+  });
+
+  public static languageContainer = (): StyleProps => ({
+    padding: ".5rem",
   });
 
   public static date = (): StyleProps => ({
     fontSize: ".75rem",
     fontStyle: "oblique",
+    padding: ".5rem",
   });
 }
 
