@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import ElevationScroll from "./ElevationScroll";
@@ -7,50 +7,51 @@ import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticResumeQuery from "../../utils/hooks/useStaticResumeQuery";
 import { StaticQueryProps } from "../../types/staticQuery.types/StaticQueryProps";
+import { MotionComponentProps } from "../../types/component.types/MotionProps";
 
 const style: any = {
   navRoot: {
     backgroundColor: Theme.color().dark,
-    height: "70px",
+    height: "70px"
   },
   navContainer: {
     alignItems: "center",
     backgroundColor: Theme.color().dark,
-    color: Theme.color().accent,
+    color: Theme.color().accent
   },
   author: {
     fontFamily: Theme.font().fontFamily,
     flexGrow: 1,
     color: Theme.color().accent,
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: "transparent"
     },
-    textDecoration: "none",
+    textDecoration: "none"
   },
   resume: {
     fontFamily: Theme.font().fontFamily,
     color: Theme.color().accent,
-    textDecoration: "none",
-  },
+    textDecoration: "none"
+  }
 };
 
 const motionVariants: any = {
   motionButtonText: Animate.scaleUpMenuItem(),
   motionToolbar: Animate.springDownToolBar(),
-  motionAuthor: () => Animate.scrollToTop(),
+  motionAuthor: () => Animate.scrollToTop()
 };
 
-const Author: FunctionComponent<StaticQueryProps> = ({ author }) => (
+const Author = ({ author }: StaticQueryProps) => (
   <Button
     style={style.author}
     onClick={motionVariants.motionAuthor}
-    title="Take me to the top!"
+    title='Take me to the top!'
   >
     {author}
   </Button>
 );
 
-const Resume: FunctionComponent = () => {
+const Resume = () => {
   const data: any = useStaticResumeQuery();
   const resume: string = data.site.siteMetadata.resume;
 
@@ -59,10 +60,10 @@ const Resume: FunctionComponent = () => {
       <a
         style={style.resume}
         href={resume}
-        target="_blank"
-        rel="noreferrer"
+        target='_blank'
+        rel='noreferrer'
         download
-        title="Go to resume"
+        title='Go to resume'
       >
         Resume
       </a>
@@ -70,7 +71,7 @@ const Resume: FunctionComponent = () => {
   );
 };
 
-const MotionToolbar: FunctionComponent = ({ children }: any) => (
+const MotionToolbar = ({ children }: MotionComponentProps) => (
   <motion.nav
     variants={motionVariants.motionToolbar}
     initial={"initial"}
@@ -80,7 +81,7 @@ const MotionToolbar: FunctionComponent = ({ children }: any) => (
   </motion.nav>
 );
 
-const MotionButtonText: FunctionComponent = ({ children }: any) => (
+const MotionButtonText = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionButtonText}
     initial={"initial"}
@@ -91,10 +92,10 @@ const MotionButtonText: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const Navbar: FunctionComponent<StaticQueryProps> = ({ author }) => (
+const Navbar = ({ author }: StaticQueryProps) => (
   <div style={style.navRoot}>
     <ElevationScroll>
-      <AppBar position="fixed" style={style.navContainer}>
+      <AppBar position='fixed' style={style.navContainer}>
         <MotionToolbar>
           <Toolbar>
             <MotionButtonText>

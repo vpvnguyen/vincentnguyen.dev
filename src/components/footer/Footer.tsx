@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import Social from "../common/Social";
 import Theme from "../../ui/Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
@@ -11,20 +11,20 @@ const style: any = {
     left: 0,
     right: 0,
     bottom: 0,
-    width: "100%",
+    width: "100%"
   },
   footerContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: ".3rem",
+    padding: ".3rem"
   },
   footerContent: {
-    margin: ".25em",
-  },
+    margin: ".25em"
+  }
 };
 
-const Footer: FunctionComponent = () => {
+const Footer = () => {
   const data: any = useStaticAuthorQuery();
   const author: string = data.site.siteMetadata.author;
 

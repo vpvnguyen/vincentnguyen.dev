@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import LayoutGlobal from "../ui/layout/Layout.global";
 import Landing from "../components/landing/Landing";
 import ProfessionalProjects from "../components/body/ProfessionalProjects";
@@ -11,26 +11,26 @@ const style: any = {
   pageContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   sectionContent: {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "1280px",
     textAlign: "center",
-    marginBottom: "5rem",
+    marginBottom: "5rem"
   },
   sectionContentLeft: {
     flex: 2,
-    padding: "1rem 2rem 1rem 2rem",
+    padding: "1rem 2rem 1rem 2rem"
   },
   sectionContentRight: {
     flex: 1,
-    padding: "1rem 2rem 1rem 2rem",
-  },
+    padding: "1rem 2rem 1rem 2rem"
+  }
 };
 
-const IndexPage: FunctionComponent = () => (
+const IndexPage = () => (
   <LayoutGlobal>
     <div style={style.pageContainer}>
       <Background>
