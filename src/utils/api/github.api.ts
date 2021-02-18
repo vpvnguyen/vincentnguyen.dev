@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import {
   GithubProjectResponse,
   ProjectLanguagesResponse,
-  ProjectStructure,
+  ProjectStructure
 } from "../../types/api.types/GithubApiProps";
 
 const getGithubProjects = async (
@@ -27,8 +27,8 @@ const getProjectLanguages = async (
   return projectLanguagesResponse.data;
 };
 
-const filterByStarredProjects = (projects: any): Array<any> =>
-  projects.reduce((starredProjects: Array<any>, project: any) => {
+const filterByStarredProjects = (projects: any[]) =>
+  projects.reduce((starredProjects: any[], project: any) => {
     if (project.stargazers_count > 0) starredProjects.push(project);
     return starredProjects;
   }, []);
@@ -43,13 +43,13 @@ const createProjectStructure = (projects: any): ProjectStructure =>
     language: project.language,
     created_at: project.created_at,
     updated_at: project.updated_at,
-    pushed_at: new Date(project.pushed_at),
+    pushed_at: new Date(project.pushed_at)
   }));
 
-const sortProjectsByDateDesc = (projects: any): Array<any> =>
+const sortProjectsByDateDesc = (projects: any): any[] =>
   projects.sort((a: any, b: any) => b.pushed_at - a.pushed_at);
 
-const setLangaugeNamesToLowerCase = (languages: any): Array<string> =>
+const setLangaugeNamesToLowerCase = (languages: any): string[] =>
   Object.keys(languages).map((languageName: string) =>
     languageName.toLowerCase()
   );
@@ -61,18 +61,14 @@ class GithubApi {
     pageAmount: string
   ): Promise<any> => {
     try {
-      const githubProjects: GithubProjectResponse = await getGithubProjects(
+      const githubProjects: any = await getGithubProjects(
         url,
         user,
         pageAmount
       );
-      const starredProjects: Array<any> = filterByStarredProjects(
-        githubProjects
-      );
+      const starredProjects: any[] = filterByStarredProjects(githubProjects);
       const structuredProjects: any = createProjectStructure(starredProjects);
-      const sortedProjects: Array<any> = sortProjectsByDateDesc(
-        structuredProjects
-      );
+      const sortedProjects: any[] = sortProjectsByDateDesc(structuredProjects);
       return sortedProjects;
     } catch (error) {
       return null;
@@ -90,9 +86,7 @@ class GithubApi {
         user,
         projectName
       );
-      const languages: Array<string> = setLangaugeNamesToLowerCase(
-        projectLanguages
-      );
+      const languages: string[] = setLangaugeNamesToLowerCase(projectLanguages);
       return languages;
     } catch (error) {
       return null;
