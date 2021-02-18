@@ -4,7 +4,7 @@ import Theme from "../../ui/Theme";
 
 export const LoaderThreeDots = () => (
   <Loader
-    type="ThreeDots"
+    type='ThreeDots'
     color={Theme.color().accent}
     height={80}
     width={80}

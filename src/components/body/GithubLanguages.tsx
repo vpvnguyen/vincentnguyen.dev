@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { LoaderThreeDots } from "../common/Loader";
 import { ProjectLanguage } from "../common/Project";
 import LanguageTheme from "../../ui/LanguageTheme";
@@ -7,18 +7,18 @@ import { GithubLanguagesProps } from "../../types/component.types/GithubLanguage
 import ProjectTheme from "../../ui/ProjectTheme";
 
 const style: any = {
-  languageContainer: ProjectTheme.languageContainer(),
+  languageContainer: ProjectTheme.languageContainer()
 };
 
-const GithubLanguages: FunctionComponent<GithubLanguagesProps> = ({
+const GithubLanguages = ({
   githubUrl,
   githubUser,
-  projectName,
-}) => {
-  const [languages, setLanguages] = useState<Array<any>>(null);
+  projectName
+}: GithubLanguagesProps) => {
+  const [languages, setLanguages] = useState<any[]>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect((): void => {
+  useEffect(() => {
     const getGithubProjectLanguages = async (
       githubUrl,
       githubUser,

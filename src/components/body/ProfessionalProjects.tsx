@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import LayoutProject from "../../ui/layout/Layout.project";
@@ -7,25 +7,26 @@ import {
   ProjectTitle,
   ProjectDescription,
   ProjectDate,
-  ProjectLanguage,
+  ProjectLanguage
 } from "../common/Project";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import LanguageTheme from "../../ui/LanguageTheme";
 import useStaticProProjectsQuery from "../../utils/hooks/useStaticProProjectsQuery";
 import { ProjectLanguagesProps } from "../../types/component.types/ProjectLanguagesProps";
+import { MotionComponentProps } from "../../types/component.types/MotionProps";
 
 const style: any = {
   header: ProjectTheme.header(),
-  languageContainer: ProjectTheme.languageContainer(),
+  languageContainer: ProjectTheme.languageContainer()
 };
 
 const motionVariants: any = {
   motionProProjectHeader: Animate.fadeInHeadersLeft(),
-  motionProProject: Animate.animateProject(),
+  motionProProject: Animate.animateProject()
 };
 
-const MotionProProjectHeader: FunctionComponent = ({ children }: any) => (
+const MotionProProjectHeader = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionProProjectHeader}
     initial={"initial"}
@@ -35,7 +36,7 @@ const MotionProProjectHeader: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionProProject: FunctionComponent = ({ children }: any) => (
+const MotionProProject = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionProProject}
     initial={"initial"}
@@ -46,12 +47,10 @@ const MotionProProject: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
-  projectLanguages,
-}) => {
-  const [languages, setLanguages] = useState<Array<any>>(null);
+const ProjectLanguages = ({ projectLanguages }: ProjectLanguagesProps) => {
+  const [languages, setLanguages] = useState<any[]>(null);
 
-  useEffect((): void => {
+  useEffect(() => {
     const languages = LanguageTheme.getLanguageStyle(projectLanguages);
     setLanguages(languages);
   }, [projectLanguages]);
@@ -72,9 +71,9 @@ const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
   );
 };
 
-const ProfessionalProjects: FunctionComponent = () => {
+const ProfessionalProjects = () => {
   const data: any = useStaticProProjectsQuery();
-  const professionalProjects: Array<string> =
+  const professionalProjects: string[] =
     data.site.siteMetadata.professionalProjects;
 
   return (
