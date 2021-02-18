@@ -10,6 +10,14 @@ module.exports = {
     ],
     professionalProjects: [
       {
+        name: "Payment Rise",
+        url: "https://demo.paymentrise.com/",
+        description:
+          "SaaS awards and incentive platform for prepaid credit services.",
+        date: "In Development",
+        languages: ["typescript", "aws"],
+      },
+      {
         name: "Mazda Reimbursement",
         url: "https://mazdareimbursement.com/",
         description:
