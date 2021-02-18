@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import "reset-css";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
 import Footer from "../../components/footer/Footer";

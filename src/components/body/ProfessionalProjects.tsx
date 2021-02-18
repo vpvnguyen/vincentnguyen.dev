@@ -17,6 +17,7 @@ import { ProjectLanguagesProps } from "../../types/component.types/ProjectLangua
 
 const style: any = {
   header: ProjectTheme.header(),
+  languageContainer: ProjectTheme.languageContainer(),
 };
 
 const motionVariants: any = {
@@ -55,8 +56,10 @@ const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
     setLanguages(languages);
   }, [projectLanguages]);
 
+  if (!languages || languages.length === 0) return null;
+
   return (
-    <>
+    <div style={style.languageContainer}>
       {languages &&
         languages.map((language: any, index: number) => (
           <ProjectLanguage
@@ -65,7 +68,7 @@ const ProjectLanguages: FunctionComponent<ProjectLanguagesProps> = ({
             languageName={language.name}
           />
         ))}
-    </>
+    </div>
   );
 };
 
