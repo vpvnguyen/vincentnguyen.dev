@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import Welcome from "./Welcome";
 
-const Landing: FunctionComponent = () => <Welcome />;
+const Landing = () => <Welcome />;
 
 export default Landing;

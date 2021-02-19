@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 export interface ProjectButtonProps {
-  children: any;
+  children: ReactNode;
   href: string;
 }
 
@@ -11,4 +13,12 @@ export interface ProjectTitleProps {
 export interface ProjectLanguageProps {
   languageStyle: any;
   languageName: string;
+}
+
+export interface ProjectDescriptionProps {
+  children: ReactNode;
+}
+
+export interface ProjectDateProps {
+  children: ReactNode;
 }

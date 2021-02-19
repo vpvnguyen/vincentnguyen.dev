@@ -1,25 +1,26 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
+import { MotionComponentProps } from "../../types/component.types/MotionProps";
 
 const style: any = {
   welcomeHeaderContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "1rem",
+    padding: "1rem"
   },
-  welcomeHeader: Theme.h1(),
+  welcomeHeader: Theme.h1()
 };
 
 const motionVariants: any = {
   motionWelcomeHeader: Animate.springUpWelcomeHeader(),
-  motionWelcomeText: Animate.springUpWelcomeText(),
+  motionWelcomeText: Animate.springUpWelcomeText()
 };
 
-const MotionWelcomeHeader: FunctionComponent = ({ children }: any) => (
+const MotionWelcomeHeader = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionWelcomeHeader}
     initial={"initial"}
@@ -29,7 +30,7 @@ const MotionWelcomeHeader: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionWelcomeText: FunctionComponent = ({ children }: any) => (
+const MotionWelcomeText = ({ children }: MotionComponentProps) => (
   <motion.h2
     variants={motionVariants.motionWelcomeText}
     initial={"initial"}
@@ -39,7 +40,7 @@ const MotionWelcomeText: FunctionComponent = ({ children }: any) => (
   </motion.h2>
 );
 
-const Welcome: FunctionComponent = () => {
+const Welcome = () => {
   const data: any = useStaticAuthorQuery();
   const author: string = data.site.siteMetadata.author;
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { LoaderThreeDots } from "../common/Loader";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
@@ -8,24 +8,25 @@ import {
   ProjectButton,
   ProjectTitle,
   ProjectDescription,
-  ProjectDate,
+  ProjectDate
 } from "../common/Project";
 import GithubLanguages from "./GithubLanguages";
 import ProjectTheme from "../../ui/ProjectTheme";
 import Animate from "../../ui/Animate";
 import GithubAPI from "../../utils/api/github.api";
 import useStaticGithubApiQuery from "../../utils/hooks/useStaticGithubApiQuery";
+import { MotionComponentProps } from "../../types/component.types/MotionProps";
 
 const style: any = {
-  header: ProjectTheme.header(),
+  header: ProjectTheme.header()
 };
 
 const motionVariants: any = {
   motionProjectHeader: Animate.fadeInHeadersLeft(),
-  motionProject: Animate.animateProject(),
+  motionProject: Animate.animateProject()
 };
 
-const MotionProjectHeader: FunctionComponent = ({ children }: any) => (
+const MotionProjectHeader = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionProjectHeader}
     initial={"initial"}
@@ -35,7 +36,7 @@ const MotionProjectHeader: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionProject: FunctionComponent = ({ children }: any) => (
+const MotionProject = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionProject}
     initial={"initial"}
@@ -46,8 +47,8 @@ const MotionProject: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const GithubProjects: FunctionComponent = () => {
-  const [githubProjects, setGithubProjects] = useState<Array<any>>(null);
+const GithubProjects = () => {
+  const [githubProjects, setGithubProjects] = useState<any[]>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   const data: any = useStaticGithubApiQuery();
@@ -55,7 +56,7 @@ const GithubProjects: FunctionComponent = () => {
   const githubUser: string = data.site.siteMetadata.api.github.user;
   const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
 
-  useEffect((): void => {
+  useEffect(() => {
     const getGithubProjects = async (
       githubUrl: string,
       githubUser: string,

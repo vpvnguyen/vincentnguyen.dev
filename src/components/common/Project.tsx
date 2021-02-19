@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 import ProjectTheme from "../../ui/ProjectTheme";
@@ -6,49 +6,48 @@ import {
   ProjectButtonProps,
   ProjectTitleProps,
   ProjectLanguageProps,
+  ProjectDescriptionProps,
+  ProjectDateProps
 } from "../../types/component.types/ProjectProps";
 
 const style: any = {
   title: ProjectTheme.title(),
   description: ProjectTheme.description(),
   date: ProjectTheme.date(),
-  buttonLink: ProjectTheme.buttonLink(),
+  buttonLink: ProjectTheme.buttonLink()
 };
 
-export const ProjectButton: FunctionComponent<ProjectButtonProps> = ({
-  children,
-  href,
-}) => (
-  <a href={href} style={style.buttonLink} rel="noreferrer" target="_blank">
+export const ProjectButton = ({ children, href }: ProjectButtonProps) => (
+  <a href={href} style={style.buttonLink} rel='noreferrer' target='_blank'>
     {children}
   </a>
 );
 
-export const ProjectTitle: FunctionComponent<ProjectTitleProps> = ({
+export const ProjectTitle = ({
   projectName,
-  projectHomepage,
-}) => (
+  projectHomepage
+}: ProjectTitleProps) => (
   <h3 style={style.title}>
     {projectName.toUpperCase()}{" "}
     <span>
       {projectHomepage ? (
-        <FontAwesomeIcon icon={faGlobe} title="Live Demo" />
+        <FontAwesomeIcon icon={faGlobe} title='Live Demo' />
       ) : (
-        <FontAwesomeIcon icon={faCode} title="Repository" />
+        <FontAwesomeIcon icon={faCode} title='Repository' />
       )}
     </span>
   </h3>
 );
 
-export const ProjectDescription: FunctionComponent = ({ children }: any) => (
+export const ProjectDescription = ({ children }: ProjectDescriptionProps) => (
   <p style={style.description}>{children}</p>
 );
 
-export const ProjectDate: FunctionComponent = ({ children }: any) => (
+export const ProjectDate = ({ children }: ProjectDateProps) => (
   <p style={style.date}>{children}</p>
 );
 
-export const ProjectLanguage: FunctionComponent<ProjectLanguageProps> = ({
+export const ProjectLanguage = ({
   languageStyle,
-  languageName,
-}) => <span style={languageStyle}>{languageName}</span>;
+  languageName
+}: ProjectLanguageProps) => <span style={languageStyle}>{languageName}</span>;

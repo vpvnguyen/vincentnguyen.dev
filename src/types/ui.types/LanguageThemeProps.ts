@@ -77,4 +77,8 @@ export interface LanguageThemeProps {
     border: string;
     background: string;
   };
+  aws?: {
+    border: string;
+    background: string;
+  };
 }

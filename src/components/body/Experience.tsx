@@ -1,26 +1,27 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import LayoutComponent from "../../ui/layout/Layout.component";
 import Theme from "../../ui/Theme";
 import Animate from "../../ui/Animate";
 import useStaticExperienceQuery from "../../utils/hooks/useStaticExperienceQuery";
+import { MotionComponentProps } from "../../types/component.types/MotionProps";
 
 const style: any = {
   experienceContainer: {
-    textAlign: "center",
+    textAlign: "center"
   },
   experienceHeader: Theme.h1(),
   experience: {
-    padding: ".5rem",
-  },
+    padding: ".5rem"
+  }
 };
 
 const motionVariants: any = {
   motionExperienceHeader: Animate.fadeInHeadersLeft(),
-  motionExperience: Animate.fadeInExperienceRight(),
+  motionExperience: Animate.fadeInExperienceRight()
 };
 
-const MotionExperienceHeader: FunctionComponent = ({ children }: any) => (
+const MotionExperienceHeader = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionExperienceHeader}
     initial={"initial"}
@@ -30,7 +31,7 @@ const MotionExperienceHeader: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const MotionExperience: FunctionComponent = ({ children }: any) => (
+const MotionExperience = ({ children }: MotionComponentProps) => (
   <motion.div
     variants={motionVariants.motionExperience}
     initial={"initial"}
@@ -40,9 +41,9 @@ const MotionExperience: FunctionComponent = ({ children }: any) => (
   </motion.div>
 );
 
-const Experience: FunctionComponent = () => {
+const Experience = () => {
   const data: any = useStaticExperienceQuery();
-  const experiences: Array<string> = data.site.siteMetadata.experience;
+  const experiences: string[] = data.site.siteMetadata.experience;
 
   return (
     <LayoutComponent>

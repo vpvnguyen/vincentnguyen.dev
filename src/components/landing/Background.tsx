@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import Theme from "../../ui/Theme";
 import Images from "../../ui/Images";
+import { BackgroundProps } from "../../types/component.types/BackgroundProps";
 
 const style: any = {
   background: {
@@ -18,11 +19,11 @@ const style: any = {
     color: Theme.color().light,
     width: "100%",
     padding: "10rem 0rem 15rem 0rem",
-    textAlign: "center",
-  },
+    textAlign: "center"
+  }
 };
 
-const Background: FunctionComponent = ({ children }: any) => (
+const Background = ({ children }: BackgroundProps) => (
   <div style={style.background}>{children}</div>
 );
 
