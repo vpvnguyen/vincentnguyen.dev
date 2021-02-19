@@ -17,16 +17,13 @@ const style: any = {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "1280px",
-    textAlign: "center",
-    marginBottom: "5rem"
+    textAlign: "center"
   },
   sectionContentLeft: {
-    flex: 2,
-    padding: "1rem 2rem 1rem 2rem"
+    flex: 2
   },
   sectionContentRight: {
-    flex: 1,
-    padding: "1rem 2rem 1rem 2rem"
+    flex: 1
   }
 };
 
@@ -42,6 +39,7 @@ const IndexPage = () => (
           <ProfessionalProjects />
           <GithubProjects />
         </div>
+
         <div style={style.sectionContentRight}>
           <Experience />
           <EmbedTwitterTimeline />

@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 
 const style: any = {
   layoutComponentContainer: {
-    margin: "3rem",
-  },
+    margin: "3rem"
+  }
 };
 
-const LayoutComponent: FunctionComponent = ({ children }: any) => (
+const LayoutComponent = ({ children }: any) => (
   <div style={style.layoutComponentContainer}>{children}</div>
 );
 
