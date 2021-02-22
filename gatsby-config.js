@@ -6,7 +6,7 @@ module.exports = {
       "Software Engineer",
       "Quality Assurance",
       "Pipeline Management",
-      "PCI Security Standard",
+      "PCI Security Standard"
     ],
     professionalProjects: [
       {
@@ -15,7 +15,7 @@ module.exports = {
         description:
           "SaaS awards and incentive platform for prepaid credit services.",
         date: "In Development",
-        languages: ["typescript", "aws"],
+        languages: ["typescript", "aws"]
       },
       {
         name: "Mazda Reimbursement",
@@ -23,7 +23,7 @@ module.exports = {
         description:
           "Mazda reimbursement program for recalls and special services for selected vehicles.",
         date: "Mar-2020",
-        languages: ["typescript", "mysql"],
+        languages: ["typescript", "mysql"]
       },
       {
         name: "Hyundai Motors America Engine Settlement",
@@ -31,32 +31,32 @@ module.exports = {
         description:
           "Hyundai theta engine class action settlement claim program.",
         date: "Jul-2020",
-        languages: ["laravel", "php", "drupal", "mysql"],
-      },
+        languages: ["laravel", "php", "drupal", "mysql"]
+      }
     ],
     social: {
       twitter: {
         url: `https://twitter.com/Vincent33567189?ref_src=twsrc%5Etfw`,
         user: `Vincent33567189`,
-        embedWidget: `https://platform.twitter.com/widgets.js`,
+        embedWidget: `https://platform.twitter.com/widgets.js`
       },
       github: {
         url: `https://www.github.com/`,
-        user: `vpvnguyen`,
+        user: `vpvnguyen`
       },
       linkedin: {
         url: `https://www.linkedin.com/in/`,
-        user: `vpvnguyen`,
-      },
+        user: `vpvnguyen`
+      }
     },
     resume: `https://docs.google.com/document/d/1PTogfVNXdTCEIQor0yN4gXIcFEKxHRFzGIlRl4287xM/edit?usp=sharing`,
     api: {
       github: {
         url: `https://api.github.com`,
         user: `vpvnguyen`,
-        pageAmount: `100`,
-      },
-    },
+        pageAmount: `100`
+      }
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -70,8 +70,14 @@ module.exports = {
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#03DAC5`,
-        display: `minimal-ui`,
-      },
+        display: `minimal-ui`
+      }
     },
-  ],
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "vincentnguyen.dev"
+      }
+    }
+  ]
 };
