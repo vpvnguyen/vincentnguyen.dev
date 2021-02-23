@@ -78,7 +78,7 @@ module.exports = {
       options: {
         bucketName: "vincentnguyen.dev",
         protocol: "https",
-        hostname: "www.vincentnguyen.dev"
+        hostname: "vincentnguyen.dev"
       }
     }
   ]
