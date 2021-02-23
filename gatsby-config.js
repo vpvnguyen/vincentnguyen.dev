@@ -76,7 +76,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "vincentnguyen.dev"
+        bucketName: "vincentnguyen.dev",
+        protocol: "https",
+        hostname: "www.vincentnguyen.dev"
       }
     }
   ]
