@@ -73,6 +73,5 @@ module.exports = {
         display: `minimal-ui`
       }
     }
-  ],
-  pathPrefix: "/vincentnguyen.dev"
+  ]
 };
