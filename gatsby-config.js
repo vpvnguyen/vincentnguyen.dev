@@ -72,14 +72,7 @@ module.exports = {
         theme_color: `#03DAC5`,
         display: `minimal-ui`
       }
-    },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: "vincentnguyen.dev"
-        // protocol: "https",
-        // hostname: "vincentnguyen.dev"
-      }
     }
-  ]
+  ],
+  pathPrefix: "/vincentnguyen.dev"
 };
