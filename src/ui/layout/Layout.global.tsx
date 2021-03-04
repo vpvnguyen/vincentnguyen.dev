@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import "reset-css";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/header/Navbar";
 import Footer from "../../components/footer/Footer";
 import Theme from "../Theme";
 import useStaticAuthorQuery from "../../utils/hooks/useStaticAuthorQuery";
+import { LayoutProps } from "../../types/ui.types/LayoutProps";
 
 const style: any = {
   root: {
@@ -16,11 +17,11 @@ const style: any = {
     position: "relative",
     margin: 0,
     padding: 0,
-    backgroundColor: "#FFFFFF",
-  },
+    backgroundColor: "#FFFFFF"
+  }
 };
 
-const LayoutGlobal: FunctionComponent = ({ children }: any) => {
+const LayoutGlobal = ({ children }: LayoutProps) => {
   const data: any = useStaticAuthorQuery();
   const author: string = data.site.siteMetadata.author;
 

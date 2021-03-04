@@ -1,4 +1,5 @@
 import React from "react";
+import { LayoutProps } from "../../types/ui.types/LayoutProps";
 
 const style: any = {
   layoutComponentContainer: {
@@ -6,7 +7,7 @@ const style: any = {
   }
 };
 
-const LayoutComponent = ({ children }: any) => (
+const LayoutComponent = ({ children }: LayoutProps) => (
   <div style={style.layoutComponentContainer}>{children}</div>
 );
 
