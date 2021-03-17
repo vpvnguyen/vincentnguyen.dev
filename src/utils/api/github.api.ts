@@ -5,6 +5,8 @@ import {
   ProjectStructure
 } from "../../types/api.types/GithubApiProps";
 
+// create logic to paginate to all github pages
+// batch and return all projects; just not the first 100 pages
 const getGithubProjects = async (
   url: string,
   user: string,
