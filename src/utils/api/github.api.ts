@@ -5,15 +5,51 @@ import {
   ProjectStructure
 } from "../../types/api.types/GithubApiProps";
 
-const getGithubProjects = async (
+const fetchGithubProjects = async (
   url: string,
   user: string,
+  pageNumber: number,
   pageAmount: string
 ): Promise<GithubProjectResponse> => {
   const githubProjectsResponse: AxiosResponse<any> = await axios.get(
-    `${url}/users/${user}/repos?per_page=${pageAmount}`
+    `${url}/users/${user}/repos?page=${pageNumber}&per_page=${pageAmount}`
   );
   return githubProjectsResponse.data;
+};
+
+const fetchAndPaginateAllGithubProjects = async (
+  url: string,
+  user: string,
+  pageAmount: string
+) => {
+  let pageNumber = 1;
+  let retrievedProjects = [];
+
+  const githubProjects: any = await fetchGithubProjects(
+    url,
+    user,
+    pageNumber,
+    pageAmount
+  );
+
+  if (githubProjects !== null || githubProjects.length !== 0) {
+    pageNumber++;
+    const moreGithubProjects: any = await fetchGithubProjects(
+      url,
+      user,
+      pageNumber,
+      pageAmount
+    );
+    retrievedProjects = [
+      ...retrievedProjects,
+      ...githubProjects,
+      ...moreGithubProjects
+    ];
+    console.log(retrievedProjects);
+    return retrievedProjects;
+  } else {
+    return githubProjects;
+  }
 };
 
 const getProjectLanguages = async (
@@ -55,18 +91,18 @@ const setLangaugeNamesToLowerCase = (languages: any): string[] =>
   );
 
 class GithubApi {
-  static fetchGithubProjects = async (
+  static getGithubProjects = async (
     url: string,
     user: string,
     pageAmount: string
-  ): Promise<any> => {
+  ) => {
     try {
-      const githubProjects: any = await getGithubProjects(
+      const allGithubProjects = await fetchAndPaginateAllGithubProjects(
         url,
         user,
         pageAmount
       );
-      const starredProjects: any[] = filterByStarredProjects(githubProjects);
+      const starredProjects = filterByStarredProjects(allGithubProjects);
       const structuredProjects: any = createProjectStructure(starredProjects);
       const sortedProjects: any[] = sortProjectsByDateDesc(structuredProjects);
       return sortedProjects;
