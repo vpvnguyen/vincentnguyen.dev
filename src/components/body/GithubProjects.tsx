@@ -57,13 +57,13 @@ const GithubProjects = () => {
   const pageAmount: string = data.site.siteMetadata.api.github.pageAmount;
 
   useEffect(() => {
-    const getGithubProjects = async (
+    const getStarredGithubProjects = async (
       githubUrl: string,
       githubUser: string,
       pageAmount: string
     ) => {
       try {
-        const githubProjects = await GithubAPI.fetchGithubProjects(
+        const githubProjects = await GithubAPI.getGithubProjects(
           githubUrl,
           githubUser,
           pageAmount
@@ -75,7 +75,7 @@ const GithubProjects = () => {
       setLoading(false);
     };
 
-    getGithubProjects(githubUrl, githubUser, pageAmount);
+    getStarredGithubProjects(githubUrl, githubUser, pageAmount);
   }, [githubUrl, githubUser, pageAmount]);
 
   return (
