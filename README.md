@@ -2,6 +2,24 @@
 
 My portfolio built on Gatsby.js + Typescript. This application is intended for my personal site and experimental sandbox.
 
+## Setup
+
+### Requirements
+- Node 18+ (corepack)
+
+### Init Yarn
+Set `yarn` version using `corepack` available in Node 18+. Yarn version will be set via `packageManager` within `package.com` 
+```
+corepack enable
+corepack prepare yarn
+```
+
+## Development
+```
+yarn install
+yarn dev
+```
+
 ## Features
 
 #### Personal Project Admin Portal
