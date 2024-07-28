@@ -1,52 +1,30 @@
-import React from "react";
-import LayoutGlobal from "../ui/layout/Layout.global";
-import Landing from "../components/landing/Landing";
-import ProfessionalProjects from "../components/body/ProfessionalProjects";
-import GithubProjects from "../components/body/GithubProjects";
-import Experience from "../components/body/Experience";
-import EmbedTwitterTimeline from "../components/body/EmbedTwitterTimeline";
-import Background from "../components/landing/Background";
+import * as React from "react"
+import { graphql, PageProps } from "gatsby"
 
-const style: any = {
-  pageContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  sectionContent: {
-    display: "flex",
-    flexWrap: "wrap",
-    maxWidth: "1280px",
-    textAlign: "center"
-  },
-  sectionContentLeft: {
-    flex: 2
-  },
-  sectionContentRight: {
-    flex: 1
+type DataProps = {
+  site: {
+    siteMetadata: {
+      title: string
+    }
   }
-};
+}
 
-const IndexPage = () => (
-  <LayoutGlobal>
-    <div style={style.pageContainer}>
-      <Background>
-        <Landing />
-      </Background>
+const IndexRoute = ({ data: { site } }: PageProps<DataProps>) => {
+  return (
+    <main>
+      <h1>{site.siteMetadata.title}</h1>
+    </main>
+  )
+}
 
-      <div style={style.sectionContent}>
-        <div style={style.sectionContentLeft}>
-          <ProfessionalProjects />
-          <GithubProjects />
-        </div>
+export default IndexRoute
 
-        <div style={style.sectionContentRight}>
-          <Experience />
-          <EmbedTwitterTimeline />
-        </div>
-      </div>
-    </div>
-  </LayoutGlobal>
-);
-
-export default IndexPage;
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
