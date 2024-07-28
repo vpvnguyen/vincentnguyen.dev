@@ -55,7 +55,7 @@ typings/
 .env*
 
 # gatsby files
-.cache
+.cache/
 public
 
 # Mac files
@@ -67,3 +67,5 @@ yarn-error.log
 .pnp.js
 .yarn-integrity
 .yarn
+
+archive/
